@@ -1,0 +1,584 @@
+%\documentclass[a4paper,12pt,oneside,openany]{jsbook}
+%\include{begin}
+\graphicspath{{./pictures/chapter2/}}
+
+\chapter{Experiment} 
+\label{chap-exp}
+%概要
+
+%%%%%
+\section{Outline}
+The J-PARC E40 was performed at the K1.8 beamline in the J-PARC Hadron Experimental Facility (HEF) from 2018 to 2020. It measured the $\SPMp$ elastic scatterings and the $\SMpLn$ inelastic scattering using the $\SPM$ beams derived from the $\pipKS$ reactions, irradiating a high intensity $\pPM$ beams (20 M/spill, 5.2 seconds cycle with a beam duration of 2 s) to a liquid hydrogen (LH$_2$) target. The $\SP$ beams with a momentum range $0.44-0.80$ GeV/$c$ were produced using 1.41 GeV/$c$ $\pP$ beam, and the $\SM$ beams with a momentum range $0.47-0.85$ GeV/$c$ were produced using 1.33 GeV/$c$ $\pM$ beam, respectively. In addition, proton beams with a momentum range $0.45-0.85$ GeV/$c$ were used to accumulate the $pp$ scattering data for the energy calibration of a cylindrical detector cluster called \say{CATCH} \cite{Aka-2020}. Finally, $\sim70 \rm{M}\ \SP, and \sim17 \rm{M}\ \SM$ beams were accumulated. Then,  $\sim2400$ $\SPp$ elastic scattering events, $\sim4500$ $\SMp$ elastic scattering events, $\sim2300$ $\SMpLn$ inelastic scattering events were identified respectively. Their differential cross-sections were reported in Ref. \cite{Nana-SPp, Miwa-SMp, Miwa-SMLn}.
+
+This paper analyzed the $\PiKL$ reaction data accumulated included in the $\SM$ run data. Here, we developed a new $\Kz$ identification method where the forward magnetic spectrometer called \say{KURAMA spectrometer} and the CATCH system detects $\pP$ and $\pM$ derived from the $\kzdecay$ decay, respectively. This is due to the limited angular acceptance of KURAMA. The beam $\Lambda$ was tagged by calculating the missing mass of the $\PiKX$ reaction. 
+
+In the beam $\Lambda$ polarization measurement, only the $\Ldecay$ decay events detected by CATCH were analyzed, and the emission angle distribution of the decay proton in the rest frame of $\Lambda$ was measured. In the $\Lp$ scattering identification, the recoil proton from scattering and $\scatldecay$ decay were detected by CATCH. 
+
+
+\begin{comment}
+
+In the first stage, the commissioning run for $\SMp$ scattering was carried out in June 2018. Then, the $\SMp$ and $\SPp$ scattering data were taken from February to April 2019. Although the data taking was suspended due to accelerator trouble and maintenance, the $\SPp$ scattering data acquisition was completed in June 2020. 
+
+We first measured the $\SMp$ scattering because $\SM$ has no decay channel to a proton, unlike $\SP$, which decays to a proton and $\pZ$. Therefore, it is easier to identify the scattering event by detecting the recoil proton in the $\SMp$ scattering measurement. We used this $\SMp$ scattering feature when establishing and checking the experimental method. In contrast, the $\SPp$ scattering is disadvantaged because the decay protons derived from the $\SPdecay$ decay become background when identifying the recoil protons. The number of triggers also increases because some $\pP$ beams, which have the same charge as the outgoing $\KP$, penetrate the target. 
+
+The incident $\pi$ beam was selected and delivered to the target by the K1.8 beamline, which consists of the upstream section, mass separation section, and momentum analysis section (QQDQQ magnets: four quadrupoles Q10, Q11, Q12, Q13 and one dipole magnet D4). After the upstream and mass separation sections extracted the $\pi$ beam, the K1.8 beamline spectrometer analyzes its momentum. The magnetic field of the D4 magnet extracts the particle having the specified central momentum. 
+
+%%The K1.8 beamline has a design value for the momentum resolution as $\Delta p/p = 3.3\times10^{-4}$ with a position resolution of 200 $\mu$m (FWHM) \cite{K1.8}. 
+%The fluctuation of its magnetic field was 0.01\%, monitored by the high-resolution Hall probe (Digital Teslameter 151 (DTM-151)) \cite{DTM-151}.
+
+We installed new tracking detectors in the K1.8 beamline spectrometer to handle high-intensity $\pi$ beams. A Beamline Fiber Tracker (BFT) and two Beamline Multi-Wire Drift Chambers (BC3 and BC4) were used for position measurement. 
+%BFT consists of 320 scintillation fibers ($160\times2$ layers) with the position resolution of $\sigma\sim180\ \mu$m \cite{Honda-D}. 
+%%BC3 and BC4 have six layers ($xx', uu', vv'$) for each with an anode-anode spacing of 3 mm and are located downstream of the Q13 magnet. 
+
+Two Beam Hodoscopes (BH1 and BH2), segmented plastic scintillation counters, were used for timing measurement. They measured beam particles' Time-Of-Flight (TOF) with a flight length of 10.4 m. In the present experiment, the contaminations from other particles in $\pPM$ beams were small. Therefore, BH1 was used to select the BFT hit segment corresponding to the triggered event in multiple-beam events. BH2 was used as a trigger counter, determining the origin timing for all detectors. 
+%The typical timing resolution of the beam TOF was $\sigma\sim$125 ps \cite{BH1}\cite{BH2}. BH2 was also used as the time zero counter to determine the start timing of the DAQ system at the K1.8 beamline.
+
+Outgoing charged particles produced at the LH$_2$ target via the $\pPM p$ reactions were analyzed by a forward magnetic spectrometer, called \say{KURAMA spectrometer}. KURAMA consists of a forward dipole magnet (KURAMA magnet), a Scattered Fiber Tracker (SFT), a Scattered Charged Hodoscope (SCH), two Fine-segmented Hodoscopes (FHT1, FHT2), a Scattered Aerogel Cherenkov counter (SAC), three MWDCs (SDC1, SDC2, SDC3), and a Time-Of-Flight wall (TOF). The trajectory of the charged particle passed through the magnetic field of the KURAMA magnet was reconstructed by the Runge-Kutta method \cite{Runge}. The charged particle momentum was determined by choosing the optimal momentum value that reproduces the hit position measured by the tracking detector. We also used TOF to measure the time-of-flight of the outgoing particles along a flight path of $\sim3$ m distance.
+%Although the tracking at the KURAMA spectrometer, called \say{KURAMA tracking}, had a momentum resolution of $\Delta p/p = 2.5\times10^{-2}$ for the 1.37 GeV/$c$ $\pP$, we improved it to $\Delta p/p = 6.5\times10^{-3}$ by recalculating the momentum measured by the KURAMA spectrometer \cite{Nana-D}. 
+%Since the KURAMA magnet was excited to 0.78 T, the $K^+$ momentum acceptance reached about $0.65-1.05$ GeV/$c$, which allowed us to produce the $\Sigma^{\pm}$ beams with the momentum range of $440-800$ MeV/$c$ for $\SP$, and $470-850$ MeV/$c$ for $\SM$. 
+
+The recoil protons, the decay protons from the $\SPdecay$ decay, and the decay $\pM$ from the $\SMdecay$ decay were detected by the CATCH system \cite{Aka-2020}, a cylindrical detector cluster. Its cylindrical fiber tracker (CFT) and BGO calorimeter measure scattered particles' tracks and energy deposits. 
+%The energy resolution of the CATCH system, including the energy resolutions of CFT and BGO calorimeter was $\sigma_E \sim 6$ MeV at the $E_{cal}(\theta) = 100$ MeV \cite{Nana-D}. 
+%Here, $E_{cal}$ was calculated kinetic energy of the recoil proton using its scattering angle $\theta$. The angular dependence of CFT was $\sigma_{\theta} = 1.5$ degrees.
+\textcolor{red}{To identify $\SPMp$ scattering events, two new analysis methods using kinematical consistency analyses were developed and introduced in the present experiment: $\Delta E$ and $\Delta p$ methods. $\Delta E$ method identifies the scattering events by comparing independent kinetic energy values of recoil proton measured directly and calculated kinematically using its scattering angle. $\Delta p$ method identifies the scattering events by comparing independent momentum values of scattered $\SPM$ measured directly and calculated kinematically using its scattering angle. Owing to these unique experimental techniques, the J-PARC E40 experiment finally accumulated $\sim70 \rm{M}\ \SP, \sim17 \rm{M}\ \SM$ beams. Then, approximately 4500 $\SMp$ elastic scattering events, 2300 $\SMpLn$ inelastic scattering events, and approximately 2400 $\SPp$ elastic scattering events were identified respectively, and their differential cross-sections were already reported in Ref. \cite{Miwa-SMp}\cite{Miwa-SMLn}\cite{Nana-SPp}. }
+
+In the $\SM$ production, SAC in front of the KURAMA magnet vetoed outgoing $\pP$s with a rejection efficiency $\sim99\%$ under the data-taking rate of 300 kHz \cite{Koba-2016}. Therefore, 1\% of $\pP$ data SAC accepted were accumulated simultaneously. The byproduct data include the $\PiKL$ reaction when $\pP$ from the $\kzdecay$ decay passed through the KURAMA magnet. This paper analyzed the $\PiKL$ reaction data to search for Lp scattering events and measure beam L polarization as a feasibility study of the next-generation $\Lp$ scattering experiment, J-PARC E86. Our analysis assumed that the $\PiKL$ reaction produced the beam $\Lambda$ for the $\Lp$ scattering. 
+
+The analysis method assuming the detector configuration of the present experiment to identify the $\PiKL$ reaction has been established for the first time. We developed a new $\Kz$ identification method where the KURAMA spectrometer and the CATCH system detect $\pP$ and $\pM$ from the $\kzdecay$ decay, respectively. This is due to the limited spectrometer acceptance of the KURAMA spectrometer. To compensate for the missing information of $\pM$ energy, we introduced \say{$\Kz$ assumption} for the detected $\pP$ and $\pM$. This method assumes that the two $\pi$s originate from the $\kzdecay$ decay and determines the momentum of $\pM$ so that the invariant mass between $\pP$ and $\pM$ is equal to the mass of $\Kz$. Then, the missing mass of the $\PiKX$ reaction was calculated. If the $\Lambda$ production events occur, the missing mass peak corresponding to the mass of $\Lambda$ appears: the $\Kz$ assumption is valid for such events. Conversely, spurious events, \say{non-$\Kz$ events}, in which $\Kz$ was not produced formed huge background structures in the missing mass spectrum. From this $\PiKL$ reaction analysis explained above \textcolor{red}{$\sim379$ k $\Lambda$ in a momentum range of $0.25-1.25$ GeV/$c$ were identified.} Using these momentum-tagged beam $\Lambda$s, the $\Lp$ scattering event search and beam $\Lambda$ polarization measurement were performed. 
+
+\end{comment}
+
+
+%%%%%
+\section{Japan Proton Accelerator Research Complex (J-PARC)}
+\label{sec-jparc}
+
+The Japan Proton Accelerator Research Complex (J-PARC) consists of world-class proton accelerators and experimental facilities that use high-intensity proton beams. All neutron, pion, kaon, and neutrino beams can be produced at J-PARC via collisions between the proton beams and target materials (spallation reactions). The applications of these beams include fundamental nuclear and particle physics, materials and life science, and nuclear technology.
+
+J-PARC has three proton accelerators and three experimental facilities. The former consists of a 400 MeV linear accelerator (Linac), a 3 GeV Rapid Cycling Synchrotron (RCS), and a 30 GeV Main Ring synchrotron (MR). The latter consists of the NeUtrino experimental facility (NU), the Hadron Experimental Facility (HEF), and the Material and Life-science Facility (MLF), as shown in Figure \ref{fig-J-PARC}. 
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{J-PARC.png}
+   \caption{Schematic of the J-PARC. It has three proton accelerators and three experimental facilities. The former consists of a 400 MeV linear accelerator (Linac), a 3 GeV Rapid Cycling Synchrotron (RCS), and a 30 GeV Main Ring synchrotron (MR). The latter includes the NeUtrino Experimental Facility (NU), the Hadron Experimental Facility (HEF), and the Material and Life-science Facility (MLF).}
+   \label{fig-J-PARC}
+ \end{center}
+\end{figure}
+
+First, plasma (electrically charged gas) of negative hydrogen ions (H$^-$), which have two electrons attached to the proton, are created from hydrogen gas and accelerated up to the energy of 400 MeV in Linac. Here, the force of an electric field accelerates the plasma of H$^-$ ions so-called a \say{bunch} by transmitting electromagnetic waves of 324 MHz (upstream) and 972 MHz (downstream) generated by a klystron at the same time as the plasma passes through several cylindrical tanks called \say{acceleration cavities.} There are 41 acceleration cavities in a row, and the final kinetic energy reaches 400 MeV or 71\% of the speed of light.
+
+Second, The bunch accelerated by the Linac passes through a thin carbon film as it enters the 3 GeV RCS, a circumferential accelerator. The two electrons are then stripped away to form a proton beam. Whereas the Linac has many acceleration cavity tanks, the RCS has only about ten. Instead, the proton beam is bent and focused by about 160 large electromagnets, weighing several to several dozen tons, and travels more than 10,000 times through the doughnut-shaped beam duct. Each rotation is energized by the electric field from the acceleration cavity so that the final kinetic energy reaches 3 GeV or 97\% of the speed of light. The RCS accelerating cavities have been developed independently and have excellent performance, and they support the world's highest intensity acceleration performance, a feature of J-PARC. A large fraction of the proton beam accelerated in the RCS is sent to the MLF. A portion is sent to the next accelerator, the MR.
+
+Third, the MR receives eight bunches of protons, each containing more than 20 trillion protons, from the RCS. Each bunch passes through the acceleration cavity several times during its $3\times10^5$ orbits around the long, ultra-large, doughnut-shaped vacuum duct in 1.4 seconds, and each time it is accelerated a little more. The final proton beam has a kinetic energy of 30 GeV or 99.95\% of the speed of light. After acceleration, these high-intensity bunches of protons are sent to the HEF and the NU, with fast/slow extraction, respectively. They strike targets to produce secondary particles for experiments \cite{J-PARCsite}. 
+
+In the NU, beam bunches are extracted within a one-turn period of $\sim5\ \mu$s using the fast extraction mode. Then neutrino and anti-neutrino beams are generated by the $\pi^{\pm}\to\mu^{\pm}\nu_{\mu} (\bar{\nu_{\mu}})$ decays, where $\pi^{\pm}$'s are produced by colliding the extracted proton beam with graphite target. The beam bunches are gradually extracted in the HEF, taking $\sim2$ seconds with the slow extraction mode. \say{Spill}, beams extracted in one cycle or one-cycle extraction itself is 5.2 s, of which 2.0 s was on-beam.
+
+The schematic of the HEF is shown in Figure \ref{fig-hadron}. Here, various experiments, such as nuclear reactions and particle decays, are performed using a variety of secondary beams produced from high-intensity primary proton beams or the primary proton beams themselves. Secondary beams of $K$ mesons, pions, hyperons, neutrinos, muons, and antiprotons are available. Three secondary particle beamlines (K1.8, K1.8BR, KL) and two primary proton beamlines (high momentum (high-p) beamline and COMET beamline) are currently installed in the HEF, where various experimental studies in nuclear and particle physics are being conducted as follows. 
+% An experiment to search for muon-electron conversion events (COMET experiment) is also planned.
+\begin{itemize}
+\item Study of Hypernucei (K1.8 Beamlines)
+\item Study of Exotic Atoms and Nuclei (K1.8BR Beamlines)
+\item Study of CP Symmetry-Breaking in Neutral $K$ Meson Decays (KL Beamline)
+\item Study of Time-Reversal Symmetry Breaking in $K^+$ Meson Decays (K1.1BR beamline)
+\item Study of Mass Origin and Chiral Symmetry (High Momentum Beamline)
+\item Study of Muon-Electron Conversion Events Beyond the Standard Model (COMET Beamline)
+\end{itemize}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{hadron.png}
+   \caption{Schematic of the HEF in the J-PARC. The K1.8, K1.8 BR, KL, and K1.1 beamlines use secondary beams. The high-p and COMET beamlines use primary proton beams.}
+   \label{fig-hadron}
+ \end{center}
+\end{figure}
+
+%%%%%
+\clearpage 
+\section{K1.8 beamline}
+\label{sec-k18beamline}
+
+The K1.8 beamline is a multi-purpose beamline with various secondary hadron beams available for a maximum momentum of 2.0 GeV/$c$. First, the primary 30 GeV/$c$ proton beam is irradiated to the T1 target (Au) to produce the secondary beam particles, such as $K$ mesons, $\pi$ mesons, hyperons, neutrinos, muons, and antiprotons. The secondary beam particles are then delivered to our target through the K1.8 beamline, which consists of the upstream section, mass separation section, and momentum analysis section, as shown in Figure \ref{fig-K1.8}. After the upstream and mass separation sections extract the beam particles, the K1.8 beamline spectrometer analyzes their momenta. 
+%The K1.8 beamline spectrometer was designed to have the momentum resolution of $\Delta p/p = 3.3\times10^{-4}$ with a position resolution of 200 $\mu$m (FWHM) \cite{K1.8}. The magnetic field of the D4 magnet extracts the beam particles having the specified central momentum. The fluctuation of its magnetic field is 0.01\%, monitored by the high-resolution Hall probe (Digital Teslameter 151 (DTM-151)) \cite{DTM-151}.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{K1.8.png}
+   \caption{Schematic of the K1.8 beamline. Its upstream section consists of two dipole magnets (D1, D2), two quadruple magnets (Q1, Q2), and the intermediate focus (IF) slits.}
+   \label{fig-K1.8}
+ \end{center}
+\end{figure}
+
+%%%%
+\subsection{Upsream section}
+The upstream section of the K1.8 beamline consists of two dipole magnets (D1, D2), two quadruple magnets (Q1, Q2), and the intermediate focus (IF) slits. The IF slits are installed behind the D2 magnet, and have horizontal and vertical components of a 30-cm thick brass block (IFH, IFV).
+
+The primary proton beam is irradiated to a primary target so-called \say{T1}, an Au rod ($\phi\ 6\times60$ mm), for $\sim2$ s ($=1$ spill) within 5.2 s interval, synchronized to an operation cycle of the MR. The secondary beam particles generated at the T1 target are then separated. After that, those whose momentum is a certain value are only extracted by the D1 magnet. Then, the selected particles are vertically focused by the IF point. Here, IFH and IFV shape beam profiles and reject the cloud $\pi$s produced by the $\kzsd$ decays and the $\pi$s scattered from upstream materials.
+
+%%%%
+\subsection{mass separation section}
+The mass separation section of the K1.8 beamline has two subsections. The first subsection consists of four quadruple magnets (Q3, Q4, Q5, Q6), two sextupole magnets (S1, S2), an octupole magnet (O1), an electrostatic separator (ESS1) with two correction magnets (CM1, CM2), the horizontal momentum slit (MOM), and the mass slit (MS1). The second subsection consists of three quadruple magnets (Q7, Q8, Q9), two sextupole magnets (S3, S4), two octupole magnets (O2, O3), an electrostatic separator (ESS2) with two correction magnets (CM3, CM4), and the mass slit (MS2). 
+
+Each ESS1 and ESS2 generates a transverse electric field against the beam axis, separating beam particles with the same momenta by their mass. Each ESS generates an electric field with a gap of 10 cm between parallel electrode plates with a size of 30 cm in width and 6 m in length. Since the electric fields of ESSs slightly shift the particle orbit, CM1$-$CM4 correct it in front of and behind each ESS. Then, MOM, located between the Q6 magnet and MS1, determines a beam momentum bite. The beam is focused vertically at each MS. The mass of beam particles can be selected by tuning the magnetic fields of each CM and the positions of each MS. The D3 magnet also arranges the direction of the beam either to the K1.8 or the K1.8BR experimental area. 
+
+%%%%
+\subsection{momentum analysis section}
+The momentum analysis section of the K1.8 beamline consists of four quadrupoles (Q10, Q11, Q12, Q13), a dipole magnet D4, three tracking detectors (BFT, BC3, BC4), and two timing counters (BH1, BH2). This section is called \say{K1.8 beamline spectrometer}. Here, Q12 and Q13 focus the beam on the experimental target. Details on the K1.8 beamline spectrometer are described in the next section.
+
+
+%%%%%
+\section{K1.8 beamline spectrometer}
+\label{sec-k18beamspec}
+
+The K1.8 beamline spectrometer, located at the end of the K1.8 beamline, consists of four quadrupoles (Q10, Q11, Q12, Q13), a dipole magnet D4, three tracking detectors (BFT, BC3, BC4), and two trigger counters (BH1, BH2), as shown in Figure \ref{fig-K1.8spec}. It was designed to have the momentum resolution of $\Delta p/p = 3.3\times10^{-4}$ with a position resolution of 200 $\mu$m (FWHM) \cite{K1.8}. The magnetic field of the D4 magnet extracts the beam particles having the specified central momentum. The fluctuation of its magnetic field is 0.01\%, monitored by the high-resolution Hall probe (Digital Teslameter 151 (DTM-151)) \cite{DTM-151}.
+
+The horizontal beam position is measured by BFT installed in front of the QQDQQ magnets. BC3 and BC4 measure the three-dimensional beam trajectories at the exit of QQDQQ magnets. The $\pM$ beam momentum is reconstructed using the position information observed by tracking detectors (BFT, BC3, and BC4) with the third-order transfer matrix. This section introduces three tracking detectors (BFT, BC3, BC4) and two trigger counters (BH1, BH2). The specifications of each detector are summarized in Table \ref{tab-K1.8spec-tracker} and Table \ref{tab-K1.8spec-hodo}.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{K1.8spec.png}
+   \caption{Schematic of the K1.8 beamline spectrometer. It consists of four quadrupoles (Q10, Q11, Q12, Q13), a dipole magnet D4, three tracking detectors (BFT, BC3, BC4), and two trigger counters (BH1, BH2).}
+   \label{fig-K1.8spec}
+ \end{center}
+\end{figure}
+
+\begin{table}[h]
+  \begin{center}
+    \caption{The list of specifications of the tracking detectors in the K1.8 beamline spectrometer.}
+    \begin{tabular}{cccccc} \hline \hline
+      Name & Sensitive area & Composition & Drift space & Wires & Resolution $\sigma_{pos}$\\
+       & W $\times$ H (mm$^2$) & & (mm) & & ($\mu$m) \\ \hline
+      BFT & 160 $\times$ 80 & Plastic scintillation fiber & - & xx' & 190 \\
+      BC3 & 192 $\times$ 100 & MWDC & 1.5 & $xx'uu'vv'$ & 200  \\ 
+      BC4 & 192 $\times$ 100 & MWDC & 1.5 & $xx'uu'vv'$ & 200 \\ 
+\hline\hline
+   \end{tabular}
+   \label{tab-K1.8spec-tracker}
+   \end{center}
+\end{table}
+
+%\textcolor{red}{結局BFTの位置分解能はいくらなんだろう。松本修論には240$\mu$m、本多博論には180$\mu$m、七村博論には190$\mu$mとある。}
+
+\begin{table}[h]
+  \begin{center}
+    \caption{The list of specifications of the hodoscopes in the K1.8 beamline spectrometer.}
+    \begin{tabular}{cccc} \hline \hline
+      Name & Sensitive area & Composition & PMT number \\
+       & W $\times$ H (mm$^2$) & & \\ \hline
+      BH1& 170 $\times$ 66 & Plastic scintillator & HPK H6524MOD \\
+      BH2 & 118 $\times$ 60 & Plastic scintillator & HPK R9880U-110MOD  \\ 
+\hline\hline
+   \end{tabular}
+   \label{tab-K1.8spec-hodo}
+   \end{center}
+\end{table}
+
+%%%%
+\subsection{Hodoscope}
+Two trigger counters, BH1 and BH2, select only $\pi$s by measuring a time-of-flight for a 10.4 m distance. BH1 and BH2 can separate a small amount of $K$ mesons with the same momentum as the $\pi$s. The flight velocity of the beam particles $v$ can be obtained as
+\begin{equation}
+  v = \beta c = \frac{pc}{E} = \frac{d}{t}
+  \label{eq:velo}
+\end{equation}
+where $p$ is the momentum, $E$ is the energy of the beam particle, $d$ is the distance between BH1 and BH2, and $t$ is the measured time-of-flight. Even if $\pi$ and $K$ mesons have the same momentum, the $\pi$ can be identified by the difference in time-of-flight. In the present experiment, $\pi$ and $K$ mesons with momentum $p = 1.33$ GeV/$c$ passed through BH1 and BH2, so the difference of time-of-flight between them was estimated as $\Delta t \sim 2.15$ ns. BH1 was also used for selecting the BFT hits corresponding to the triggered event in multiple-beam events. BH2 was used as the trigger counter, determining the origin timing for all detectors.
+
+%%%
+\subsubsection{BH1}
+The Beam Hodoscope 1 (BH1) \cite{BH1} is located upstream of the QQDQQ magnets and consists of 11 plastic scintillator segments (Saint-Goban BC-420), with the narrower segment at the center of the high-density beam to ensure uniform count rates per segment. The widths of each segment are 8, 12, 16, and 20 mm, as shown in Figure \ref{fig-BH1} \cite{Honda-D}. The segments are arranged alternately with an overlap of 1 mm. The sensitive area is 170 mm (H)$\times$66 mm (V). Photo-Multiplier Tubes (PMTs) (HPK H6524MOD) read out the signals through acrylic guides from both the top and bottom sides.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=8cm]{BH1.png}
+   \caption{Schematic of BH1 \cite{Honda-D}.}
+   \label{fig-BH1}
+ \end{center}
+\end{figure}
+
+%%%
+\subsubsection{BH2}
+The Beam Hodoscope 2 (BH2) \cite{BH2} is installed at the downstream end of the QQDQQ magnets, in front of the LH$_2$ target, and consists of eight plastic scintillator segments (Saint-Goban BC-420), which, like BH1, are narrower at the center where the beam density is higher. The widths of each segment are 7, 10, and 35 mm, as shown in Figure \ref{fig-BH2} \cite{Honda-D}. The segments are arranged in a single horizontal row without overlap. The sensitive area is $118\ \rm{mm}\times60$ mm. PMTs (HPK R9880U-110MOD) read out the signals through acrylic guides from both the top and bottom sides. A beam particle's time-of-flight (TOF) for the flight length of 10.4 m is measured by BH1 and BH2. \textcolor{red}{The typical timing resolution of the beam TOF was $\sim125$ ps ($\sigma$) \cite{BH2}.}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=8cm]{BH2.png}
+   \caption{Schematic of BH2 \cite{Honda-D}.}
+   \label{fig-BH2}
+ \end{center}
+\end{figure}
+
+%%%%
+\subsection{Tracking detector}
+The Beamline Fiber Tracker (BFT) installed upstream of the QQDQQ magnets and Beamline multi-wire drift Chambers 3, 4 (BC3, BC4) installed downstream of the QQDQQ magnets measure the horizontal and three-dimensional position information of the beam particles, respectively, to reconstruct its momentum. Here, the linear tracks obtained from BC3 and BC4 are applied to the third-order transport matrix based on the beam optics of the beam spectrometer to reconstruct the trajectory. The momentum is then determined so that the reconstructed track passes through the hit position of BFT.
+
+%%%
+\subsubsection{BFT}
+The Beam Fiber Tracker (BFT) is located between BH1 and Q10 to measure the horizontal position of the beam particle. It consists of two layers ($xx'$) made of 320 plastic scintillation fibers (Kuraray SCSF-78MJ) with a diameter of 1 mm. Fibers are arranged alternately with an overlap of 0.5 mm, as shown in Figure \ref{fig-BFT} \cite{Honda-D}. The effective area is 160 mm (H)$\times$80mm (V), and the position resolution was estimated to be 190 $\mu$m ($\sigma$). Readout was performed by multi-pixel photon counter, MPPC (Hamamatsu S10362-11-100P).
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{BFT.png}
+   \caption{Schematic of BFT \cite{Honda-D}.}
+   \label{fig-BFT}
+ \end{center}
+\end{figure}
+
+%
+\subsubsection{BC3 and BC4}
+The Beamline multi-wire drift Chambers 3 and 4 (BC3, BC4) are installed downstream of the QQDQQ magnets. They measure the three-dimensional position of the beam particle and consist of six layers ($xx'uu'vv'$) for each. Each layer is arranged in the order of $x, x', v, v', u, u'$ in BC3 and $u, u', v, v', x, x'$ in BC4 from upstream. For one layer, 64 sense wires with a diameter of 15 $\mu$m are strung at 3 mm intervals. The $v$ and $u$ layers are stretched at an inclination of $-15^{\circ}$ and $-15^{\circ}$, respectively, to the $x$ layer, stretched in the vertical direction. To determine which side of the wire the beam particle passed through, the $x', u',$ and $v'$ layers are strung to the $x, u,$ and $v$ layers, respectively, shifted by 1.5 mm, half the wire spacing as shown in Figure \ref{fig-BC34}.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{BC34.png}
+   \caption{Schematic of a pair plane of BC3 and BC4.}
+   \label{fig-BC34}
+ \end{center}
+\end{figure}
+
+
+%%%%%
+\clearpage
+\section{KURAMA spectrometer}
+The outgoing charged particles produced by the $\pPMK$ reaction at the LH$_2$ target are detected and analyzed by the forward magnetic spectrometer called \say{KURAMA spectrometer}. It consists of a forward dipole magnet (KURAMA magnet), a Scattered Fiber Tracker (SFT), a Scattered Charged Hodoscope (SCH), two Fine-segmented Hodoscopes (FHT1, FHT2), a Scattered Aerogel Cherenkov counter (SAC), three MWDCs (SDC1, SDC2, SDC3), and a Time-Of-Flight wall (TOF), as shown in Figure \ref{fig-KURAMAspec}.
+
+The KURAMA magnet has the momentum resolution of $\Delta p/p \sim10^{-2}$ \cite{Miwa-SMp} and is excited to 0.78 T at the central position. The trajectory of the scattered particle at the entrance and exit of the magnet is measured by four tracking detectors: SFT, SDC1, SDC2, and SDC3. Here, the flight path of the scattered particles in the magnetic field is obtained by numerical iteration with the Runge-Kutta method \cite{Runge} to minimize $\chi^2$ with hits on tracking devices. Then, the momentum of the scattered particle is obtained to reconstruct its flight path, referring to the hit combination between SFT, SCH, and TOF. The time-of-flight of the outgoing particle along a flight path of approximately 3 m distance is measured by TOF. SAC rejects scattered $\pP$s (typical momentum range of $0.9-1.4$ GeV/$c$) at a trigger level with a refractive index of 1.1.%, which allows us to roughly select scattered $K^+$s (typical momentum range of $0.6-1.1$ GeV/$c$). 
+
+With BH2 installed upstream of the target, SAC, TOF, SFT, and SCH work as the trigger counter. The KURAMA spectrometer acceptance for the scattered $K^+$ by the $\PiKSM$ reaction is $\sim$ 4\%, and $K^+$ typically has the survival ratio of $\sim$ 59\%. 
+  
+Under the high-rate environment, the number of combinations corresponding to track candidates becomes enormous when using two drift chambers, which is because no tight timing gate can be applied due to their drift
+time. To deal with this, SFT, which has a good timing resolution of $\sigma \leq 1$ ns, is installed to reduce the number of combinations. This also minimizes the amount of material scattered particles pass through, resulting in measurements that maintain the quality of the momentum resolution.
+
+%2023/10/31 19:00
+Since the SAC efficiency of $\pP$ rejection is $\sim\ 99$\%, 1\% of all reactions including the $\PiKL$ reaction were accumulated as a byproduct data. To establish the analysis methods for the next-generation $\Lp$ scattering experiment (J-PARC E86), we analyzed this $\PiKL$ reaction data. Here, scattered $\pP$ and $\pM$ produced by the $\kzdecay$ decay are detected by the CATCH system and KURAMA spectrometer, respectively. In the same way as the analysis for the $\PiKSM$ reaction above, the KURAMA spectrometer can analyze the scattered $\pP$ momentum and trajectory. The typical momentum range of scattered $\pP$ is $0.2-1.5$ GeV/$c$.
+
+In this section, detailed explanations of each detector, composing the KURAMA spectrometer, and the trigger logic are described. The specifications of the detectors are summarized in Table \ref{tab-KURAMAspec-trig} and Table \ref{tab-KURAMAspec-track}.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{KURAMAspec_old.png}
+   \caption{Schematic of the KURAMA spectrometer \cite{Nana-D}. It consists of a forward dipole magnet (KURAMA magnet), a Scattered Fiber Tracker (SFT), a Scattered Charged Hodoscope (SCH), two Fine-segmented Hodoscopes (FHT1, FHT2), a Scattered Aerogel Cherenkov counter (SAC), three MWDCs (SDC1, SDC2, SDC3), and a Time-Of-Flight wall (TOF). Five solid curves represent typical trajectories for expected particles. The blue curve represents the outgoing $\KP$s following the kinematics of the $\pM p\to\KP\SM$ reaction.}
+   \label{fig-KURAMAspec}
+ \end{center}
+\end{figure}
+
+%
+\subsection{Trigger counters}
+Four trigger counters (SFT, SAC, SCH, TOF) are installed downstream of the KURAMA magnet. The particle identification is performed using the hit combination between SFT, SCH, and TOF. Specifications of trigger counters are summarized in Table \ref{tab-KURAMAspec-trig}.
+
+\begin{table}[h]
+  \begin{center}
+    \caption{The list of specifications of the trigger counters in the KURAMA spectrometer.}
+    \begin{tabular}{cccc} \hline \hline
+      Name & Sensitive area & Composition & Position resolution ($\sigma$) \\
+       & W $\times$ H (mm$^2$) & & (mm) \\ \hline
+      SFT& 280 $\times$ 160 & Fiber tracker & 0.18  \\
+      SAC& 484 $\times$ 402 & Aerogel Cherenkov counter & -  \\
+      SCH & 673 $\times$ 450 & Scintillator hodoscope & 6.0  \\ 
+      TOF & 1800 $\times$ 1800 & Scintillator wall & 40 (H), 20 (V)  \\ 
+\hline\hline
+   \end{tabular}
+   \label{tab-KURAMAspec-trig}
+   \end{center}
+\end{table}
+
+%
+\subsubsection{SFT}
+The Scattered Fiber Tracker (SFT) is installed at the most upstream of the KURAMA spectrometer. To measure the three-dimensional trajectory, SFT consists of two independent frames, $x, uv$ frames.
+
+The detector frame of the $x$ plane is shown in Figure \ref{fig-SFTx} \cite{Honda-D}. It consists of two layers vertically aligned ($xx'$) with $256\times2\ \rm{layers}=512$ scintillation fibers (Kuraray SCSF-78MJ) of 1 mm diameter. Since the number of fibers is larger than BFT $x$ frame, it is possible to measure the particles with the scattering angle up to $20^{\circ}$. A beam window size is $450\times160$ mm$^2$, and the sensitive area is $256\times160$ mm$^2$. 
+
+The detector frame of the $uv$ plane is shown in Figure \ref{fig-SFTuv} \cite{Honda-D}. Each plane consists of two layers with $240\times2\ \rm{layers}=480$ scintillating fibers (Kuraray SCSF-78MJ) of 0.5 mm diameter, which means the total number of fibers in the SFT $uv$ frame is 960. The reason that the diameter of fibers is smaller than the $x$ plane is to reduce the energy loss straggling. Each layer is inclined $45^{\circ}$ to the left and right, respectively ($uu', vv'$), with an overlap of 0.25 mm. The beam window size of $280\times160$ mm$^2$ corresponds to the size of the effective area.
+
+Scintillation signals are read by an MPPC (Hamamatsu S10362-11-100P) attached at the end of each fiber. Especially in the $u-v$ frame, three fibers are read out by one MPPC to reduce the number of channels. 
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SFTx.png}
+   \caption{Schematic of SFT $x$ plane ($xx'$ layers) \cite{Honda-D}.}
+   \label{fig-SFTx}
+ \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SFTuv.png}
+   \caption{Schematic of SFT $u$ and $v$ planes ($uu', vv'$ layers) \cite{Honda-D}.}
+   \label{fig-SFTuv}
+ \end{center}
+\end{figure}
+
+
+%
+\subsubsection{SAC}
+The Scattered Aerogel Cherenkov counter (SAC) is installed behind SDC1. It rejects scattered $\pP$s (typical momentum range of $0.9-1.4$ GeV/$c$) at a trigger level with a refractive index of 1.1, which allows us to roughly select scattered $K^+$s (typical momentum range of $0.6-1.1$ GeV/$c$). The efficiency of $\pP$ rejection is over 99\% under the data-taking rate of 300 kHz \cite{Koba-2016}. 
+
+Silica aerogels are spread in four separate chambers. Each room is arranged to avoid the beam passage area.
+To reduce counting rate variation, the chambers were designed so that the volume of the chamber became larger the farther from the beam center as shown in Figure \ref{fig-SAC}. Cherenkov lights are detected by the Fine mesh PMTs (Hamamatsu R6682). Even in the magnetic fields of $\sim$0.3 T, PMT gains are maintained to be $\geq90$\%. The sensitive area is $484\times402$ mm$^2$.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SAC.png}
+   \caption{Schematic of SAC \cite{Koba-2016}.}
+   \label{fig-SAC}
+ \end{center}
+\end{figure}
+
+%%%
+\subsubsection{SCH}
+The Scattered Charged Hodoscope (SCH) is installed inside the KURAMA magnet. It consists of 64 segments of the plastic scintillator (EJ212). The size of one segment is $11.5\times450\times2$ mm$^3$. The segments are arranged alternately with an overlap of 1 mm, as shown in Figure \ref{fig-SCH} \cite{Nana-D}. 
+
+MPPC readout was performed from the end of the wavelength-converting fiber (Kuraray PSFY-11J) embedded in each segment. Eight segments in the beam passage area were not triggered to reduce noise from the high-intensity $\pi$ beam.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SCH.png}
+   \caption{Schematic of SCH \cite{Nana-D}.}
+   \label{fig-SCH}
+ \end{center}
+\end{figure}
+
+%
+\subsubsection{TOF}
+The Time-Of-Flight (TOF) wall counter is a plastic scintillation detector installed downstream of SDC3 to measure the flight time from BH2 to TOF. It consists of 24 segments of plastic scintillators (EJ200), and one segment size is $80\times1800\times30$ mm$^3$. The segments are arranged alternately with an overlap of 5 mm, as shown in Figure \ref{fig-TOF}. Readout was performed by PMTs (Hamamatsu H1945) through acrylic guides from both the top and bottom sides of each segment. 
+
+In the present experiment, only the area where the high-intensity $\pi$ beam passes through is made of acrylic to prevent eddy currents in the PMT caused by such beams. 
+Specifically, a rectangular area cut at 200 mm from the center of the $14-16$th segment through which the $\pM$ beam is expected to pass and the $2-7$th segment through which the $\pP$ beam is expected to pass corresponds to the insensitive area. During the commissioning study in 2018, only the $\pM$ beam pass-through region was insensitive, and during the beamtime in 2019, both $\pi^{\pm}$ beam pass-through regions were insensitive. The typical position resolution between BH2 and TOF is $40$(H)$\times20$(V) mm ($\sigma$) \cite{Nana-D}. 
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{TOF.png}
+   \caption{Schematic of TOF.}
+   \label{fig-TOF}
+ \end{center}
+\end{figure}
+
+%%%%
+\subsection{Tracking detectors}
+Three Scattered Drift Chambers (SDC1, SDC2, SDC3) and two scintillation Fiber Hodoscope Trackers (FHT1, FHT2) are installed in the KURAMA spectrometer. Specifications of them are summarized in Table \ref{tab-KURAMAspec-track}.
+
+\begin{table}[h]
+  \begin{center}
+    \caption{The list of specifications of the tracking detectors in the KURAMA spectrometer.}
+    \begin{tabular}{cccc} \hline \hline
+      Name & Sensitive area & Composition & Position resolution ($\sigma$) \\
+       & W $\times$ H (mm$^2$) & & (mm) \\ \hline
+      SDC1& 280 $\times$ 160 & Drift Chamber & 0.30 \\
+      SDC2& 484 $\times$ 402 & Drift Chamber & 0.40 \\
+      SDC3 & 673 $\times$ 450 & Drift Chamber & 0.30 \\ 
+      FHT1 & 196 $\times$ 450 & Scintillator hodoscope & 0.58 \\
+      FHT2 & 256 $\times$ 450 & Scintillator hodoscope & 0.58 \\ 
+\hline\hline
+   \end{tabular}
+   \label{tab-KURAMAspec-track}
+   \end{center}
+\end{table}
+
+%
+\subsubsection{SDC1}
+The SDC1 is a multi-wire drift chamber (MWDC), located at the entrance of the KURAMA magnet. It comprises six layers ($vv',\ xx',\ uu'$). The $uv$ layers incline $15^{\circ}$ to the left and right, respectively ($uu',\ vv'$). The wire configuration is shown in Figure \ref{fig-SDC1} \cite{Nana-D}. Each anode wire comprises gold-plated tungsten-rhenium (Au-W/Re) wire with a diameter of 20 $\mu$m, whose pitch is 6 mm. The $x',\ u',\ v'$ layers, which are pair planes, are offset from the $x,\ u,\ v$ layers by 3 mm, half the distance between the anode wires. Potential and shield wires comprise gold-plated aluminum wires with a diameter of 80 $\mu$m. 
+The gas and readout systems were common to BC3 and BC4. A mixed gas of Ar (76\%), iso-C$_4$H$_{10}$ (20\%), and methylal (4\%) were filled inside, and a raw signal from each wire was read by Amplifier Shaper Discriminator (ASD) cards attached to the edge of the chamber. SDC1 was placed to detect only scattering particles from $3^{\circ}$ to $30^{\circ}$.
+The operation voltage of the cathode wire is $-1.6$ kV, and the potential wire is $-1.56$ kV.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SDC1.png}
+   \caption{Schematic of SDC1 \cite{Nana-D}.}
+   \label{fig-SDC1}
+ \end{center}
+\end{figure}
+
+%
+\subsubsection{SDC2, SDC3}
+\label{sec: SDC23}
+Two MWDCs, SDC2 and SDC3 are located at the exit of the KURAMA magnet. They comprise four layers ($xx',\ yy'$) each. The structure of the wire configuration is the same as SDC1, but the anode wire pitch of SDC2 and SDC3 were designed to be 9 mm and 20 mm, respectively. As in SDC1, the $x',\ y'$ layers are shifted by half the anode wire pitch to the $x,\ y$ layers. A mixed gas of Ar (50\%) and ethane (50\%) was filled in both SDC2 and SDC3. SDC2 was operated with the operation voltages of $-2.05$ kV for the potential wire and $-1.5$ kV for the cathode wire. SDC3 was operated with the operation voltages of $-2.6$ kV for the potential wire and $-1.5$ kV for the cathode wire. Since SDC2 and SDC3 don't have enough high-rate tolerance for beam particles, the wires near the beam region were set to be insensitive by applying no operation voltage to the potential wires. As a result, SDC2 and SDC3 had a cross-shaped dead area, as shown in Figure \ref{fig-SDC23}. The vertical insensitive area was covered by FHT1 and FHT2. However, the horizontal dead area was not recovered. Therefore, for SDC2 and SDC3, the horizontal position of the particles near the beam height was not measured. %SDC2 and SDC3 lost about 10\% and 5\% of their effective area in the horizontal and vertical directions, respectively.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{SDC23.png}
+   \caption{Schematic of SDC2 and SDC3 with the insensitive area.}
+   \label{fig-SDC23}
+ \end{center}
+\end{figure}
+
+%
+\subsubsection{FHT1, FHT2}
+Two Fiber Hodoscope Trackers, FHT1 and FHT2, are located upstream of SDC2 and downstream of SDC3 to cover the horizontal insensitive area of SDC2 and SDC3, mentioned in Sec. \ref{sec: SDC23}. As shown in Figure \ref{fig-FHT2}, FHT2 is set to cover the insensitive area of SDC3.
+FHT1 and FHT2 consist of two detectors, an upper and a lower detector, respectively. The structure of the FHT consists of plastic scintillators (EJ212) with holes in the scintillator surface with sizes of 6 mm (H) $\times$ 550 mm (V) $\times$ 2 mm (T), arranged in a staggered configuration overlapping each other by 2 mm. The holes on the scintillator surface have a diameter of 1 mm. A wavelength-shifting fiber (KurarayPSFY-11J) with a diameter of 1 mm is placed in the holes on the scintillator surface, and the scintillation signal is read by an MPPC connected to its end.
+FHT1 has 96 scintillator segments and an effective area of 196 mm (H) $\times$ 450 mm (V). FHT2, on the other hand, has 128 scintillator segments and an effective area of 256 mm(H) $\times$ 450 mm(V).
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{FHT2.png}
+   \caption{Photograph of FHT2 located behind SDC3 to cover its insensitive area.}
+   \label{fig-FHT2}
+ \end{center}
+\end{figure}
+
+%%
+\section{Liquid hydrogen target}
+The liquid hydrogen target is contained in a cylindrical container, which is mainly made from a Mylar sheet of
+0.25 mm thickness, with a diameter of 40 mm, and a length of 300 mm. In this system, the hydrogen target is cooled by a heat exchanger using a GM cryocooler. The radius of the target is set to 20 mm considering the average path length of $\SP$, $c\tau\sim 24$ mm. The target system was kept in a vacuum, and carbon fiber reinforced plastic (CFRP) was used as a vacuum vessel to minimize the material in the region where the recoil protons and other particles pass through. The target density is $\rho = 0.070743(4) $g/cm$^{3}$. Figure \ref{fig-LH2} \cite{Nana-D} shows the schematic of the LH$_{2}$ target system, and Figure \ref{fig-LH2_2} \cite{Nana-D} shows the target container.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{LH2.png}
+   \caption{Schematic of the LH$_{2}$ target system \cite{Nana-D}.}
+   \label{fig-LH2}
+ \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{LH2_2.png}
+   \caption{Schematic of the LH$_{2}$ target container \cite{Nana-D}.}
+   \label{fig-LH2_2}
+ \end{center}
+\end{figure}
+
+%%
+\clearpage
+\section{CATCH detector system}
+The CATCH is a cylindrical detector cluster comprising a Cylindrical Fiber Tracker (CFT), BGO calorimeter, and scintillation fiber hodoscope (PiID) as shown in Figure \ref{fig-CATCH}. In the center of the CATCH, the LH$_2$ target cell was placed as shown in Figure \ref{fig-CATCH2}. 
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{CATCH.png}
+   \caption{Schematic of CATCH system, which comprises CFT, BGO calorimeter, and PiID from inside to outside \cite{Aka-2020}.}
+   \label{fig-CATCH}
+ \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{CATCH2.png}
+   \caption{Side and front views of the CATCH system \cite{Aka-2020}.}
+   \label{fig-CATCH2}
+ \end{center}
+\end{figure}
+
+%
+\subsection{Cylindrical fiber tracker}
+The Cylindrical Fiber Tracker (CFT) reconstructs the trajectories of charged particles. It is 400 mm long along the beam axis, surrounding the LH$_2$ target. CFT comprises eight cylindrical layers of plastic scintillation fibers (Kuraray SCSF-78M) with a diameter of 0.75 mm., forming two different fiber configurations, $\phi$ and $uv$ layers. In the $\phi$ layers, the fibers are placed parallel to the direction of the beam around the cylinder surface of each layer. The $\phi$ layers measure the azimuthal angle. On the other hand, in the $uv$ layers, scintillation fibers are arranged in a spiral configuration along the surface of the cylinder. Each $u,\ v$ layer has opposite tilt angles to the direction of the beam. The $uv$ layers measure the zenith angle of the track. In the end, the trajectory of the charged particle is reconstructed three-dimensionally. 
+The radial distance and the number of fibers for each installed layer are summarized in Table \ref{tab-CFT}.
+Figure \ref{fig-CFT} also shows the two types of fiber arrangements in CFT ($\phi$ and $uv$).
+
+\begin{table}[h]
+  \begin{center}
+    \caption{Radial distance and number of fibers for each installed layer in CFT.}
+    \begin{tabular}{ccccc} \hline \hline
+      $\phi$ layer index & $\phi1$ & $\phi2$ & $\phi3$ & $\phi4$ \\ \hline
+      Radial distance (mm) & 54 & 64 & 74 & 84 \\
+      Number of fibers & 584 & 692 & 800 & 910 \\ \hline\hline
+      \\
+      \hline \hline
+      $uv$ layer index & $u1$ & $v2$ & $u3$ & $v4$ \\ \hline
+      Radial distance (mm) & 49 & 59 & 69 & 79 \\
+      Number of fibers & 426 & 472 & 510 & 538 \\ 
+      Tilt angle (degree) & 37.6 & 42.8 & 47.3 & 51.1 \\
+      \hline\hline
+   \end{tabular}
+   \label{tab-CFT}
+   \end{center}
+\end{table}
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{CFT.png}
+   \caption{Structures of fiber arrangement for straight and spiral layers of CFT. A straight layer consists of fibers installed in parallel to the beam axis. A spiral layer consists of fibers installed along the side of the cylinder centered on the beam axis. \cite{Aka-2020}.}
+   \label{fig-CFT}
+ \end{center}
+\end{figure}
+
+%
+\subsection{BGO calorimeter}
+The BGO calorimeter consists of 24 BGO crystals of 30 (W) x 25 (T) x 400 (L) mm$^{3}$ and was installed outside the CFT. PMTs (Hamamatsu Photonics H11934-100) were used as the readout sensor; the BGO calorimeter was designed to have an energy resolution of more than 3\% ($\sigma$) for 80 MeV protons at the high single rate of $40-400$ kHz expected in $\Sp$ scattering experiment. At such single rates, pulses from the BGO calorimeter frequently accumulate due to the relatively long delay time of 300 ns. We read out the waveform using a flash ADC to resolve these accumulation events. To reduce the data size, the BGO signal was filtered with an integrating circuit, and the shaped signal was sampled at a low sampling rate of several 10 ns. Then, the waveforms were recorded by a flash ADC module (CAEN V1724) with a sampling frequency of 33 MHz, as shown in Figure \ref{fig-BGOwaveform}. The pulse height information is reconstructed from the recorded waveform by fitting the data point with a template waveform. In the test experiment, the energy resolution was estimated as 1.3\% at 80 MeV with the proton intensity up to 550 kHz.
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=12cm]{BGOwaveform.png}
+   \caption{Typical waveform of the BGO calorimeter after the shaping amplifier circuit. The black points show the flash ADC data with a sampling rate of 33 MHz. The blue line shows the reconstructed pulse shape by fitting the data point with a template waveform \cite{Aka-2020}.}
+   \label{fig-BGOwaveform}
+ \end{center}
+\end{figure}
+
+%
+\subsection{PiID counter}
+A plastic scintillator (PiID counter) was also installed outside the BGO calorimeter to satisfy particle identification. Basically, particle identification is done using the energy deposit at CFT ($\Delta E$) and total energy at the BGO calorimeter ($E$). Since most $\pi$s penetrate the BGO calorimeter, the PiID counter hit information is useful. Plastic scintillators with wavelength-shifting fibers were employed for the MPPC readout. The PiID counter consists of 34 plastic scintillators with a size of 30 (W) $\times$ 15 (T) $\times$ 400 (L) mm$^{3}$. As shown in Figure \ref{fig-PiID}, a wavelength-shifting (WLS) fiber (Kuraray Y-11(200)M) with a diameter of 1 mm is attached to the grooves dug in the scintillator. An MPPC reads out photons from the WLS fibers (Hamamatsu Photonics S10362-11-100P) attached to the scintillator by a screw The VME-EASIROC board is also used to read out the PiID counter.
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{PiID.png}
+   \caption{Photograph of a plastic scintillator for the PiID counter \cite{Aka-2020}.}
+   \label{fig-PiID}
+ \end{center}
+\end{figure}
+
+%%
+%\clearpage
+\section{Trigger}
+To select ($\pM,\ \KP$) events, we use two types of different triggers (i.e. the level 1 trigger (L1) and the level 2 trigger (L2)). The L1 trigger is defined as a coincidence between the trigger counters. Cerenkov counters are essential in eliminating beam $\pi$s and protons at this stage. Here, SAC rejects the scattered $\pi$s with a rejection efficiency of 99\%. Since the main background of the ($\pM,\ \KP$) events are the ($\pM$,\ p) events, the mass trigger (MsT) was set to reject scattered protons; the trigger was made from the time-of-flight information at TOF and the hit combination between SCH and TOF segments. Figure \ref{fig-trig} shows the diagram of the trigger system in the J-PARC E40. Using the logic signals from the trigger counters, the trigger signal was made using three FPGA-based modules, Hadron Univeral Logic (HUL) trigger \cite{Hoshino-M}, HUL matrix trigger, and HUL mass trigger modules. 
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[clip,width=15cm]{trig.png}
+   \caption{Diagram of the trigger system in the J-PARC E40.}
+   \label{fig-trig}
+ \end{center}
+\end{figure}
+
+%%
+\subsection{Level 1 trigger}
+The L1 trigger aims to identify the ($\pi$, $\KP$) reactions with a minimum trigger latency using only fast signals from scintillation counters and Cerenkov counters. The L1 trigger is a coincidence between the beam trigger and the scattered kaon trigger, independently defined. 
+
+The beam trigger is defined as 
+\begin{equation}
+  {\rm BEAM \equiv BH2}
+\end{equation}
+Generally, when using the $\pi$ beam, the coincidence between two timing counters and the gas Cerenkov counter is used to reject the protons and positrons (electrons). However, the proton contamination is almost zero due to the double mass-separator system. Furthermore, the contamination from the ($e$, $\KP$) reaction via virtual photons is negligible. Therefore, only BH2 signals are used for the beam trigger. The L1 trigger is defined as
+\begin{equation}
+  {\rm L1 \equiv BH2\times BH2\_K \times Matrix }
+\end{equation}
+In the HUL module, toggle flip-flops (TFF), which are used as a coincidence gate, are implemented into FPGA on HUL so that the start timing can be determined by each segment of BH2 in the trigger level. The timing of the BH2 signal is called \say{Final Timing} and determines the reference time for the readout of all detectors. The coincidence logical signals were created for each segment of BH2 and then summed to prevent saturation of the OR signal due to the high-intensity beam.
+
+%For the scattered $K$ trigger, the TOF vetoes the particles with small $\beta$, mainly protons with low momenta based on the pulse height, and the Cerenkov counter (SAC) eliminates $\pi$s and protons. In particular, the TOF uses two different types of signals: a logic signal with a threshold set to detect MIP particles and a logic signal with a higher threshold set to detect protons (TOF-HT). In addition, the 2D matrix trigger (2D-MT) and 3D matrix trigger (3D-MT) are combined, which are coincidence matrices between TOF, SCH, and SFT $x$ plane. The 2D-MT participates in the trigger to reject the particles coming from the reaction that occurred by beam $\pi$ or beam $\pi$ themselves. Conversely, the 3D-MT determines the accepted region based on the $\KP$ identification result. Because the momenta of the scattered K+ were strongly correlated with the hit segment combinations, the matrix trigger was quite effective in suppressing the trigger rate. All discriminated signals from TOF and SAC are input to HUL to check whether the hit combination is within the accepted region. 
+
+%Selecting the time-of-flight of the scattered particle also enables us to identify $\KP$ events more accurately. This is the so-called mass trigger in the 2L trigger. TOF timings, which correspond to the time-of-flight between BH2 and TOF, were recorded by a high-resolution TDC in the HUL mass trigger module, a typical gate width is 4 ns, and the 2L trigger was decided. The gate of the mass trigger was optimized for each combination of SCH and TOF, which 3D-MT accepted. Owing to the mass trigger, many background protons and pions were rejected.
+
+%
+\subsubsection{HUL trigger}
+HUL Trigger tags $\pi K$ reactions by taking coincidence between BH2, a time detector upstream of the target, and TOF counter, a time detector downstream of the target. Since SAC only emits the Cerenkov light when the velocity of particles passing through the aerogel exceeds a threshold value, the reaction that occurred by beam $\pi$ or beam $\pi$ themselves can be removed by taking the logical product of the SAC and the veto signal.
+
+The TOF-HT was used to identify low-momentum protons because it only emits a signal when the energy loss at the TOF exceeds a high threshold value, which can be used as a veto signal to remove low-momentum protons. The definition of the signal BH2\_K produced by HUL Trigger is
+\begin{equation}
+  {\rm BH2\_K \equiv BH2\times TOF\times\overline{SAC}\times\overline{TOF\mathchar`-HT} }
+\end{equation}
+
+%
+\subsubsection{Matrix trigger}
+Matrix Trigger uses 48 segments of SFT-X, 56 segments of SCH, and 24 segments of TOF counter, which are the detectors of the KURAMA spectrometer, to generate a signal only when there is an optimal pattern among $48\times56\times24=64512$ hit patterns. A signal is produced only when the best pattern is found. This corresponds to the selection of charge and momentum and is called \say{3D Mtx}. For events that appear to be beam $\pi$s, a signal called \say{2D Mtx} was made from the hit patterns of the SCH and TOF counters, and is used for veto. The definition of a Matrix Trigger is
+\begin{equation}
+  {\rm Matrix \equiv 3D Mtx\times \overline{2D Mtx} }
+\end{equation}
+
+%%
+\subsection{Level 2 trigger}
+The L2 trigger is a signal created by the Mass Trigger to determine whether to transfer or clear the data when the L1 Trigger starts the AD conversion of each module. The L2 trigger was defined as 
+\begin{equation}
+  {\rm L2 \equiv L2 \times MsT}
+\end{equation}
+
+%
+\subsubsection{Mass trigger}
+SCH and TOF counters are used to generate the Mass Trigger. The module receives the L1 trigger and measures the TDC of TOF. An appropriate time width was set in the register for each hit pattern of the two detectors, and the L2 signal was generated only when the measured TOF TDC value is within this time width. This corresponds to selecting the mass of the particle. If the L2 signal is not output, a clear signal is sent to all modules via MTM to clear the AD-converted data without transferring it to the PC. 
+
+
+%%%
+\section{Data acquisition system}
+The data acquisition (DAQ) system at the K1.8 beamline possesses network-controlled subsystems, which gather data from detectors. They are synchronized via a trigger managing system using a master trigger module (MTM) and a receiver module (RM). Figure \ref{fig-daq} shows the diagram of the DAQ system at the K1.8 beamline.
+
+The Hadron Universal Logic (HUL) modules were developed to operate the DAQ control system at the K1.8 beamline. The J-PARC E40 experiment used HUL RM, HUL Multihit TDC (MHTDC), and HUL High-resolution TDC (HRTDC). Pulse height information on BH1, BH2, TOF, and SAC was recorded using CAEN V792 modules controlled by the VME-CPU module (XVB 601). Timing information on BH1, BH2, and TOF were recorded using HUL HRTDC. The EASIROC test board and the VME-EASIROC module read MPPC signals. EASIROC test boards recorded timing information on BFT and SCH. Although signals from SFT were amplified, shaped, and discriminated in EASIROC test boards, discriminated timing signals were recorded by the HUL MHTDC modules. Both timing and pulse height information on CFT, FHT, and PiID were recorded using VME-EASIROC modules. The waveforms of signals from the BGO calorimeter were recorded using three flash ADC modules, CAEN V1724, controlled by the VME-CPU module. To reduce the data transfer time, one module was read by the VME-CPU module, and the other two modules were read by the so-called \say{optical controller computer}. Signals of all drift chambers were recorded using the HUL MHTDC modules \cite{Nana-D}.
+
+\begin{figure}[!h]
+ \begin{center}
+   \includegraphics[width=15cm]{daq.png}
+   \caption{Diagram of DAQ system at the K1.8 beamline.}
+   \label{fig-daq}
+ \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{end}

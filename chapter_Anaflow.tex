@@ -1,0 +1,254 @@
+%\documentclass[a4paper,12pt,oneside,openany]{jsbook}
+%\include{begin}
+
+%\renewcommand{\labelitemi}{・}
+%\renewcommand{\labelitemii}{・}
+\graphicspath{{./pictures/chapter_Anaflow/}}
+
+\chapter{Analysis flow and simulation} 
+\label{chap-Anaflow}
+
+%%%%%
+\section{Overview}
+\label{sec-overview}
+%The analysis \rom{2} aims to derive the $\Lp$ scattering cross-section in the $\Lambda$ beam momentum ($p_{\Lambda}$) range of $0.25 - 1.25$ GeV/$c$. Three stages of analysis procedures achieve this, i.e. the missing mass analysis, $\Lp$ scattering identification, and the cross-section analysis. 
+In this study, as basic research for the next-generation $\Lp$ scattering experiment, J-PARC E86, we analyzed $\PiKL$ data obtained from the J-PARC E40 experiment since the J-PARC E40 experiment was operated using a similar detector setup as the J-PARC E86. 
+\textcolor{red}{ After we reconstructed $\Kz$ by detecting $\pP$ by KURAMA and $\pM$ by CATCH, respectively, beam $\Lambda$ was tagged as missing momentum of $\PiKX$ reaction. We measured the polarization of the beam $\Lambda$ by detecting one proton and one $\pM$ by CATCH. This detection case is called \say{case \rom{1}} where we regarded a proton and a $\pM$ as decay products of $\Ldecay$ decay. This is because the polarization can be derived by measuring the emission angle distribution of decay protons from the $\Ldecay$ decay. The $\Lp$ scattering events were also identified by detecting two protons with/without $\pM$ by CATCH. This detection case is called \say{case \rom{2}} where we regarded one proton as a recoil proton from the $\Lp$ scattering, and the other proton and $\pM$ as decay products of the $\scatldecay$ decay. }
+
+%We also measured the polarization of the beam $\Lambda$, assuming that CATCH detects one proton and one $\pM$. This detection case is called \say{case \rom{2}.} In case \rom{1}, we regarded one proton as a recoil proton from the $\Lp$ scattering, the other proton as a decay proton from the $\scatldecay$ decay, and the remaining $\pM$ as a decay $\pM$ from $\scatldecay$ decay. In case \rom{2}, we regarded a proton as a decay proton from the $\scatldecay$ decay and a $\pM$ as a decay $\pM$ from the $\scatldecay$ decay. In case \rom{2}, there was so much background from the beam $\Lambda$ decay ($\Ldecay$ decay) that the S/N would not reach a standard suitable for searching for $\Lp$ scattering events, so case \rom{2} was not used in this $\Lp$ scattering event search. On the other hand, since the polarization of the beam $\Lambda$ can be measured by the emission angle distribution of decay protons from the $\Ldecay$ decay, it was necessary to select and analyze \say{events in which $\Lp$ scatterings did not occur and only $\Ldecay$ decays occurred.} Case \rom{1} requires two protons, so it cannot be used to measure the polarization analysis. Case \rom{2} originally assumes decay products of the $\scatldecay$ decay after $\Lp$ scattering, but by selecting an appropriate angular range, it is possible to select \say{events in which $\Lp$ scatterings did not occur and only $\Ldecay$ decays occurred.}
+
+The analysis flows to measure the beam $\Lambda$ polarization and search the $\Lp$ scattering events are summarized in Figure \ref{fig-flow}. %The analysis flow to search the $\Lp$ scattering event comprises two stages: missing mass analysis and $\Lp$ scattering identification. The analysis flow to measure the beam $\Lambda$ polarization comprises three stages: missing mass analysis, $\Ldecay$ decay identification, and polarization analysis. 
+The missing mass analysis identifies the incident $\Lambda$ produced by the $\PiKL$ reaction using the $\pM$ beam identified by the K1.8 beamline and reconstructed $\Kz$. If the CATCH detection is case \rom{1}, the $\Ldecay$ decay identification begins followed by the beam $\Lambda$ polarization measurement. The measured emission angle distribution of decay protons was corrected by the detection efficiency of CATCH estimated by Geant4-based Monte Carlo simulation. If the CATCH detection is case \rom{2}, the $\Lp$ scattering identification begins. 
+
+The schematic of the $\Ldecay$ decay following the $\PiKL$ reaction is shown in Figure \ref{fig-sch_Ldecay}. The $\Ldecay$ decay can be identified by a kinematical analysis using the scattering angle of $\Lambda$. The decay proton emission angle at the rest of $\Lambda$ required for beam $\Lambda$ polarization measurement can be obtained using the information of decay proton track and $\piKz$ plane. See Chapter \ref{chap-Pl} \textcolor{red}{（$\Lambda$偏極度の章）} for details on how to select such $\Ldecay$ decay-only events.
+%If CATCH detects such a $\Ldecay$ decay-only event in case \rom{2}, the proton and $\pM$ derived from the beam $\Lambda$ are mistakenly treated as if they were derived from the scattered $\Lambda$, and the analysis proceeds. The particles reconstructed in this way can be called \say{pseudo scattered $\Lambda$.} Since the apparent scattered $\Lambda$ is essentially the same as the beam $\Lambda$, the \say{pseudo scattering angle} (the angle between the missing mass tagged beam $\Lambda$ and reconstructed $\Lambda$) concentrates at $0^{\circ}$, almost forward. By intentionally selecting such a super-forward scattering angle region, it is possible to select beam $\Lambda$ decay in case \rom{2} and perform polarization analysis.
+
+The schematic of the $\Lp$ scattering following the $\PiKL$ reaction with and without $\pM$ detections are shown in Figure \ref{fig-sch_c2wo} and Figure \ref{fig-sch_c2w}, respectively. If CATCH does not detect $\pM$ (so-called \say{without $\pM$ mode}), we can identify $\Lp$ events by only the measured and kinematically calculated kinetic energies of the recoil protons. If CATCH detects $\pM$ (so-called \say{with $\pM$ mode}), we can identify using $\Lp$ events by not only kinetic energies of recoil protons but also momenta of $\Lambda'$. See Chapter \ref{chap-Lp_2p} \textcolor{red}{（$\Lp$探索の章）} for details on event selection.
+
+This section briefly explains the procedures of missing mass analysis and the Monte Carlo simulation used to estimate the detection efficiency of CATCH.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=15cm]{flow.png}
+    \caption{Analysis flow of the beam $\Lambda$ polarization measurement and the $\Lp$ scattering identification.}
+    \label{fig-flow}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{sch_Ldecay.png}
+    \caption{Schematic of the $\Ldecay$ decay following the $\PiKL$ reaction in the case \rom{1}.}
+    \label{fig-sch_Ldecay}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{sch_c1wo.png}
+    \caption{Schematic of the $\Lp$ scattering following the $\PiKL$ reaction in the case \rom{2} without $\pM$ detection.}
+    \label{fig-sch_c2wo}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{sch_c1w.png}
+    \caption{Schematic of the $\Lp$ scattering following the $\PiKL$ reaction in the case \rom{2} with $\pM$ detection.}
+    \label{fig-sch_c2w}
+  \end{center}
+\end{figure}
+
+
+\clearpage
+%%%%
+\section{Missing mass analysis}
+The missing mass method allows us to calculate the mass, which is not directly measured, using the four-momentum vectors of the incident and outgoing particles analyzed by spectrometers. It is based on the kinematics of the target reaction (in this case, the $\PiKL$ reaction). Each procedure in the missing mass analysis is explained in the following.
+
+%%%
+\subsection{Determination of the $\pM$ beam momentum}
+Hit position data taken in BFT, BC3, and BC4 \textcolor{red}{ are selected by applying timing and position gates. } The momentum of the $\pM$ beam is reconstructed using a \nth{3}-order transfer matrix, which is so-called \say{K1.8 tracking}.
+  
+%%%
+\subsection{$\pP$ determination in the KURAMA spectrometer}
+The momentum of a scattered particle is determined from trajectories at the entrance and the exit of the KURAMA magnet, which were measured by SFT, SDC1, SDC2, and SDC3 using a calculated magnetic field. As mentioned, the insensitive areas of SDC2 and SDC3 were covered by FHT1 and FHT2. The outgoing particle was selected by calculating the mass of the scattered particle by the time-of-fight and momentum. Here, time-of-flight means the time it takes the scattering particles to pass the distance from the reaction vertex to the TOF counter (\textcolor{red}{ approximately 3 m }). In this paper, $\pP$ was selected in the KURAMA spectrometer regarding it as a decay product of $\kzdecay$ decay. This is so-called \say{KURAMA tracking.}
+  
+%%%
+\subsection{$\pM$ determination in the CATCH system}
+Particle identification in CATCH was performed by using the energy deposit at CFT ($dE/dx$) corrected by the path length in CFT and total energy ($E$) measured by BGO calorimeter, so-called \say{$dE-E$} method. Since most of the $\pM$s with high momenta penetrated the BGO calorimeter by losing only a part of the kinetic energy, the tracking information is only available. \textcolor{red}{ See the next subsection for how to determine the magnitude of the $\pM$s momentum detected by CATCH. }
+
+%On the other hand, in the $\Lp$ scattering analysis, low-energy recoil protons, decay protons, and decay $\pM$s stopped in CFT before reaching the BGO calorimeter. So, such particles can be identified by setting proper $dE/dx$ cut values in CFT considering Bethe-Bloch's formula. This is so-called \say{CFT tracking.} 
+  
+%%%
+\subsection{Determination of the $\pM$ momentum}
+Since the CATCH system cannot measure the momentum of \textcolor{red}{ the $\pM$s with high momenta } but only track directions, their momenta were determined so that the invariant mass of $\pP$ and $\pM$ becomes equal to the mass of $\Kz$ by solving the kinematics of the $\kzdecay$ decay using the opening angle between them ($\theta_{\pi\pi}$). Finally, the $\pM$ momentum vector can be obtained. 
+  
+%%%
+\subsection{$\Kz$ reconstruction using $\pP$ and $\pM$ tracks}
+Using the $\pP$ and $\pM$ momentum vectors measured by KURAMA and CATCH respectively, $\Kz$ momentum vector can be reconstructed assuming the $\kzdecay$ decay as
+  \begin{equation}
+    \bm{P_{\Kz}} = \bm{P_{\pM}} + \bm{P_{\pP}}.
+  \end{equation}
+This is the so-called \say{$\Kz$ reconstruction}. The details of this analysis procedure were explained in Ref. \cite{Tamao-JPS}. To ensure the occurrence of $\kzdecay$ decay, $\theta_{\pi\pi}$ was required to be under 90$^{\circ}$.
+
+\textcolor{red}{ To confirm that the beam $\pM$ and the reconstructed $\Kz$ are really in the same event, the distance of closest approach between their tracks was calculated. If $\Kz$ reconstruction was correct, ideally, this distance should be 0. In this analysis, we required it to be under 20 mm referring to the simulation result. }
+
+%%%
+\subsection{Missing mass calculation}
+\label{sec-mmcalc_anaflow}
+
+Here, we define the four-momentum vectors of the beam $\pM$, target proton, the outgoing $\Kz$, and the reaction product as $\bm{P_{\pM}}$, $\bm{P_{p}}$, $\bm{P_{\Kz}}$, and $\bm{P_X}$, respectively. Following the two-body kinematics of the target reaction, $\bm{P_X}$ can be written as 
+\begin{equation}
+  \bm{P_X} = \bm{P_{\pM}} + \bm{P_{p}} - \bm{P_{\Kz}}. 
+  \label{eq-mmom_lam}
+\end{equation}
+%The three-momentum vectors of the beam $\pM$ ($\bm{p_{\pM}}$) was measured by K1.8 beamline spectrometer. The outgoing $\Kz$ was reconstructed by vectors of $\pP$ and $\pM$ assuming the $\kzdecay$ decay, where the CATCH system detects $\pM$, and KURAMA spectrometer detects $\pP$, respectively. Since CATCH cannot measure the momentum of scattering particles, here we inversely defined the momentum of $\pM$ so that the invariant mass of $\pM$ and $\pP$ are equal to the $\Kz$ mass. 
+Consequently, the mass of the reaction product ($M_X$), namely the missing mass, can be calculated as
+\begin{equation}
+  M_X = \sqrt{ (E_{\pM} + m_p - E_{\Kz})^2 - (p_{\pM}^2 + p_{\Kz}^2 - 2p_{\pM}p_{\Kz}\cos{\theta_{\pM\Kz}}) },
+  \label{eq-mm_lam}
+\end{equation}
+where $E_{\pM}$ and $E_{\Kz}$ are the total energy of the beam $\pM$ and the outgoing $\Kz$, $m_p$ is the mass of the target, and $\theta_{\pM\Kz}$ is the reaction angle between beam $\pM$ and $\Kz$. 
+
+%%%
+% 2023/11/08 12:30
+%%%
+
+\begin{comment}
+%%%%
+\section{$\Ldecay$ decay identification}
+\label{sec-LdecayID}
+
+If the generated beam $\Lambda$ decays before $\Lp$ scattering occurs, the decay products of $\kzdecay$ decay and $\Ldecay$ decay are final state particles, where KURAMA detects $\pP$, and CATCH detects other ones (detection case \rom{1}). By applying a kinematical analysis using the scattering angle of $\Lambda$, such events were identified. Then, beam $\Lambda$ polarization measurement started. See Sec. \ref{sec-Pl-evsele} for details on how to select the $\Ldecay$ decay-only events.
+
+%While requesting this detection particle combination to CATCH, if we solve the kinematics of the \say{spurious} $\Lp$ scattering assuming that the proton and $\pM$ originate from the decay of the \say{spurious} scattered $\Lambda$, the scattering angle of the \say{spurious} scattering $\Lambda$ is almost 0$^{\circ}$, that is, the \say{spurious} scattered $\Lambda$ is analyzed as if it flew extremely forward. Using this feature, we identify $\Lambda$ decay-only events in the detection case \rom{2}. Even if $\Lp$ scattering events are included in the case \rom{2} dataset, Geant4 simulation shows that they basically do not localize super-forward but rather in the middle scattering angle region (around $-0.6 < \costcm < 0.5$). Therefore, selecting a super-forward scattering angle for the \say{spurious} scattered $\Lambda$ is an extremely useful $\Ldecay$ identification method.
+
+%%%%
+\section{$\Lp$ scattering identification}
+\label{sec-LpID}
+
+The $\Lp$ scattering identification , two-proton detection without $\pM$ mode (Figure \ref{fig-sch_c1wo}) and with $\pM$ mode (Figure \ref{fig-sch_c1w}) was assumed. This detection is called \say{case \rom{1}.} One of the important analyses in $\Lp$ scattering identification is the kinematical consistency analysis, so-called \say{$\Delta E \Delta p$} method. This is a method of identifying $\Lp$ scattering events through kinematic calculations and is theoretically equivalent to the missing mass method. The $\Delta E$ method uses the kinetic energy and scattering angle of recoil protons. The $\Delta p$ method uses the momentum and the scattering angle of scattered $\Lambda$s.
+
+Case \rom{1} without $\pM$ mode assumes that the CATCH system detected $\pM$ from the $\kzdecay$ decay, recoil proton from the $\Lp$ scattering, and decay proton from the $\scatldecay$ decay. Since scattered $\Lambda$ can not reconstructed without decay $\pM$, the $\Delta E$ method is only available in this mode. In contrast, case \rom{1} with $\pM$ mode assumes that the CATCH system detected all final state particles: $\pM$ from the $\kzdecay$ decay, recoil proton from the $\Lp$ scattering, decay $\pM$, and decay proton from the $\scatldecay$ decay. $\Delta E$ and $\Delta p$ methods are available in this mode.
+
+\end{comment}
+
+
+\clearpage
+%%%%%
+\section{Monte Carlo simulation}
+\label{sec-simulation}
+
+The Monte Carlo simulations based on the Geant4 package \cite{G4} were used for the energy calibration and detection efficiency evaluation of CATCH in Ref. \cite{Miwa-SMp}, the estimation of CATCH detection efficiency for beam $\Lambda$ polarization measurement, and simulation of $\Lp$ scattering and its background events. This section describes the simulations used for the latter two purposes.
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%！！！CATCH キャリブレーションに関する詳細は次章（Lbeam）にまとめる。%
+
+%%%%
+\subsection{Energy calibration of CATCH}
+The $pp$ elastic scattering data were accumulated to obtain the relation between proton scattering angle and energy deposit in CFT and BGO in the momentum range of $450-850$ MeV/$c$. This relation was compared with real data for the CATCH energy calibration. 
+
+%%%
+\subsubsection{Energy calibration of BGO calorimeter}
+\label{sec-EcalibBGO}
+The energy calibration of the BGO calorimeter was performed using the $pp$ elastic scattering data with a 600 MeV/$c$ proton beam by referring to the correlation between the scattering angle and kinetic energy of the proton. The kinetic energy can be kinematically calculated by the scattering angle. The correlation between the pulse height and energy deposit in BGO was obtained by comparing the measured pulse height with the simulated energy deposit for the same scattering angle. This obtained correlation was fitted with a phenomenological relation between the photon yield and the energy deposit. %as
+%\begin{equation}
+  %h_{BGO} = aE - b\log{\left( \frac{E+b}{b} \right)},
+%\end{equation}
+%where $h_{BGO}$ and  $E$ are pulse height and energy deposit at the BGO calorimeter, and $a$ and $b$ are parameters. 
+Finally, the correlation between the scattering angle and kinetic energy measured as a sum of the energy deposits in the CFT and BGO was obtained, as shown in Figure \ref{fig-EcalibBGO} \cite{Miwa-SMp}. The energy dependence of the energy resolution of the BGO calorimeter was estimated from the width of the $pp$ elastic scattering locus for different beam momenta. The energy resolution is then expressed as
+\begin{equation}
+  \sigma (\rm{MeV}) = 0.5 \sqrt{\frac{E(\rm{MeV})}{80}} + 4.0,
+\end{equation}
+where $E$ represents the kinetic energy of a proton. This energy calibration was performed for all BGO segments.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{EcalibBGO.png}
+    \caption{Correlation between the scattering angle and kinetic energy measured as a sum of the energy deposits in the CFT and BGO for the $pp$ elastic scattering data with a 600 MeV/$c$ proton beam \cite{Miwa-SMp}. The locus corresponds to the elastic scattering events.}
+    \label{fig-EcalibBGO}
+  \end{center}
+\end{figure}
+
+%%%
+\subsubsection{Energy calibration of CFT}
+In the J-PARC E40 experiment, the pulse height information acquired by each MPPC attached to the scintillation fiber of the CFT was recorded by the peak-hold ADC of the VME-EASIROC module. These ADC values were normalized for each layer using $pp$ elastic scattering data. The energy calibration of CFT was performed the same way as for the BGO calorimeter explained in Sec. \ref{sec-EcalibBGO}. The correlation between the normalized CFT ADC value and the energy deposit of the CFT fiber was obtained by comparing the ADC value with the simulated energy deposit of the same BGO energy loss. The obtained correlation was fitted with a phenomenological relation between the photon yield and the energy loss.
+%\begin{equation}
+  %h_{CFT} = a\left\{ 1-\exp{\left( \frac{-b\times dE}{a} \right)} \right\},
+%\end{equation}
+%where $a$ and $b$ are parameters corresponding to the effective number of pixels and the number of photons per energy deposit in the MPPC. 
+This parameterization takes into account the saturation effect of MPPC. 
+
+The angular resolution of the CFT was estimated as 1.5\% ($\sigma$) from the width of the opening angle of two protons in the $pp$ elastic scattering, which was constant at approximately $90^{\circ}$ kinematically. The vertex resolution of the CFT tracking was studied by reconstructing the image of the target container from the vertex of the two-proton tracks in CATCH for the $\pM$ beam run. The $z$ vertex resolution was estimated as 1.8 mm ($\sigma$), and the $x$ and $y$ vertex resolutions were estimated as 1.9 mm ($\sigma$) for both directions \cite{Miwa-SMp}. 
+
+
+%%%%
+\subsection{Evaluation of CATCH detection efficiency}
+CATCH detection efficiency includes the detector acceptance, the tracking efficiency of CFT, and the energy measurement efficiency of BGO. They depend on the angle $\theta_{lab}$, the kinetic energy $E$, and the $z-$vertex position $z$. The efficiency was evaluated based on $pp$ elastic scattering data at seven beam momentums in the $0.45-0.85$ GeV/$c$ range compared with the simulation. 
+
+In order to obtain a realistic detection efficiency, we used $pp$ elastic scattering data in which two protons are emitted. We detect a proton and identify $pp$ elastic scattering events by solving the kinematics between scattering angle and kinetic energy. By calculating the missing momentum of the $pp\rightarrow pX$ reaction, the angle and momentum of the other proton can be predicted.
+
+%CFT tracking efficiency
+\subsubsection{CFT tracking efficiency}
+The CFT tracking efficiency was obtained by checking whether the predicted track could be detected or not, referring to the momentum dependence of the recoil proton, as shown in Figure \ref{fig-CFTtrackeff} \cite{Miwa-SMp}. The black square represents the simulation results, and the blue circle represents the results in $pp$ elastic scattering data. The CFT tracking efficiency was modeled as the Fermi function with three parameters: the maximum efficiency $P_{max}$, the momentum with half efficiency $P(1/2)$s, and blurriness $\mu$. These parameters were determined by fitting the $pp$ elastic scattering data in Figure \ref{fig-CFTtrackeff}. This parametrization of the CFT tracking efficiency was performed for each scattering angle $\theta_{lab}$. The estimated CFT tracking efficiency map as a function of the scattering angle and momentum of the proton is shown in Figure \ref{fig-CFTtrackmap} \cite{Miwa-SMp}. For more details, refer to Ref. \cite{Miwa-SMp}.
+
+\begin{figure}[!h]
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{CFTtrackeff.png}
+    \caption{Momentum dependence of the CFT tracking for protons from the $pp$ elastic scattering data and the simulation data for a scattering angle of $\theta_{lab}=51^{\circ}$ \cite{Miwa-SMp}.}
+    \label{fig-CFTtrackeff}
+  \end{minipage}
+  \hspace{0.04\columnwidth} % ここで隙間作成
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{CFTtrackmap.png}
+    \caption{Estimated CFT tracking efficiency map as a function of the scattering angle and momentum of the proton \cite{Miwa-SMp}.}
+    \label{fig-CFTtrackmap}
+  \end{minipage}
+\end{figure}
+
+%BGO energy measurement efficiency 
+\subsubsection{BGO energy measurement efficiency }
+The efficiency was estimated by checking whether or not the measured energy by BGO was consistent with the predicted energy from the pp scattering kinematics, using the $pp$ elastic scattering data the same way as in the study of CFT tracking efficiency. Figure \ref{fig-BGOeff}  shows the momentum dependence of the
+BGO efficiency for protons emitted at $\theta_{lab}=41^{\circ}$ where the crossed line represents the simulation result and the red circle represents the result of $pp$ elastic scattering data. Regarding BGO energy measurement efficiency, consistency between data and simulations was confirmed in all angular regions. Therefore, the simulated efficiency was used as the efficiency map, as shown in Figure \ref{fig-BGOeffmap}. For more details, refer to Ref. \cite{Miwa-SMp}.
+
+\begin{figure}[!h]
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{BGOeff.png}
+    \caption{Momentum dependence of the BGO energy measurement for protons from the $pp$ elastic scattering data and the simulation data for a scattering angle of $\theta_{lab}=41^{\circ}$ \cite{Miwa-SMp}.}
+    \label{fig-BGOeff}
+  \end{minipage}
+  \hspace{0.04\columnwidth} % ここで隙間作成
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{BGOeffmap.png}
+    \caption{Estimated BGO efficiency map as a function of the scattering angle and momentum of the proton \cite{Miwa-SMp}.}
+    \label{fig-BGOeffmap}
+  \end{minipage}
+\end{figure}
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+\subsection{CATCH detection efficiency}
+
+\textcolor{red}{ To estimate CATCH detection efficiency for beam $\Lambda$ polarization measurement, $\Ldecay$ decay following the $\PiKL$ reaction was generated based on the realistic branching ratio. In addition to that, $\Lp$ scattering and its main background, $pp$ elastic scattering which is the secondary scattering of proton derived from $\Ldecay$ decay, were generated with the differential cross-section of 30 mb/sr and known energy dependence, respectively. }
+
+The flow chart of the full simulation is shown in Figure \ref{fig-simuflow}. The LH$_{2}$ target, all detectors, and most of the materials of the KURAMA spectrometer and CATCH system (KURAMA magnet, CFT frame, etc.) were implemented in the Geant4 package we used. The interactions between the generated particles and the experimental materials were fully simulated, and information on energy deposits and hit positions at the virtual detectors was recorded, taking into account the energy and position resolutions of the real detectors. The simulated data were analyzed and compared with the real data using the same analysis program.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=15cm]{simuflow.png}
+    \caption{Flow chart of the Geant4-based Monte Carlo simulation, which generates $\Ldecay$ decay, $\Lp$ scattering, and $pp$ elastic scattering.}
+    \label{fig-simuflow}
+  \end{center}
+\end{figure}
+
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%\include{end}

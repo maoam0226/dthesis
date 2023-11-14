@@ -1,0 +1,72 @@
+%\documentclass[a4paper,12pt,oneside,openany]{jsbook}
+\include{begin}
+\def\thesection{A.\arabic{section}}
+\chapter{{\bf 付録A 各散乱事象における$\Delta E$の導出}}
+ここでは、各散乱事象における$\Delta E$を導出する際に用いる運動学の計算方法を述べる。ここで、運動学を解くために我々が用いることのできる計測量を確認しておく。まず、二つのスペクトロメータから得られる$\SM$の運動量ベクトルである。このとき絶対値は前章で述べたように$\KP$の散乱角によって決定している。そして、CATCH検出器群から得られる陽子及び$\pM$のベクトルである。このとき、陽子はBGOカロリメータによって運動量も求められるが、$\pM$は貫通してしまうため、方向しか分からないことに注意が必要である。
+\section{$np\rightarrow np$弾性散乱}
+$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$が崩壊し($\SM\rightarrow\pM +n$)、崩壊先の中性子がさらに標的陽子と散乱することでnp散乱事象は生じる。\par
+まず、$\SM$の運動量ベクトルと$\pM$のベクトル情報から中性子の運動量ベクトルを導出する。CATCHで計測した$\pM$を$\SM$が崩壊したものと仮定すれば、$\pM$の放出角度$\theta_{\pi}$を用いて$\pM$の運動量$p_{\pi}$は次のように書ける。
+\begin{equation}
+p_{\pi} = \cfrac{Ap_{\Sigma}\cos\theta_{\pi}+\sqrt{D}}{2(E^{2}_{\Sigma}-p^2_{\Sigma}\cos^{2}\theta_{\pi})}
+\label{eq:decayPiMom}
+\end{equation}
+ここで、
+\begin{gather}
+\label{eq:decayPiMom1}
+A = M^2_{\Sigma}+M^2_{\pi}-M^2_{n}\\
+\label{eq:decayPiMom2}
+D = (Ap_{\Sigma}\cos\theta_{\pi})^2-(E^{2}_{\Sigma}-p_{\Sigma}\cos^2\theta_{\pi})(4E^2_{\Sigma}M^2_{\pi}-A^2)
+\end{gather}
+であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた$\pi$の運動量から、中性子の運度量ベクトルが$\overrightarrow{p_{n}}=\overrightarrow{p_{\Sigma}}-\overrightarrow{p_{\pi}}$と求まる。\par
+そして、中性子の運度量ベクトルと陽子のベクトル情報から陽子の全エネルギー$E_{calc}$を導出する。CATCHで計測した陽子をを中性子と散乱したものと仮定すれば、陽子の散乱角度$\theta_{p}$を用いて陽子の全エネルギー$E_{calc}$は次のように書ける。
+\begin{equation}
+E_{calc} = \cfrac{2M_{p}p^2_{n}\cos^2\theta_{p}}{(E_{n}+M_{p})^{2}-p^2_{n}\cos^2\theta_{p}}
+\end{equation}
+このようにnp散乱を仮定した運動学から陽子の全エネルギー$E_{calc}$が導出された。この$E_{calc}$をBGOカロリメータで実測した陽子の全エネルギー$E_{measure}$から差し引くことで$\Delta E_{np}$が求まる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\pM p\rightarrow \pM p$弾性散乱}
+$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$が崩壊し($\SM\rightarrow\pM +n$)、崩壊先の$\pM$がさらに標的陽子と散乱することで$\pM p$散乱事象は生じる。この反応では$\Lambda$の運動量についてBGOカロリメータで実測した陽子の全運動エネルギーから得られる$p_{\Lambda\_measore}$と運動学によって計算される$p_{\Lambda\_calc}$を比較することで評価する。\par
+まず、BGOカロリメータで実測した陽子の全運動エネルギーから得られる$\pM$の運動量について考える。得られた陽子の全運動エネルギーから陽子の運動量$p_{p}$が得られる。さらに、CATCHで測定された陽子と$\pM$が$\pM p$散乱によるものと仮定すれば、二つの粒子のベクトルが成す角$\theta_{\pi p}$を用いて散乱$\pM$の運動量$p_{\pi '}$は次のように書ける。
+\begin{equation}
+p_{\pi '} = \cfrac{Ap_{p}\cos\theta_{\pi p}+(E_{p}-M_{p})\sqrt{D}}{(E_{p}-M_{p})^{2}-p^2_{p}\cos^{2}\theta_{\pi p}}
+\end{equation}
+ここで、
+\begin{gather}
+A = E_{p}M_{p}-M^2_{p}\\
+D = M^2_{\pi}(p^2_{\pi}\cos\theta_{\pi p}-(E_{p}-M_{p})^{2})+A^2
+\end{gather}
+であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた散乱$\pM$の運動量から、崩壊$\pM$の運度量ベクトルが$\overrightarrow{p_{\pi}}=\overrightarrow{p_{p}}+\overrightarrow{p_{\pi '}}$と求まる。このときの絶対値$|\overrightarrow{p_{\pi}}|$を$p_{\pi\_measure}$とする。\par
+次に、運動学によって計算される崩壊$\pM$の運動量について考える。先ほど導出した崩壊$\pM$のベクトル情報だけ用いて、$\SM$との散乱角$\theta_{\pi}$を求める。この角度と$\SM$の運動量ベクトルのみを用いて$\SM$の崩壊を仮定したとき、$\pM$の運度量$p_{\pi\_calc}$は式(\ref{eq:decayPiMom})、式(\ref{eq:decayPiMom1})、式(\ref{eq:decayPiMom2})と同様に計算できる。こうして得られた$p_{\pi\_measore}$から$p_{\pi\_calc}$を差し引くことで$\Delta p_{\pi p}$が求まる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\SM p\rightarrow \Lambda n$非弾性散乱}
+$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$がさらに標的陽子と反応を起こすことで$\SM p\rightarrow \Lambda n$反応は生じる。この反応では$\Lambda$の運動量についてBGOカロリメータで実測した陽子の全運動エネルギーから得られる$p_{\Lambda\_measore}$と運動学によって計算される$p_{\Lambda\_calc}$を比較することで評価する。\par
+まず、BGOカロリメータで実測した陽子の全運動エネルギーから得られる$\Lambda$の運動量について考える。得られた陽子の全運動エネルギーから陽子の運動量$p_{p}$が得られる。さらに、CATCHで測定された陽子と$\pM$が$\Lambda$が崩壊したものと仮定すれば、二つの粒子のベクトルが成す角$\theta_{\pi p}$を用いて崩壊$\pM$の運動量$p_{\pi}$は次のように書ける。
+\begin{equation}
+p_{\pi} = \cfrac{Ap_{p}\cos\theta_{\pi p}+\sqrt{D}}{2(E^{2}_{p}-p^2_{p}\cos^{2}\theta_{\pi p})}
+\end{equation}
+ここで、
+\begin{gather}
+A = M^2_{\Lambda}-M^2_{p}-M^2_{\pi}\\
+D = (Ap_{p}\cos\theta_{\pi p})^2-(E^{2}_{p}-p_{p}\cos^2\theta_{\pi p})(4E^2_{p}M^2_{\pi}-A^2)
+\end{gather}
+であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた$\pi$の運動量から、$\Lambda$の運度量ベクトルが$\overrightarrow{p_{\Lambda}}=\overrightarrow{p_{p}}+\overrightarrow{p_{\pi}}$と求まる。このときの絶対値$|\overrightarrow{p_{\Lambda}}|$を$p_{\Lambda\_measure}$とする。\par
+次に、運動学によって計算される$\Lambda$の運動量について考える。先ほど導出した$\Lambda$のベクトル情報だけ用いて、$\SM$との散乱角$\theta_{\Lambda}$を求める。この角度と$\SM$の運動量ベクトルのみを用いて$\SM p\rightarrow \Lambda n$反応を仮定したとき、$\Lambda$の運度量$p_{\Lambda\_calc}$は次のように書ける。
+\begin{equation}
+p_{\Lambda\_calc} = \cfrac{Ap_{\Sigma}\cos\theta_{\Lambda}+(E_{\Sigma}+M_{p})\sqrt{D}}{2((E_{\Sigma}+M_{p})^{2}-p^2_{\Sigma}\cos^{2}\theta_{\Lambda})}
+\end{equation}
+ここで、
+\begin{gather}
+A = M^2_{\Sigma}+M^2_{\Lambda}+M^2_{p}-M^2_{n}-2E_{\Sigma}M_{p}\\
+D = 4M^2_{\Lambda}(p^2_{\pi}\cos\theta_{\Lambda}-(E_{\Sigma}+M_{p})^{2})+A^2
+\end{gather}
+であり、$D>0$のとき、$p_{\Lambda\_calc}$の解が存在する。こうして得られた$p_{\Lambda\_measore}$から$p_{\Lambda\_calc}$を差し引くことで$\Delta p_{Lambda n}$が求まる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\SM p\rightarrow \SM p$弾性散乱}
+$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$がさらに標的陽子と散乱することで$\SM p$散乱事象は生じる。\par
+$\SM$の運動量ベクトルと陽子のベクトル情報から陽子の全エネルギーを導出する。CATCHで計測した陽子を$\SM$と散乱したものと仮定すれば、陽子の散乱角度$\theta_{p}$を用いて陽子の全エネルギー$E_{calc}$は次のように書ける。
+\begin{equation}
+E_{calc} = \cfrac{2M_{p}p^2_{\Sigma}\cos^2\theta_{p}}{(E_{\Sigma}+M_{p})^{2}-p^2_{\Sigma}\cos^2\theta_{p}}
+\end{equation}
+このように$\SM p$散乱を仮定した運動学から陽子の全エネルギー$E_{calc}$が導出された。BGOカロリメータで実測した陽子の全エネルギー$E_{measure}$から$E_{calc}$を差し引くことで$\Delta E_{\Sigma p}$が求まる。\par
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{end}

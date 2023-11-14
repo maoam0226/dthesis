@@ -1,0 +1,909 @@
+%\documentclass[a4paper,12pt,oneside,openany]{jsbook}
+%\include{begin}
+\graphicspath{{./pictures/chapter_Pl/}}
+
+%%%%%
+\chapter{Analysis \rom{1}: Beam $\Lambda$ polarization measurement} 
+\label{chap-Pl}
+
+%%%%%
+\section{Overview}
+
+The J-PARC E86 will measure the differential cross-section ($\dcs$), analyzing power ($\anapow$), and depolarization ($\depo$) of $\Lp$ scattering in the beam momentum range $0.4-0.8$ GeV/$c$. There are two requirements against the beam $\Lambda$ in the spin observables measurement: (1) The beam $\Lambda$ should be polarized $\sim100$\%, and (2) Beam $\Lambda$ polarization value ($\PL$) should be measured since it is necessary for deriving $\dcs$, $\anapow$, and $\depo$ (see Equation (\ref{eq-anapow}), Equation (\ref{eq-dcs_theo}), and Equation (\ref{eq-depo}) \textcolor{red}{ イントロの測定可能な観測量の説明に記載した式 }). A past experiment \cite{Baker} reported that the $\Lambda$ produced by the $\PiKL$ reaction was polarized $\sim100$\% in the forward scattering angle region of $\Kz$. Especially for the case of $E_{CM}=1847$ MeV (J-PARC E40 energy range), the polarization is $\sim100$\% (i.e., $\PL\sim1.0$) in the $\Kz$ scattering angular region $0.6<\costkz<0.9$, as shown in Figure \ref{fig-Baker1847}. However, it has low statistics, and the situation has remained uncertain. \textcolor{red}{ To verify the polarization by establishing the analysis method based on our detector configuration, we measured $\PL$ using the $\PiKL$ data accumulated in J-PARC E40 which has the same detector setup as J-PARC E86. Here, we only analyzed the $\Ldecay$ decay-only events since $\PL$ can be obtained by measuring the emission angle of the decay protons at the \textcolor{red}{ rest frame } of $\Lambda$. }
+
+The kinematical consistency analysis called \say{$\Delta p$ method} identified $\Ldecay$ decay-only events with sufficient yield. After that, we removed the main background, the multiple $\pi$ production (i.e., $\multipi$ reaction). Finally, we determined $\PL$ values \textcolor{red}{ in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$. As a result, $\PL\sim0.94$ on average in the $0.6<\costkz<0.8$ region. } Therefore, we concluded that in J-PARC E86, by selecting such a specific $\Kz$ scattering angular region, it is possible to measure $\Lp$ spin observables using a highly polarized beam $\Lambda$.
+
+%Baker  ECM=1847 MeV
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm]{Baker1847.png}
+  \caption{A past data of beam $\Lambda$ polarization in the $\PiKL$ reaction for the case of $E_{CM}=1847$ MeV \cite{Baker}.}
+  \label{fig-Baker1847}
+\end{figure}
+
+%%%%
+\subsection{Physics of beam $\Lambda$ polarization}
+\label{sec-Pl-phys}
+
+The parities of $\Lambda$ baryon, $\pM$ meson, and proton are $+$, $-$, and $+$, respectively. Therefore, parity symmetry is broken in $\Ldecay$ decay (parity violation). \textcolor{red}{ According to Ref. \cite{Lee1957}, in the reference system where the hyperon is at rest, there are two possible final states of pion-nucleon systems. It has been pointed out before \cite{Weldman} that the angular distribution of the decay proton is proportional to 
+\begin{equation}
+  (1-\alpha\cos{\theta_{p}}) \Delta\Omega,
+\end{equation}
+where $\alpha$ is an asymmetry parameter, which has already been experimentally measured by BES3 collaboration \cite{Alpha} with high accuracy as $0.750\pm0.009\pm0.004$, $\theta_{p}$ is the angle between the proton momentum vector and the spin of the hyperon, and $d\Omega$ is the solid angle of the proton momentum vector. The constant $\alpha$ is given as 
+\begin{equation}
+  \alpha = 2 {\rm Re}(A*B) / (|A|^{2} + |B|^{2}),
+\end{equation}
+and characterizes the degree of mixing of parities in the decay. Here, denoting the amplitudes of the two final states of pion-nucleon systems by $A$ and $B$, the amplitude of decay with $\theta_{p}=0$ (Figure \ref{fig-Ldecay} (Left)) is $(A-B)$, and the one with $\theta_{p}=\pi$ (Figure \ref{fig-Ldecay} (Right)) is $(A+B)$. } Therefore, the ratio of the amplitudes of the above two final states can be given as
+\begin{equation}
+  \frac{1+\alpha}{1-\alpha} = \frac{|A-B|^{2}}{|A+B|^{2}}.
+\end{equation}
+If the parity symmetry is not broken and $\alpha=0$, the amplitudes of these two final states will be the same, but this is not the case in $\Ldecay$ decay where parity violation occurs. If $\theta_{p}$ is in the range $0^{\circ}-90^{\circ}$, the beam $\Lambda$ polarization can be said to be \say{Up}. Conversely, we can say that the beam $\Lambda$ polarization is \say{Down} if it is in the range $90^{\circ}-180^{\circ}$ (see Figure \ref{fig-UDasymm}). 
+
+In other words, the emission angle distribution of decay protons will not be uniform but will have an upward slope. This situation is called \say{Up/Down asymmetry}. $\PL$ and $\theta_{p}$ can be related as 
+\begin{equation}
+  \frac{dN_0}{d\costp} = \frac{N_0}{2}(1+\alpha\PL\costp), 
+  \label{eq-costp}
+\end{equation}
+where $N$ represents the yield of the entire emission angle distribution. %In other words, the beam $\Lambda$ polarization is synonymous with the slope of the Up/Down asymmetry. 
+
+%Ldecay図
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{Ldecay.png}
+  \caption{Schematic of the $\Ldecay$ decay in the rest frame of $\Lambda$. (Left) When the directions of the spin of $\Lambda$ and the decay proton are the same, $\theta_{p}=0^{\circ}$. The amplitude of this state is $(A-B)$. (Right) When the directions of the spin of $\Lambda$ and the decay proton are opposite, $\theta_{p}=\pi$. The amplitude of this state is $(A+B)$.}
+  \label{fig-Ldecay}
+\end{figure}
+
+%UD asymm定義図
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{UDasymm.png}
+  \caption{Schematic of the definition of Up/Down asymmetry of the decay proton. If $\theta_{p}$ is in the range $0^{\circ}-90^{\circ}$, it can be said that the beam $\Lambda$ polarization is Up. Conversely, if $\theta_{p}$ is in the range $90^{\circ}-180^{\circ}$, it can be said that the beam $\Lambda$ polarization is Down.}
+  \label{fig-UDasymm}
+\end{figure}
+
+
+%%%%
+\subsection{Experimental measurement}
+
+\textcolor{red}{ As mentioned in Sec. \ref{sec-Pl-phys}, the beam $\Lambda$ polarization can be obtained by measuring the emission angle distribution of decay protons ($\costp$). In this paper, we measured the angle formed by the Lorentz-boosted proton vector and the spin quantization axis of $\Lambda$, the emission angle distribution of decay protons in the rest frame of $\Lambda$ ($\costp$) can be obtained. In this paper, after detecting decay protons by CATCH, we Lorentz-boosted their momentum vectors and measured the angle against the spin quantization axis of $\Lambda$. The reaction system we assumed is shown in Figure \ref{fig-PiKplane}. Here, the $\Lambda$ spin axis corresponds to the normal vector of the $\piKz$ plane. The $y$ axis is the $\Lambda$ spin axis, the $z$ axis is the beam $\Lambda$ direction, and the $x$ axis is the cross product of the $y$ and $z$ axes. }
+
+Due to parity violation of $\Ldecay$ decay, $\costp$ will be asymmetrically distributed proportional to $\alpha\PL$ \cite{Lee1957} as shown in Equation (\ref{eq-costp}). Taking advantage of that, we fitted $\costp$ experimentally measured with Equation (\ref{eq-costp}) and calculated $\PL$. In this paper, $\costp$ was measured in the $\Kz$ scattering angular range $0.6<\costkz<1.0$ with an angular step $d\costkz = 0.05$.
+
+
+%PiK平面図
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{PiKplane.png}
+  \caption{Schematic of the $\piKz$ plane with $\Lambda$ decaying to proton and $\pM$ in the Laboratory frame. The $\Lambda$ spin quantization axis is the $y$ axis, the normal vector of the plane. The $z$ axis is the beam $\Lambda$ direction. The $x$ axis is the outer product between $y$ and $z$ axes. $\theta_p$ is the angle of the decay proton vector from the polarization axis and is measured in the rest frame of $\Lambda$.}
+  \label{fig-PiKplane}
+\end{figure}
+
+
+%%%%%
+\clearpage
+\section{Selection of $\Ldecay$ decay events}
+\label{sec-Pl-evsele}
+
+In the beam $\Lambda$ polarization analysis, \textcolor{red}{ we required CATCH to detect case \rom{1} assuming the $\Ldecay$ decay occurred, as shown in Figure \ref{fig-sch_Ldecay}（解析フローの章で見せた図）. } %This is because the beam $\Lambda$ polarization can be derived by measuring the emission angle distribution of the decay proton in the rest frame of $\Lambda$. 
+
+After tagging beam $\Lambda$ by the missing mass \textcolor{red}{of the $\PiKX$ reaction}, the cuts to select $\Ldecay$ decay events and remove background contamination were applied as follows, respectively. 
+
+%\textcolor{red}{ If we purposely apply kinematical consistency analysis which was developed to confirm that the tagged $\Lambda$ beam has caused $\Lp$ scattering to the $\Ldecay$ decay events, although it actually did not cause scattering, it looks to be forward scattering events (see Figure \ref{fig-forward}). Taking advantage of this feature, we selected the Λ decay event using the proton and π- information obtained in the detection case\rom{1}. }
+
+\begin{enumerate}
+  \item {\bf Selection of $\Ldecay$ decay ({\bf C-$\PL$-1}) } \\
+  A kinematical consistency analysis selected $\Ldecay$ decay events using the $\Lambda$ scattering angle and momentum.
+  \item {\bf Background subtraction ({\bf C-$\PL$-2}) } \\
+  The main background reaction, multiple $\pi$ production (i.e., $\multipi$ reaction), was subtracted using the $z$ component of $\Kz$ path length. 
+\end{enumerate}
+
+This section describes the details of each cut above.
+
+%%%%
+\subsection{Kinematical consistency analysis ({\bf C-$\PL$-1})}
+\label{sec-Pl-kinema}
+
+\textcolor{red}{ The most useful cut for selecting $\Ldecay$ decay events is the kinematical consistency analysis for $\Lambda$. This kinematical consistency analysis is originally intended to confirm that the tagged $\Lambda$ beam has caused $\Lp$ scattering. In an event where $\Ldecay$ decay occurs before $\Lp$ scattering occurs, $\Lambda$ estimated from the missing mass method of the $\PiKX$ reaction and $\Lambda$ reconstructed from decay products (protons and $\pM$) is the same particle. Therefore, if such an event is analyzed assuming the kinematics of $\Lp$ scattering, it will be analyzed as if the scattering angle of $\Lambda$ was super forward (i.e., $\costcm \sim 1$). Taking advantage of this feature, we selected the $\Ldecay$ decay events in the detection case \rom{1}. }
+
+\textcolor{red}{ Regarding the momentum, the $\Lambda$ momentum kinematically calculated ($p_{calc}$) was first obtained assuming the $\Lp$ scattering using the scattering angle. This calculated momentum $p_{calc}$ was compared with the measured one ($p_{meas}$) which was obtained by the proton and $\pM$ momentum vectors. The fact that $\Lambda$ is generated by the $\PiKL$ reaction is common to $\Lp$ scattering and $\Ldecay$ decay, so the difference between $p_{meas}$ and $p_{calc}$ ($\Delta p = p_{meas} - p_{calc}$) is ideally 0 GeV/$c$. }
+
+In fact, when this analysis was applied to a simulation of only $\Ldecay$ decay, we obtained Figure \ref{fig-costdp_Pl_sim}. Here, we found that $\Ldecay$ decay events form a locus around the range of $\costcm>0.9$ and $|\Delta p| < 0.05$ GeV/$c$. the upper left of Figure \ref{fig-costdp_Pl} shows the same correlation taken in E40 data. The cut to select the $\Ldecay$ decay events was made to be at $\costcm>0.9$ and $|\Delta p| < 0.05$ GeV/$c$, as represented by the red solid lines. This is cut level {\bf C-$\PL$-1}. Also, its $x$ and $y$ projections ($\costcm$ and $\Delta p$) are shown at lower left and upper right.
+
+%L崩壊が超前方散乱に見えるの図
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{forward.png}
+  \caption{Schematic of (Left) the $\Ldecay$ decay and (Right) the $\Lp$ scattering with super-forward scattering angle. If applying the kinematical consistency analysis 
+  multiple $\pi$ production. If $\Kz$ was indeed produced, the $z$ component difference between the production and decay points should have a value following the $\Kz$ lifetime.}
+  \label{fig-forward}
+\end{figure}
+
+%cost vs. dp
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\columnwidth]{costdp_sim.eps}
+    \caption{Simulation of the correlation between the scattering angle assuming $\Lambda'$ ($\costcm$) versus $\Delta p$, taken in the simulation of only $\Ldecay$ decay.}
+    \label{fig-costdp_sim}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\columnwidth]{costdp_each.eps}
+    \caption{Correlation between $\costcm$ versus $\Delta p$ (upper left), the $x$ projection $\costcm$ (lower left), and the $y$ projection $\Delta p$ (upper right), taken in the E40 data. The cut to select the $\Ldecay$ decay events was made to be at $\costcm>0.9$ and $|\Delta p| < 0.05$ GeV/$c$, as represented by the red solid lines.}
+    \label{fig-costdp_each}
+\end{figure}
+
+
+
+%K0 ΔzによるBG subtractionについて
+%%%%
+\clearpage
+\subsection{Background subtraction ({\bf C-$\PL$-2}) }
+\label{sec-Pl-bgsubt}
+
+The main background in the detection case \rom{1} is multiple $\pi$ production (i.e., $\multipi$ reaction). This background contamination was removed by the $z$ component of $\Kz$ path length ($\dzkz$). The $\dzkz$ was measured by the $z$-vertex of reaction point ($z_{prod}$) and the $z$-vertex of decay point ($z_{decay}$) as
+\begin{equation}
+  \dzkz = z_{decay} - z_{prod}.
+\end{equation}
+Figure \ref{fig-pik_pipro} (Left) shows the schematic of the $\PiKL$ reaction. Vertex \circled{1} represents the $\Kz$ production point, and vertex \circled{2} represents the $\Kz$ decay point. If $\Kz$ was indeed produced, ideally, $\dzkz$ should have a value following the $\Kz$ lifetime ($c\tau_{\Kz} \sim 2.69$ cm).
+In contrast, if the multiple $\pi$ production occurs, these vertices are the same so that $\dzkz$ becomes 0 mm, as shown in Figure \ref{fig-pik_pipro} (Right).
+
+When simulating the $\PiKL$ reaction, it can be seen that $\dzkz$ has a mean value on the positive side due to $\Kz$ being boosted downstream, as shown in Figure \ref{fig-kzdz_true_sim}. On the other hand, when simulating the multiple $\pi$ production, it can be said that since $\Kz$ was not produced, the $\dzkz$ had a mean value near 0 mm with a symmetrical distribution, as shown in Figure \ref{fig-kzdz_false_sim}.
+
+As a sample of such a background event, we adopted the low sideband of the $\Lambda$ peak in the missing mass of the $\PiKX$ reaction. The removal of the background event structure in the $\costp$ distribution is as follows. Details of each step are explained in the following subsections. 
+
+\begin{enumerate}
+  \item Analyze the $\dzkz$ distribution of background events. Fit it with Gaussian and measure its mean value.
+  \item Analyze the $\dzkz$ distribution of the $\Ldecay$ decay events selected in Sec. \ref{sec-Pl-kinema} within the $\Lambda$ region of the missing mass of the $\PiKX$ reaction ($1.0707-1.1626$ GeV/$c^{2}$).
+  \item Assume that in the $\dzkz$ distribution of events in the $\Lambda$ region of the missing mass, a symmetric background distribution with the mean value obtained in step (1) is included. Then, subtract the $\costp$ distribution of events in the region below the mean value from the $\costp$ distribution of events in the region above the mean value.
+\end{enumerate}
+
+%True or False
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{pik_pipro.png}
+  \caption{Schematic of (Left) the $\PiKL$ reaction and (Right) the multiple $\pi$ production. If $\Kz$ was indeed produced, the $z$ component difference between the production and decay points should have a value following the $\Kz$ lifetime.}
+  \label{fig-pik_pipro}
+\end{figure}
+ 
+%simulated Kz dz
+\begin{figure}[!h]
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{kzdz_true_sim.png}
+    \caption{Simulation of the $z$ path length of $\Kz$ ($\dzkz$) analyzed in the $\PiKL$ reaction. The mean value is shifted to the positive side due to $\Kz$ being boosted downstream.}
+    \label{fig-kzdz_true_sim}
+  \end{minipage}
+  \hspace{0.04\columnwidth} % ここで隙間作成
+  \begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{kzdz_false_sim.png}
+    \caption{Simulation of the $z$ path length of $\Kz$ ($\dzkz$) analyzed in the multiple $\pi$ production. The mean value is not shifted, and the distribution becomes symmetrical.}
+    \label{fig-kzdz_false_sim}
+  \end{minipage}
+\end{figure}
+
+
+
+%%%
+\subsubsection{Step (1): $\dzkz$ distribution of background events}
+
+The background events were estimated by the low sideband of the $\Lambda$ peak in the missing mass of the $\PiKX$ reaction. The $\dzkz$ distribution was measured in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$, as shown in Figure \ref{fig-dz_lowSB_fit}. Each red solid line represents the fitting function (Gaussian). From this fitting, the mean value of each $\dzkz$ distribution was obtained. The numerical values of the fitting results were summarized in Table \ref{tab-dz_lowSB_fit}. 
+
+%fititng of dz (low SB)
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{dz_lowSB_fit.eps}
+  \caption{The $\dzkz$ distribution of background events in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$. Each red solid line represents the fitting function (Gaussian) to measure the mean value.}
+  \label{fig-dz_lowSB_fit}
+\end{figure}
+
+%lowSBのdzkz fitting結果表
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the mean values of the $\dzkz$ distributions of background events (Figure \ref{fig-dz_lowSB_fit})}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costkz$ & Mean (mm) \\
+    \midrule\midrule
+    $0.6-0.65$ & -1.891 \\
+    \midrule
+    $0.65-0.7$ & -2.088 \\
+    \midrule
+    $0.7-0.75$ & -0.878 \\
+    \midrule
+    $0.75-0.8$ & -1.586 \\
+    \midrule
+    $0.8-0.85$ & 0.111 \\
+    \midrule
+    $0.85-0.90$ & 1.534 \\
+    \midrule
+    $0.90-0.95$ & -0.009 \\
+    \midrule
+    $0.95-1.0$ & 11.117 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-dz_lowSB_fit}
+  \end{center}
+\end{table}
+
+%%%
+\subsubsection{Step (2): $\dzkz$ distribution of the events within the $\Lambda$ region}
+The $\dzkz$ distribution of the events within the $\Lambda$ region of the missing mass of $\PiKX$ reaction ($1.0707-1.1626$ GeV/$c^{2}$), was measured in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$, as shown in Figure \ref{fig-dz_lam}. Each red solid line represents the background mean value obtained by Step (1) (see Figure \ref{fig-dz_lowSB_fit} and Table \ref{tab-dz_lowSB_fit}). 
+
+%fititng of dz (lambda)
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{dz_lam.eps}
+  \caption{The $\dzkz$ distribution of the events within the $\Lambda$ region of the missing mass of $\PiKX$ reaction ($1.0707-1.1626$ GeV/$c^{2}$) in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$. Each red solid line represents the background mean value obtained by Step (1).}
+  \label{fig-dz_lam}
+\end{figure}
+
+
+%%%
+\subsubsection{Step (3): Extract $\Lambda$ decay events in the $\costp$ distribution}
+\textcolor{red}{ In Figure \ref{fig-dz_lam}, background events were still included and expected to be distributed symmetrically around the reference mean value (red solid line). In contrast, the $\dzkz$ distribution of $\Ldecay$ decay events was expected to be asymmetric, with a larger number of events on the positive side. That means that events below the reference mean value include both $\Ldecay$ decays and background events. However, events above the reference mean value include more $\Ldecay$ decays although including background events. }
+
+\textcolor{red}{ Taking advantage of this feature, we subtracted the $\costp$ distribution of events below the reference mean value from the $\costp$ distribution of events above the reference mean value in Figure \ref{fig-dz_lam}. As a result, $\costp$ distribution of the $\Ldecay$ decay events with better S/N were extracted. Figure \ref{fig-costp_ab} shows the $\costp$ distribution of events below the background's $\dzkz$ mean (blue solid line) and the $\costp$ distribution of events above the background's $\dzkz$ mean (red solid line), respectively. After subtracting the contamination of events below the reference mean (blue solid line) from the distribution of events above the reference mean (red solid line), we extracted $\costp$ distribution of $\Ldecay$ decay events as shown in Figure \ref{fig-costp_ext}. This is cut level {\bf C-$\PL$-2}. }
+
+The yield of extracted $\Ldecay$ decay ($N_0$) can be obtained as
+\begin{align}
+  N_0 &= N_{above} - N_{below}, \\
+  \sigma(N_0) &= \sqrt{N_{above} + N_{below}},
+\end{align}
+where $N_{above}$ is the yield of $\costp$ of the events above the background mean, $N_{below}$ is the yield of $\costp$ of the events below the background mean, and $\sigma(N_0)$ is the statistical error included in $N_0$. In fact, this background subtraction reduces the number of $\Ldecay$ decay events. However, since $\PL$ is synonymous with the slope of the $\costp$ distribution, even if the overall number of events decreases, it does not affect the quality of $\PL$ measurement. Rather, deriving $\PL$ under a better S/N improves the accuracy.
+
+%costp posi & nega
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{costp_ab.eps}
+  \caption{The $\costp$ distribution of events below the background's $\dzkz$ mean (blue solid line) and the $\costp$ distribution of events above the background's $\dzkz$ mean (red solid line).}
+  \label{fig-costp_ab}
+\end{figure}
+
+%costp extracted
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{costp_ext.eps}
+  \caption{The $\costp$ distribution extracted by subtracting the contamination of events below the reference mean from the distribution of events above the reference mean.}
+  \label{fig-costp_ext}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% CATCH アクセプタンス
+%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Acceptance}
+\label{sec-accPl}
+
+The acceptance of the $\costp$ distribution was estimated by the Geant4 simulation of the $\PiKL$ reaction followed by the $\Ldecay$ decay with a realistic branching ratio. The same analysis as in the E40 data was applied. In order to check how CATCH detection efficiency (see Chap. \ref{chap-Lbeam} Sec. \ref{subsubsec-evaCATCHeff} \textcolor{red}{（Λビーム同定の章）}) and Geant4 Hadronic processes affect the $\costp$ acceptance, we experimentally generated three types of simulation data as follows.
+\begin{enumerate}
+  \item Normal (no CATCH detection efficiency and Geant4 Hadronic processes)
+  \item With the CATCH detection efficiency evaluated by the $pp$ elastic scattering data taken in J-PARC E40
+  \item With the CATCH detection efficiency and Geant4 Hadronic processes
+  \label{list-threetypes}
+\end{enumerate}
+
+%This section describes how to estimate the efficiency of the $\costp$ distribution in the $\Kz$ scattering angle range of $0.6<\costkz<1.0$ with an angular step of $d\costkz=0.05$ and the correction of extracted $\costp$ distribution obtained in Sec. \ref{sec-Pl-evsele}.
+
+%アクセプタンスを用いた補正は、次の章（Pl測定）に記述する。2023/11/11
+
+%%%%
+\subsection{Estimation of the CATCH acceptance}
+\label{sec-Pl-esteff}
+
+\textcolor{red}{ The acceptance can be obtained by the number of $\Ldecay$ decay events initially generated ($N_{gen}$) and the number of events accepted by the same analysis as the E40 data ($N_{acc}$) as }
+\begin{align}
+  \accPL &= \frac{N_{acc}}{N_{gen}}, \\
+  \erraccPL &= \sqrt{\accPL \frac{1-\accPL}{N_{gen}}},
+  \label{eq-accPL}
+\end{align}
+where $\erraccPL$ is the statistical error included in $\accPL$. This calculation was performed for each $d\costp=0.1$ binning in each $\costkz$ range.
+
+\textcolor{red}{ In the \say{Normal} version (type 1), CATCH detection efficiency was not applied, and generated data was analyzed based on only the Geant4 package setting, such as virtual detector resolution, etc. In the \say{With the CATCH detection efficiency} version (type 2), CATCH detection efficiency was applied when analyzing the generated data. In the \say{With the CATCH detection efficiency and Geant4 Hadronic processes} version (type 3), Geant4 Hadronic processes were included when generating the $\Ldecay$ decay events, and CATCH detection efficiency was applied when analyzing the generated data. }
+
+Figure \ref{fig-accPl} shows the acceptances of $\costp$ distribution estimated in the three types above. The black solid line represents type 1, the red solid line represents type 2, and the blue solid line represents type 3. We found that as we added more realistic effects, the efficiency gradually decreased. In this paper, we decided to adopt the most realistic one, type 3. The numerical values of the acceptances of $\costp$ distribution estimated in type 3 were summarized in Table \ref{tab-Pl-acc_32} to Table \ref{tab-Pl-acc_39}.
+
+%estimated efficiency
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{accPl.eps}
+  \caption{CTACH acceptance of $\costp$ distribution estimated in the three types by the Geant4 simulation. The black solid line represents type 1, the red solid line represents type 2, and the blue solid line represents type 3. In this paper, we decided to adopt the most realistic one, type 3.}
+  \label{fig-accPl}
+\end{figure}
+
+%estimated eff (type3) 結果表
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.6<\costkz<0.65$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 27.489 \\
+    \midrule
+    $-0.9 - -0.8$ & 24.603 \\
+    \midrule
+    $-0.8 - -0.7$ & 22.733 \\
+    \midrule
+    $-0.7 - -0.6$ & 18.712 \\
+    \midrule
+    $-0.6 - -0.5$ & 16.542 \\
+    \midrule
+    $-0.5 - -0.4$ & 13.909 \\
+    \midrule
+    $-0.4 - -0.3$ & 11.374 \\
+    \midrule
+    $-0.3 - -0.2$ & 8.763 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.188 \\
+    \midrule
+    $-0.1 - 0.0$ & 4.260 \\
+    \midrule
+    $0.0 - 0.1$ & 4.182 \\
+    \midrule
+    $0.1 - 0.2$ & 6.132 \\
+    \midrule
+    $0.2 - 0.3$ & 9.344 \\
+    \midrule
+    $0.3 - 0.4$ & 11.366 \\
+    \midrule
+    $0.4 - 0.5$ & 14.262 \\
+    \midrule
+    $0.5 - 0.6$ & 16.293 \\
+    \midrule
+    $0.6 - 0.7$ & 17.393 \\
+    \midrule
+    $0.7 - 0.8$ & 21.254 \\
+    \midrule
+    $0.8 - 0.9$ & 24.321 \\
+    \midrule
+    $0.9 - 1.0$ & 26.166 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_32}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.65<\costkz<0.7$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 29.190 \\
+    \midrule
+    $-0.9 - -0.8$ & 26.813 \\
+    \midrule
+    $-0.8 - -0.7$ & 23.714 \\
+    \midrule
+    $-0.7 - -0.6$ & 21.917 \\
+    \midrule
+    $-0.6 - -0.5$ & 18.680 \\
+    \midrule
+    $-0.5 - -0.4$ & 16.161 \\
+    \midrule
+    $-0.4 - -0.3$ & 13.712 \\
+    \midrule
+    $-0.3 - -0.2$ & 10.597 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.104 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.031 \\
+    \midrule
+    $0.0 - 0.1$ & 5.081 \\
+    \midrule
+    $0.1 - 0.2$ & 7.538 \\
+    \midrule
+    $0.2 - 0.3$ & 10.118 \\
+    \midrule
+    $0.3 - 0.4$ & 11.898 \\
+    \midrule
+    $0.4 - 0.5$ & 15.792 \\
+    \midrule
+    $0.5 - 0.6$ & 19.120 \\
+    \midrule
+    $0.6 - 0.7$ & 21.840 \\
+    \midrule
+    $0.7 - 0.8$ & 23.344 \\
+    \midrule
+    $0.8 - 0.9$ & 27.342 \\
+    \midrule
+    $0.9 - 1.0$ & 27.182 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_33}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.7<\costkz<0.75$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 30.369 \\
+    \midrule
+    $-0.9 - -0.8$ & 28.287 \\
+    \midrule
+    $-0.8 - -0.7$ & 27.790 \\
+    \midrule
+    $-0.7 - -0.6$ & 23.971 \\
+    \midrule
+    $-0.6 - -0.5$ & 19.656 \\
+    \midrule
+    $-0.5 - -0.4$ & 16.339 \\
+    \midrule
+    $-0.4 - -0.3$ & 14.307 \\
+    \midrule
+    $-0.3 - -0.2$ & 11.832 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.859 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.756 \\
+    \midrule
+    $0.0 - 0.1$ & 5.850 \\
+    \midrule
+    $0.1 - 0.2$ & 7.752 \\
+    \midrule
+    $0.2 - 0.3$ & 11.471 \\
+    \midrule
+    $0.3 - 0.4$ & 14.043 \\
+    \midrule
+    $0.4 - 0.5$ & 16.758 \\
+    \midrule
+    $0.5 - 0.6$ & 19.481 \\
+    \midrule
+    $0.6 - 0.7$ & 22.733 \\
+    \midrule
+    $0.7 - 0.8$ & 25.601 \\
+    \midrule
+    $0.8 - 0.9$ & 27.781 \\
+    \midrule
+    $0.9 - 1.0$ & 29.433 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_34}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.75<\costkz<0.8$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 31.978 \\
+    \midrule
+    $-0.9 - -0.8$ & 28.998 \\
+    \midrule
+    $-0.8 - -0.7$ & 27.029 \\
+    \midrule
+    $-0.7 - -0.6$ & 24.143 \\
+    \midrule
+    $-0.6 - -0.5$ & 20.427 \\
+    \midrule
+    $-0.5 - -0.4$ & 17.607 \\
+    \midrule
+    $-0.4 - -0.3$ & 13.834 \\
+    \midrule
+    $-0.3 - -0.2$ & 11.205 \\
+    \midrule
+    $-0.2 - -0.1$ & 8.633 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.461 \\
+    \midrule
+    $0.0 - 0.1$ & 6.213 \\
+    \midrule
+    $0.1 - 0.2$ & 8.707 \\
+    \midrule
+    $0.2 - 0.3$ & 11.370 \\
+    \midrule
+    $0.3 - 0.4$ & 14.345 \\
+    \midrule
+    $0.4 - 0.5$ & 17.252 \\
+    \midrule
+    $0.5 - 0.6$ & 20.692 \\
+    \midrule
+    $0.6 - 0.7$ & 24.358 \\
+    \midrule
+    $0.7 - 0.8$ & 27.593 \\
+    \midrule
+    $0.8 - 0.9$ & 30.038 \\
+    \midrule
+    $0.9 - 1.0$ & 31.555 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_35}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.8<\costkz<0.85$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 32.574 \\
+    \midrule
+    $-0.9 - -0.8$ & 30.567 \\
+    \midrule
+    $-0.8 - -0.7$ & 28.748 \\
+    \midrule
+    $-0.7 - -0.6$ & 24.612 \\
+    \midrule
+    $-0.6 - -0.5$ & 19.630 \\
+    \midrule
+    $-0.5 - -0.4$ & 15.850 \\
+    \midrule
+    $-0.4 - -0.3$ & 12.443 \\
+    \midrule
+    $-0.3 - -0.2$ & 9.888 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.752 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.101 \\
+    \midrule
+    $0.0 - 0.1$ & 6.552 \\
+    \midrule
+    $0.1 - 0.2$ & 7.725 \\
+    \midrule
+    $0.2 - 0.3$ & 9.575 \\
+    \midrule
+    $0.3 - 0.4$ & 12.340 \\
+    \midrule
+    $0.4 - 0.5$ & 15.857 \\
+    \midrule
+    $0.5 - 0.6$ & 20.019 \\
+    \midrule
+    $0.6 - 0.7$ & 24.052 \\
+    \midrule
+    $0.7 - 0.8$ & 28.680 \\
+    \midrule
+    $0.8 - 0.9$ & 30.587 \\
+    \midrule
+    $0.9 - 1.0$ & 33.207 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_36}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.85<\costkz<0.9$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 33.568 \\
+    \midrule
+    $-0.9 - -0.8$ & 30.296 \\
+    \midrule
+    $-0.8 - -0.7$ & 25.830 \\
+    \midrule
+    $-0.7 - -0.6$ & 20.516 \\
+    \midrule
+    $-0.6 - -0.5$ & 16.065 \\
+    \midrule
+    $-0.5 - -0.4$ & 12.598 \\
+    \midrule
+    $-0.4 - -0.3$ & 9.608 \\
+    \midrule
+    $-0.3 - -0.2$ & 8.232 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.765 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.472 \\
+    \midrule
+    $0.0 - 0.1$ & 6.206 \\
+    \midrule
+    $0.1 - 0.2$ & 7.042 \\
+    \midrule
+    $0.2 - 0.3$ & 7.421 \\
+    \midrule
+    $0.3 - 0.4$ & 9.333 \\
+    \midrule
+    $0.4 - 0.5$ & 12.212 \\
+    \midrule
+    $0.5 - 0.6$ & 15.644 \\
+    \midrule
+    $0.6 - 0.7$ & 19.715 \\
+    \midrule
+    $0.7 - 0.8$ & 25.488 \\
+    \midrule
+    $0.8 - 0.9$ & 30.477 \\
+    \midrule
+    $0.9 - 1.0$ & 31.713 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_37}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.9<\costkz<0.95$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 27.136 \\
+    \midrule
+    $-0.9 - -0.8$ & 22.395 \\
+    \midrule
+    $-0.8 - -0.7$ & 18.053 \\
+    \midrule
+    $-0.7 - -0.6$ & 14.596 \\
+    \midrule
+    $-0.6 - -0.5$ & 11.435 \\
+    \midrule
+    $-0.5 - -0.4$ & 8.899 \\
+    \midrule
+    $-0.4 - -0.3$ & 7.791 \\
+    \midrule
+    $-0.3 - -0.2$ & 6.842 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.200 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.332 \\
+    \midrule
+    $0.0 - 0.1$ & 6.087 \\
+    \midrule
+    $0.1 - 0.2$ & 6.925 \\
+    \midrule
+    $0.2 - 0.3$ & 6.634 \\
+    \midrule
+    $0.3 - 0.4$ & 7.658 \\
+    \midrule
+    $0.4 - 0.5$ & 9.235 \\
+    \midrule
+    $0.5 - 0.6$ & 10.758 \\
+    \midrule
+    $0.6 - 0.7$ & 14.013 \\
+    \midrule
+    $0.7 - 0.8$ & 18.340 \\
+    \midrule
+    $0.8 - 0.9$ & 22.480 \\
+    \midrule
+    $0.9 - 1.0$ & 27.166 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_38}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the acceptance estimated in type 3 in the $\Kz$ scattering angular range of \textbf{$0.95<\costkz<1.0$}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    Bin ($\costp$) & Acceptance (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 10.895 \\
+    \midrule
+    $-0.9 - -0.8$ & 8.701 \\
+    \midrule
+    $-0.8 - -0.7$ & 7.921 \\
+    \midrule
+    $-0.7 - -0.6$ & 6.731 \\
+    \midrule
+    $-0.6 - -0.5$ & 6.470 \\
+    \midrule
+    $-0.5 - -0.4$ & 5.822 \\
+    \midrule
+    $-0.4 - -0.3$ & 5.437 \\
+    \midrule
+    $-0.3 - -0.2$ & 5.071 \\
+    \midrule
+    $-0.2 - -0.1$ & 4.934 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.027 \\
+    \midrule
+    $0.0 - 0.1$ & 4.830 \\
+    \midrule
+    $0.1 - 0.2$ & 4.852 \\
+    \midrule
+    $0.2 - 0.3$ & 4.947 \\
+    \midrule
+    $0.3 - 0.4$ & 5.399 \\
+    \midrule
+    $0.4 - 0.5$ & 6.032 \\
+    \midrule
+    $0.5 - 0.6$ & 6.298  \\
+    \midrule
+    $0.6 - 0.7$ & 6.386 \\
+    \midrule
+    $0.7 - 0.8$ & 7.753 \\
+    \midrule
+    $0.8 - 0.9$ & 9.232 \\
+    \midrule
+    $0.9 - 1.0$ & 11.098 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_39}
+  \end{center}
+\end{table}
+
+
+%アクセプタンスを用いた補正は、次の章（Pl測定）に記述する。2023/11/11
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PL測定
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+\section{Measurement of the beam $\Lambda$ polarization}
+\label{sec-Plmeas}
+
+\textcolor{red}{ The beam $\Lambda$ polarization ($\PL$) can be derived by fitting the emission angle distribution of decay protons ($\costp$). The $\costp$ distributions obtained in Sec. \ref{sec-Pl-evsele} (Fig. \ref{fig-costp_ext}) are concave in the central angular region due to CATCH acceptance. In order to measure $\PL$ correctly, these distributions were corrected by the CATCH acceptance estimated in Sec. \ref{sec-accPl}. After the correction, $\costp$ distributions were fitted with a linear function corresponding to Equation (\ref{eq-costp}). }
+
+\textcolor{red}{ Also, we investigated the degree of freedom in which the fitting accuracy falls within the chi-square 90\% confidence interval to get better fitting accuracy. Here, we reduced the number of data points by two points on either side of the center. The data points from 0 to 18 degrees of freedom were independently fitted. In principle, $\PL$ is synonymous with the slope of the $\costp$ distribution, so reducing the number of data points from the center of the $\costp$ distribution does not affect the $\PL$ measurement. Finally, $\PL$ was measured at the largest degree of freedom among the ones that fall within the $\chisq$ 90\% confidence interval. The systematic error was estimated from the difference from the $\PL$ value obtained by fitting all data points. }
+
+%%%%
+\subsection{Correction and fitting of the $\costp$ distribution}
+
+The $\costp$ distribution extracted in Sec. \ref{sec-Pl-bgsubt} was corrected by CATCH acceptance estimated in Sec. \ref{sec-accPl} as
+\begin{align}
+  N &= \frac{N_{0}}{\accPL}, \\
+  \sigma(N) &= N \sqrt{\left( \frac{\sigma(N_{0})}{N_{0}} \right)^2 +\left( \frac{\sigma(\accPL)}{\accPL} \right)^2 },  \label{eq-errNcor} \\
+\end{align}
+where $N$ is the corrected yield, $\sigma(N)$ is the statistical error included in $N$. Figure \ref{fig-costp_cor} shows the corrected $\costp$ distributions.
+
+%corrected costp
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{costp_cor.eps}
+  \caption{The $\costp$ distribution corrected by the acceptance estimated by Geant4 simulation in Sec. \ref{sec-accPl}.}
+  \label{fig-costp_cor}
+\end{figure}
+
+%%
+The fitting function corresponding to the Equation (\ref{eq-costp}) can be written as
+\begin{equation}
+  f(x) = \frac{p_0}{2} (1+p_1x),
+  \label{eq-fitfunc}
+\end{equation}
+where the fitting parameter $p_0$ corresponds to the total counts of the corrected $\costp$ distribution and $p_1$ corresponds to $\alpha\PL$ in Equation (\ref{eq-costp}). $\PL$ can be measured by $p_1$ and $\alpha$ as
+\begin{align}
+  \PL &= \frac{p_1}{\alpha}, \label{eq-PL} \\
+  \errPL &= \PL \sqrt{ \left( \frac{\sigma(p_1)}{p_1} \right)^2 + \left( \frac{\sigma(\alpha)}{\alpha} \right)^2},
+\end{align}
+where $\sigma(p_1)$ is the fitting error. %obtained by the ROOT function of \say{GetParError} 
+Here, we adopted $\alpha=0.75$ and $\sigma(\alpha)=0.009$ referred by Ref. \cite{Alpha}. Figure \ref{fig-costp_fit_all} shows the corrected $\costp$ distribution with the fitting function (red solid line) in $\Kz$ scattering angular range of $0.6 - 1.0$ with an angular step of $d\costkz=0.05$. 
+
+%corrected costp (all)
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{costp_fit_all.eps}
+  \caption{The $\costp$ distribution corrected by the acceptance estimated by Geant4 simulation in Sec. \ref{sec-accPl}. The red solid line represents the fitting function: Equation (\ref{eq-fitfunc}).}
+  \label{fig-costp_fit_all}
+\end{figure}
+
+
+%カイ二乗検定の話
+%%%%
+\subsection{$\chisq$ test}
+
+As shown in Figure \ref{fig-costp_fit_all}, due to the low statistics of $\costp$ distribution, background structures appear especially in the $0.75<\costkz<0.95$ range. Such structures affect the fitting result. In this paper, we performed the $\chisq$ test to investigate the degree of freedom in which the fitting accuracy falls within the 90\% confidence interval to get better fitting accuracy. 
+
+In general, if $N$ independent variables $x_i$ are each normally distributed with mean $\mu_i$ and variance $\sigma_i^2$, then the quantity known as $\chi^2$ is defined by
+\begin{equation}
+  \chi^2 \equiv \frac{(x_1 - \mu_1)^2}{\sigma_1^2} + \frac{(x_2 - \mu_2)^2}{\sigma_2^2} + \dots + \frac{(x_N - \mu_N)^2}{\sigma_N^2} = \sum_{i=1}^N \frac{(x_i - \mu_i)^2}{\sigma_i^2}.
+\end{equation}
+When performing the $\chisq$ test for the corrected $\costp$ distributions, we re-defined that $x_i$ is the corrected $\costp$ counts ($N$), $\mu_i$ is the fitting result, and $\sigma_i$ is the error of corrected $\costp$ counts ($\sigma(N)$). 
+
+\textcolor{red}{ Among the degrees of freedom in which the fitting $\chisq$s are within the 90\% confidence interval, the largest one was defined as the \say{selected degree of freedom}. Since the number of fitting parameters is two in Equation (\ref{eq-fitfunc}), the degree of freedom ($N_{df}$) can be defined by the number of bins ($N_{bin}$) as 
+\begin{equation}
+  N_{df} = N_{bin} - 2.
+\end{equation} }
+
+\textcolor{red}{ The measured $\chisq$s are shown in Figure \ref{fig-chi2test}. Note that the horizontal axis is the number of bins used for fitting ($N_{bin}$). The red square point represents $\chisq$ in each degree of freedom, and the blue shaded band represents the 90\% confidence interval. The numerical values of the selected number of bins ($N_{bin}=N_{df}+2$) in each $\Kz$ scattering angular range are summarized in Table \ref{tab-selebin}. The systematic error was estimated by comparing the $\PL$ value obtained from fitting using selected data points with the $\PL$ value obtained when all data points were used.}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=15cm]{chi2test.eps}
+  \caption{$\chisq$ of the fitting in each degree of freedom (red square point). The blue-shaded band represents the 90\% confidence interval.}
+  \label{fig-chi2test}
+\end{figure}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{The Number of bins in each $\Kz$ scattering angular range selected by the $\chisq$ test (Figure \ref{fig-chi2}).}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{cc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costkz$ & Selected number of bins \\
+    \midrule\midrule
+    $0.6-0.65$ & 20 \\
+    \midrule
+    $0.65-0.7$ & 20 \\
+    \midrule
+    $0.7-0.75$ & 20 \\
+    \midrule
+    $0.75-0.8$ & 12 \\
+    \midrule
+    $0.8-0.85$ & 10 \\
+    \midrule
+    $0.85-0.90$ & 6 \\
+    \midrule
+    $0.90-0.95$ & 4 \\
+    \midrule
+    $0.95-1.0$ & 20 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-selebin}
+  \end{center}
+\end{table}
+  
+
+%%%
+% 2023/11/11 17:30
+%%%
+\clearpage
+%%%%%
+\subsection{Beam $\Lambda$ polarization in E40 data}
+
+Finally, we measured $\PL$ by Equation (\ref{eq-PL}), as shown in Figure \ref{fig-Pl}. 
+The blue points represent the $\PL$s measured by the fitting of $\costp$ in the E40 data with bins selected by the $\chisq$ test, the red points represent the $\PL$s measured by the fitting of $\costp$ in the E40 data with all bins, and the magenta points represent the $\PL$ measured in Ref. \cite{Baker}. The blue points only include statistical errors, and the red ones include both statistical and systematic errors. The numerical values included in this $\PL$ measurement are summarized in Table \ref{tab-Pl}.
+
+We demonstrated that the analysis method developed this time allows $\PL$ measurements to be made in smaller angular steps than in the past experiment. \textcolor{red}{ The average $\PL$ value obtained from fitting using all E40 data points was found to be $\sim0.911\pm0.057\pm0.004$ in the range of $0.6<\costkz<0.85$. } Therefore, we concluded that by selecting this specific $\costkz$ region, we could use a beam $\Lambda$ with high polarization, resulting in that $\Lp$ spin observable measurement is fully possible in J-PARC E86.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{Pl.eps}
+  \caption{The beam $\Lambda$ polarizations in the $\PiKL$ reaction. The blue points represent the $\PL$s measured by the fitting of $\costp$ in the E40 data with bins selected by the $\chisq$ test, the red points represent the $\PL$s measured by the fitting of $\costp$ in the E40 data with all bins, and the magenta points represent the $\PL$ measured in Ref. \cite{Baker}.}
+  \label{fig-Pl}
+\end{figure}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values included in the $\PL$ measurement}
+  %\centering
+    \begin{tabular}%{cccc}
+    {m{2cm} m{3cm} m{4cm} m{3cm}}
+    $\costkz$ & R.D. Baker $et\ al.$ & E40 (selected bins) & E40 (all bins) \\
+    \midrule\midrule
+    $0.5-0.6$ & $0.75\pm0.097$ & & \\
+    \midrule
+    $0.6-0.65$ $0.65-0.7$ & 1.01$\pm$0.081 & 0.838$\pm$0.085 0.861$\pm$0.069 & 0.838$\pm$0.085 0.861$\pm$0.069 \\
+    \midrule
+    $0.7-0.75$ $0.75-0.8$ & 0.99$\pm$0.081 & 1.069$\pm$0.055 0.961$\pm$0.044 & 1.069$\pm$0.055 0.946$\pm$0.044 \\
+    \midrule
+    $0.8-0.85$ $0.85-0.90$ & 0.90$\pm$0.089 & 0.831$\pm$0.037 0.738$\pm$0.041 & 0.839$\pm$0.035 0.751$\pm$0.035 \\
+    \midrule
+    $0.90-0.95$ $0.95-1.0$ & & 0.549$\pm$0.045 0.224$\pm$0.070 & 0.574$\pm$0.041 0.224$\pm$0.070 \\
+    \label{tab-Pl}
+    \end{tabular}
+  \end{center}
+\end{table}
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%\include{end}
