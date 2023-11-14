@@ -1,0 +1,295 @@
+%\setlength{\topmargin}{10mm}
+%\addtolength{\topmargin}{-1in}
+%\setlength{\oddsidemargin}{27mm}
+%\addtolength{\oddsidemargin}{-1in}
+%\setlength{\evensidemargin}{20mm}
+%\addtolength{\evensidemargin}{-1in}
+%\setlength{\textwidth}{160mm}
+%\setlength{\textheight}{250mm}
+%\setlength{\evensidemargin}{\oddsidemargin}
+
+%\usepackage{ascmac}
+
+\usepackage{color}
+\usepackage{textcomp}
+%\usepackage[dviout]{graphicx}
+%\usepackage[dvipdfm]{graphicx,color}
+\usepackage{wrapfig}
+\usepackage{ccaption}
+\usepackage{color}
+%\usepackage{jumoline} %%行にまたがって下線を引ける、ダウンロードの必要有
+\usepackage{umoline}
+\usepackage{fancybox}
+\usepackage{pifont}
+\usepackage{indentfirst} %%最初の段落も字下げしてくれる
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{makeidx}
+\usepackage{accents}
+%\usepackage{slashbox} %%ダウンロードの必要有
+
+\usepackage[dvipdfmx]{hyperref} %%pdfにリンクを貼る
+\usepackage{pxjahyper}
+
+\usepackage[flushleft]{threeparttable}
+\usepackage{array,booktabs,makecell}
+
+\usepackage{geometry}
+\geometry{left=30mm,right=30mm,top=50mm,bottom=5mm}
+
+\usepackage[super]{nth} %1st, 2nd ...を出力
+\usepackage{dirtytalk} %クォーテーションマーク
+\usepackage{amsmath} %行列が書ける
+\usepackage{tikz} %\UTF{2460}などが書ける
+\usepackage{cite} %複数の引用ができる
+
+%\graphicspath{{./pictures/}}
+
+%\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.55in}
+
+\renewcommand{\baselinestretch}{1} %% 行間
+
+%\setcounter{tocdepth}{5}  %% 目次section depth
+\setcounter{secnumdepth}{5}
+%\renewcommand{\bibname}{参考文献}
+
+%%%%%%%%% accent.sty 設定 %%%%%%%%%
+\makeatletter
+  \def\widebar{\accentset{{\cc@style\underline{\mskip10mu}}}}
+\makeatother
+
+%%%%%%%%%  chapter 設定 %%%%%%%%%%%
+%\makeatletter
+%\def\@makechapterhead#1{%
+%  \vspace*{1\Cvs}% 欧文は50pt 章上部の空白
+%  {\parindent \z@ \raggedright \normalfont
+%    \ifnum \c@secnumdepth >\m@ne
+%      \if@mainmatter
+%        \huge\headfont \@chapapp\thechapter\@chappos
+%       \par\nobreak
+%       \vskip \Cvs % 欧文は20pt
+%         \hskip1zw
+%      \fi
+%    \fi
+%    \interlinepenalty\@M
+%    \centering \huge \headfont #1\par\nobreak
+%    \vskip 3\Cvs}} % 欧文は40pt 章下部の空白
+%\makeatother
+
+%%%%%%%%%  chapter* 設定 %%%%%%%%%%%
+
+
+
+%%%%%%%%%  chapter* 設定 %%%%%%%%%%%
+
+%\makeatletter
+%\def\@makeschapterhead#1{%
+%  \vspace*{1\Cvs}
+%  {\parindent \z@ \raggedright
+%    \normalfont
+%    \interlinepenalty\@M
+%    \centering \huge \headfont #1\par\nobreak
+%    \vskip 3\Cvs}}
+%\makeatother
+
+%%%%%%%%%  section 設定 %%%%%%%%%%%
+\makeatletter
+\renewcommand{\section}{%
+  \@startsection{section}%
+   {1}%
+   {\z@}%
+   {-3.5ex \@plus -1ex \@minus -.2ex}%
+   {2.3ex \@plus.2ex}%
+   {\normalfont\Large\bfseries}%
+}%
+\makeatother
+
+%%%%%%%%%  subsection 設定 %%%%%%%%%%%
+\makeatletter
+\renewcommand{\subsection}{%
+  \@startsection{subsection}%
+   {2}%
+   {\z@}%
+   {-3.5ex \@plus -1ex \@minus -.2ex}%
+   {2.3ex \@plus.2ex}%
+   {\normalfont\large\bfseries}%
+}%
+\makeatother
+
+%%%%%%%%%  subsubsection 設定 %%%%%%%%%%%
+\makeatletter
+\renewcommand{\subsubsection}{%
+  \@startsection{subsubsection}%
+   {3}%
+   {\z@}%
+   {-3.5ex \@plus -1ex \@minus -.2ex}%
+   {2.3ex \@plus.2ex}%
+   %{\normalfont\normalsize\bfseries$\blacksquare$}%
+   {\normalfont\normalsize\bfseries}%
+}%
+\makeatother
+
+%%%%%%%%%  paragraph 設定 %%%%%%%%%%%
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}%
+   {4}%
+   {\z@}%
+   {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}
+   {-1zw}
+   {\normalfont\normalsize\bfseries $\blacklozenge$\ }%
+  % {\normalfont\normalsize\bfseries $\Diamond$\ }%
+}%
+\makeatother
+
+%%%%%%%%%  subparagraph 設定 %%%%%%%%%%%
+\makeatletter
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}%
+   {4}%
+   {\z@}%
+   {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}
+   {-1zw}
+   {\normalfont\normalsize\bfseries $\Diamond$\ }%
+}%
+\makeatother
+
+%%%%%%%%% caption 設定 %%%%%%%%%%%%
+\makeatletter
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+\newcommand{\msolar}{M_\odot}
+
+\newcommand{\anapow}{A_{y}(\theta)}
+\newcommand{\depo}{D^{y}_{y}(\theta)}
+
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
+\newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+\newcommand{\hfl}{{}_\Lambda^4\rm{H}}
+\newcommand{\htl}{{}_\Lambda^3\rm{H}}
+\newcommand{\hefl}{{}_\Lambda^4\rm{He}}
+\newcommand{\hefil}{{}_\Lambda^5\rm{He}}
+\newcommand{\lisl}{{}_\Lambda^7\rm{Li}}
+\newcommand{\benl}{{}_\Lambda^9\rm{Be}}
+\newcommand{\btl}{{}_\Lambda^{10}\rm{B}}
+\newcommand{\bel}{{}_\Lambda^{11}\rm{B}}
+
+\newcommand{\nfl}{{}_\Lambda^{15}\rm{N}}
+\newcommand{\osl}{{}_\Lambda^{16}\rm{O}}
+\newcommand{\ctl}{{}_\Lambda^{13}\rm{C}}
+\newcommand{\pbtl}{{}_\Lambda^{208}\rm{Pb}}
+
+\def\vector#1{\mbox{\boldmath$#1$}}
+\newcommand{\Kpi}{(K^-,\pi^-)}
+\newcommand{\piKz}{(\pi^-,K^0)}
+\newcommand{\pPK}{(\pi^+,K^+)}
+\newcommand{\pMK}{(\pi^-,K^+)}
+\newcommand{\pPMK}{(\pi^{\pm},K^+)}
+
+\newcommand{\eeK}{(e,e' K^+)}
+\newcommand{\gK}{(\gamma + p \to \Lambda + K^+)}
+\newcommand{\PiKL}{\pi^-  p \to K^0 \Lambda}
+\newcommand{\multipi}{\pi^-  p \to \pi^-\pi^-\pi^+p}
+\newcommand{\PiKX}{\pi^-  p \to K^0 X}
+\newcommand{\PiKSM}{\pi^-  p \to K^+ \Sigma^-}
+\newcommand{\pipKS}{\pi^{\pm}p \to K^+ \Sigma^{\pm}}
+\newcommand{\pipKX}{\pi^{\pm}p \to K^+ X}
+\newcommand{\pipLn}{\pi^- p \to \Lambda n}
+\newcommand{\PiKS}{\pi^{-}p \to K^{0}\Sigma^{0}}
+
+\newcommand{\kzdecay}{K^0 \to \pi^+ \pi^-}
+\newcommand{\kzsd}{K^0_s \to \pi^+ \pi^-\ \rm{or}\ \pi^0 \pi^0}
+\newcommand{\Ldecay}{\Lambda\to p\pM}
+\newcommand{\scatldecay}{\Lambda'\to p\pM}
+
+
+
+
+\newcommand{\triton}{{}^3\rm{H}}
+
+\newcommand{\BB}{B_{8}B_{8}}
+\newcommand{\SM}{\Sigma^{-}}
+\newcommand{\SP}{\Sigma^{+}}
+\newcommand{\Sz}{\Sigma^{0}}
+\newcommand{\SMp}{\Sigma^{-}p}
+\newcommand{\SMn}{\Sigma^{-}n}
+\newcommand{\SPp}{\Sigma^{+}p}
+\newcommand{\SPn}{\Sigma^{+}n}
+\newcommand{\Sp}{\Sigma p}
+\newcommand{\SPMp}{\Sigma^{\pm}p}
+\newcommand{\SPM}{\Sigma^{\pm}}
+\newcommand{\SPdecay}{\Sigma^+ \to \pi^0 p}
+\newcommand{\SMdecay}{\Sigma^- \to \pi^- n}
+\newcommand{\SMpLn}{\Sigma^- p \to \Lambda n}
+
+\newcommand{\XM}{\Xi^{-}}
+\newcommand{\Xz}{\Xi^{0}}
+
+\newcommand{\pM}{\pi^{-}}
+\newcommand{\pP}{\pi^{+}}
+\newcommand{\pZ}{\pi^{0}}
+\newcommand{\pPM}{\pi^{\pm}}
+\newcommand{\KP}{K^{+}}
+\newcommand{\KM}{K^{-}}
+\newcommand{\Kz}{K^{0}}
+\newcommand{\Lp}{\Lambda p}
+\newcommand{\LpLX}{\Lambda p \to \Lambda X}
+
+\newcommand{\LN}{\Lambda N}
+\newcommand{\SN}{\Sigma N}
+\newcommand{\LNtoSN}{\Lambda N\to\Sigma N}
+\newcommand{\LS}{\Lambda - \Sigma}
+
+%\newcommand{\dp}{\Delta p}
+%\newcommand{\dE}{\Delta E}
+
+\newcommand{\dcs}{d\sigma/d\Omega}
+\newcommand{\fdcs}{\frac{d\sigma}{d\Omega}}
+\newcommand{\dz}{\Delta z}
+\newcommand{\dzkz}{\Delta z_{K^{0}}}
+
+
+\newcommand{\bgct}{\beta\gamma c\tau}
+
+\newcommand{\costp}{\cos{\theta_p}}
+\newcommand{\costkz}{\cos{\theta_{K0,CM}}}
+\newcommand{\costcm}{\cos{\theta}_{CM}}
+\newcommand{\PL}{P_{\Lambda}}
+\newcommand{\PLall}{P_{\Lambda,\ all}}
+\newcommand{\PLsele}{P_{\Lambda,\ selected}}
+\newcommand{\errPL}{\sigma(P_{\Lambda})}
+
+\newcommand{\rud}{r_{ud}}
+\newcommand{\errrud}{\sigma(\rud)}
+
+\newcommand{\accPL}{\epsilon_{\PL}}
+\newcommand{\erraccPL}{\sigma(\epsilon_{\PL})}
+
+\newcommand{\PLscat}{P_{\Lambda'}}
+\newcommand{\effPLw}{\epsilon_{\PL,\ w/}}
+\newcommand{\erreffPLw}{\sigma(\epsilon_{\PL,\ w/})}
+\newcommand{\effPLwo}{\epsilon_{\PL,\ w/o}}
+\newcommand{\erreffPLwo}{\sigma(\epsilon_{\PL,\ w/o})}
+
+\newcommand{\chisq}{\chi^{2}}
+
+\newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+
+\makeatother
+
+\begin{document}
