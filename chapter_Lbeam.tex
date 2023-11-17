@@ -327,14 +327,59 @@ The beam $\Lambda$ produced by the $\PiKL$ reaction was identified by calculatin
 %%%%
 \subsection{Event selection for $\Kz$ production}
 \label{sec-Lbeam-EVselect}
-In the previous section, we reconstructed the \say{temporary $\Kz$} using the two $\pi$s detected by KURAMA and CATCH, respectively. To ensure that this particle was indeed a $\Kz$ produced by the $\PiKL$ reaction, two cuts were used for event screening: (1) Opening angle between two $\pi$s (2) Distance of closest approach between $\pM$ beam and $\Kz$ tracks. Note that this event screening was applied in detection case \rom{1} and \rom{2}, respectively. Detection case \rom{1} requires that the detected particles of CATCH be two protons and one or two $\pi$s. Detection case \rom{2} requires that the detected particle of CATCH be one proton and two $\pi$s. 
+In the previous section, we reconstructed the \say{temporary $\Kz$} using the two $\pi$s detected by KURAMA and CATCH, respectively. To ensure that this particle was indeed a $\Kz$ produced by the $\PiKL$ reaction, two cuts were used for event screening: (1) Opening angle between two $\pi$s (2) Distance of closest approach between $\pM$ beam and $\Kz$ tracks. 
+
+\textcolor{red}{ In this paper, we analyzed two detection cases of CATCH: case \rom{1} for beam $\Lambda$ polarization measurement and case \rom{2} for $\Lp$ scattering identification independently. Detection case \rom{1} requires that CATCH detects $pM$ of $\kzdecay$ decay and decay products of $\Ldecay$ decay. Detection case \rom{2} requires that CATCH detects $pM$ of $\kzdecay$ decay, recoil proton, and decay products of $\scatldecay$ decay. Therefore, the event screening to identify $\Kz$ production above was applied in each detection case, respectively. }
+
+
+
 
 %%%
 \subsubsection{Opening angle between two $\pi$s}
 %\textcolor{red}{K0選択カットについては、ケース毎にも記載するからここに説明書くべきか？要検討。}
-In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s derived from the $\Kz$ decay should be under $90^{\circ}$ according to the Monte Carlo simulation as shown in Figure \ref{fig-thetapipi_sim1} (for case \rom{1}) and Figure \ref{fig-thetapipi_sim2} (for case \rom{2}). If the main background reaction, multiple $\pi$ production, occurs, it would distribute wider. Therefore, the cut was chosen at $90^{\circ}$ as represented by the red solid lines in Figure \ref{fig-thetapipi_1} (case \rom{1}) and Figure \ref{fig-thetapipi_2} (case \rom{2}). 
+In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s derived from the $\Kz$ decay should be under $90^{\circ}$ according to the Monte Carlo simulation as shown in Figure \ref{fig-thetapipi_1p1pi_sim} (case \rom{1}) and Figure \ref{fig-thetapipi_2p_sim} (case \rom{2}). \textcolor{red}{ If the main background reaction, multiple $\pi$ production, occurs, it would distribute wider. To remove such contamination, the cut was chosen at $90^{\circ}$ as represented by the red solid lines in Figure \ref{fig-thetapipi_1p1pi} (case \rom{1}) and Figure \ref{fig-thetapipi_2p} (case \rom{2}). }
+
+\begin{comment}
 
 %theta(pipi) sim
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[clip,width=12cm]{thetapipi_1p1pi_sim.eps}
+    \caption{Opening angle between $\pP$ and $\pM$ of the $\kzdecay$ decay in case \rom{1}, taken in simulation data.}
+    \label{fig-thetapipi_1p1pi_sim}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[clip,width=12cm]{thetapipi_2p_sim.eps}
+    \caption{Opening angle between $\pP$ and $\pM$ of the $\kzdecay$ decay in case \rom{2}, taken in simulation data.}
+    \label{fig-thetapipi_2p_sim}
+  \end{center}
+\end{figure}
+
+%theta(pipi) e40
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[clip,width=12cm]{thetapipi_1p1pi.eps}
+    \caption{Opening angle between $\pP$ and $\pM$ of the $\kzdecay$ decay in case \rom{1}, taken in E40 data.}
+    \label{fig-thetapipi_1p1pi}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[clip,width=12cm]{thetapipi_2p.eps}
+    \caption{Opening angle between $\pP$ and $\pM$ of the $\kzdecay$ decay in case \rom{2}, taken in E40 data.}
+    \label{fig-thetapipi_2p}
+  \end{center}
+\end{figure}
+\end{comment}
+
+
+%minipageはなしかも
+\begin{comment}
+
 \begin{figure}[!h]
   \begin{minipage}[t]{0.48\columnwidth}
     \centering
@@ -350,6 +395,8 @@ In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s derived from t
     \label{fig-thetapipi_sim2}
   \end{minipage}
 \end{figure}
+
+\end{comment}
 
 %theta(pipi) e40
 \begin{figure}[!h]
@@ -368,11 +415,16 @@ In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s derived from t
   \end{minipage}
 \end{figure}
 
+
+
 %%%
 \subsubsection{Distance of closest approach of $\pM$ beam and $\Kz$ tracks}
-Sometimes, the $\Kz$ reconstruction method mistakenly connects the wrong combination of $\pP$ and $\pM$ as the decay product from the $\kzdecay$ decay. For case \rom{1}, when the CATCH system mistakenly selects the $\pM$ derived from the $\scatldecay$ decay as derived from the $\kzdecay$ decay, as shown in Figure \ref{fig-mistake_c1}. For case \rom{2}, when the CATCH system mistakenly selects the $\pM$ derived from the $\Ldecay$ decay as derived from the $\kzdecay$ decay, as shown in Figure \ref{fig-mistake_c2}. That results in the wrong $\Kz$ being reconstructed and its track would be placed apart from the $\pM$ beam track. 
+\textcolor{red}{ The $\Kz$ reconstruction method sometimes regards the wrong combination of $\pP$ and $\pM$ as the decay products of $\kzdecay$ decay. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\Ldecay$ decay as the one of $\kzdecay$ decay, as shown in Figure \ref{fig-mistake_c2}. That results in the wrong $\Kz$ being reconstructed and its track would be placed apart from the $\pM$ beam track. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\scatldecay$ decay as the one of $\kzdecay$ decay, as shown in Figure \ref{fig-mistake_c1}. 
+To ensure the $\Kz$ reconstruction was correctly performed, we checked the closest distance between the $\pM$ beam and $\Kz$ tracks. The simulation indicates that it would distribute under 20 mm in case \rom{1} and case \rom{2}, as shown in Figure \ref{fig-cdistk0_1p1pi_sim} and Figure \ref{fig-cdistk0_2p_sim}. Therefore, the cut was chosen at the same value for E40 data analysis, as shown in Figure \ref{fig-cdistk0_1p1pi} and Figure \ref{fig-cdistk0_2p}. }
 
-To ensure the $\Kz$ reconstruction was correctly performed, rejecting such mistakenly reconstructed $\Kz$, we checked the distance of the closest approach (DOCA) between $\pM$ beam and $\Kz$ tracks. The Monte Carlo simulation indicates that it would distribute under 20 mm in case \rom{1} and case \rom{2}, as shown in Figure \ref{fig-cdistk0_sim1} and Figure \ref{fig-cdistk0_sim2}. Therefore, the cut was chosen at the same value for E40 data, as shown in Figure \ref{fig-cdistk0_1} and Figure \ref{fig-cdistk0_2}.
+%%%%%%%%
+% 2023/11/17 18:12
+%%%%%%%%
 
 %DOCA (pi & K0) sim
 \begin{figure}[!h]
