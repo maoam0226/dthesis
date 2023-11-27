@@ -1,0 +1,300 @@
+%\documentclass[a4paper,12pt,twoside,openany]{jsarticle}
+\documentclass[a4paper,11pt,twoside,twocolumn]{article}
+%\documentclass[a4paper,10.5pt]{jsarticle}
+
+
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage[super]{nth} %1st, 2nd ...を出力
+\usepackage{ascmac}
+\usepackage{comment}
+\usepackage{dirtytalk} %クォーテーションマーク
+%
+%\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+%
+\oddsidemargin -5.4mm
+\evensidemargin -5.4mm 
+\textwidth 160mm
+\topmargin -5.4mm 
+\headheight 0pt 
+\headsep 0pt 
+\textheight 237mm
+%
+\columnsep 5mm
+%
+
+
+\begin{comment}
+
+\usepackage{ascmac}
+\usepackage{textcomp}
+%\usepackage[dviout]{graphicx}
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage{wrapfig}
+\usepackage{ccaption}
+\usepackage{color}
+%\usepackage{jumoline}
+\usepackage{umoline}
+\usepackage{fancybox}
+\usepackage{pifont}
+
+\usepackage{float}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{makeidx}
+\usepackage{accents}
+%\usepackage{slashbox}
+
+
+\pagestyle{empty}
+%\setlength{\textwidth}{\fullwidth}
+\setlength{\textwidth}{156mm}
+\setlength{\textheight}{42\baselineskip}
+%\setlength{\textheight}{45\baselineskip}
+
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.75in}
+
+\setlength{\oddsidemargin}{27mm}
+\addtolength{\oddsidemargin}{-1.2in}
+\setlength{\evensidemargin}{20mm}
+\addtolength{\evensidemargin}{-1in}
+
+\renewcommand{\baselinestretch}{0.8} %% 行間
+%\renewcommand{\bibname}{参考文献}
+
+\end{comment}
+
+\graphicspath{{./pictures/youshi/}}
+\begin{document}
+
+%\setlength{\abovedisplayskip}{3pt} % 上部のマージン
+%\setlength{\belowdisplayskip}{2pt} % 下部のマージン
+
+
+\abovecaptionskip=-3pt
+\belowcaptionskip=-10pt
+
+\makeatletter
+
+\newcommand{\msolar}{M_\odot}
+
+\newcommand{\anapow}{A_{y}(\theta)}
+\newcommand{\depo}{D^{y}_{y}(\theta)}
+
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
+\newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+\newcommand{\hfl}{{}_\Lambda^4\rm{H}}
+\newcommand{\htl}{{}_\Lambda^3\rm{H}}
+\newcommand{\hefl}{{}_\Lambda^4\rm{He}}
+\newcommand{\hefil}{{}_\Lambda^5\rm{He}}
+\newcommand{\lisl}{{}_\Lambda^7\rm{Li}}
+\newcommand{\benl}{{}_\Lambda^9\rm{Be}}
+\newcommand{\btl}{{}_\Lambda^{10}\rm{B}}
+\newcommand{\bel}{{}_\Lambda^{11}\rm{B}}
+
+\newcommand{\nfl}{{}_\Lambda^{15}\rm{N}}
+\newcommand{\osl}{{}_\Lambda^{16}\rm{O}}
+\newcommand{\ctl}{{}_\Lambda^{13}\rm{C}}
+\newcommand{\pbtl}{{}_\Lambda^{208}\rm{Pb}}
+
+\def\vector#1{\mbox{\boldmath$#1$}}
+\newcommand{\Kpi}{(K^-,\pi^-)}
+\newcommand{\piKz}{(\pi^-,K^0)}
+\newcommand{\pPK}{(\pi^+,K^+)}
+\newcommand{\pMK}{(\pi^-,K^+)}
+\newcommand{\pPMK}{(\pi^{\pm},K^+)}
+
+\newcommand{\eeK}{(e,e' K^+)}
+\newcommand{\gK}{(\gamma + p \to \Lambda + K^+)}
+\newcommand{\PiKL}{\pi^-  p \to K^0 \Lambda}
+\newcommand{\multipi}{\pi^-  p \to \pi^-\pi^-\pi^+p}
+\newcommand{\PiKX}{\pi^-  p \to K^0 X}
+\newcommand{\PiKSM}{\pi^-  p \to K^+ \Sigma^-}
+\newcommand{\pipKS}{\pi^{\pm}p \to K^+ \Sigma^{\pm}}
+\newcommand{\pipKX}{\pi^{\pm}p \to K^+ X}
+\newcommand{\pipLn}{\pi^- p \to \Lambda n}
+\newcommand{\PiKS}{\pi^{-}p \to K^{0}\Sigma^{0}}
+
+\newcommand{\kzdecay}{K^0 \to \pi^+ \pi^-}
+\newcommand{\kzsd}{K^0_s \to \pi^+ \pi^-\ \rm{or}\ \pi^0 \pi^0}
+\newcommand{\Ldecay}{\Lambda\to p\pM}
+\newcommand{\scatldecay}{\Lambda'\to p\pM}
+
+
+
+
+\newcommand{\triton}{{}^3\rm{H}}
+
+\newcommand{\BB}{B_{8}B_{8}}
+\newcommand{\SM}{\Sigma^{-}}
+\newcommand{\SP}{\Sigma^{+}}
+\newcommand{\Sz}{\Sigma^{0}}
+\newcommand{\SMp}{\Sigma^{-}p}
+\newcommand{\SMn}{\Sigma^{-}n}
+\newcommand{\SPp}{\Sigma^{+}p}
+\newcommand{\SPn}{\Sigma^{+}n}
+\newcommand{\Sp}{\Sigma p}
+\newcommand{\SPMp}{\Sigma^{\pm}p}
+\newcommand{\SPM}{\Sigma^{\pm}}
+\newcommand{\SPdecay}{\Sigma^+ \to \pi^0 p}
+\newcommand{\SMdecay}{\Sigma^- \to \pi^- n}
+\newcommand{\SMpLn}{\Sigma^- p \to \Lambda n}
+
+\newcommand{\XM}{\Xi^{-}}
+\newcommand{\Xz}{\Xi^{0}}
+
+\newcommand{\pM}{\pi^{-}}
+\newcommand{\pP}{\pi^{+}}
+\newcommand{\pZ}{\pi^{0}}
+\newcommand{\pPM}{\pi^{\pm}}
+\newcommand{\KP}{K^{+}}
+\newcommand{\KM}{K^{-}}
+\newcommand{\Kz}{K^{0}}
+\newcommand{\Lp}{\Lambda p}
+\newcommand{\LpLX}{\Lambda p \to \Lambda X}
+
+\newcommand{\LN}{\Lambda N}
+\newcommand{\SN}{\Sigma N}
+\newcommand{\LNtoSN}{\Lambda N\to\Sigma N}
+\newcommand{\LS}{\Lambda - \Sigma}
+
+%\newcommand{\dp}{\Delta p}
+%\newcommand{\dE}{\Delta E}
+
+\newcommand{\dcs}{d\sigma/d\Omega}
+\newcommand{\fdcs}{\frac{d\sigma}{d\Omega}}
+\newcommand{\dz}{\Delta z}
+\newcommand{\dzkz}{\Delta z_{K^{0}}}
+
+
+\newcommand{\bgct}{\beta\gamma c\tau}
+
+\newcommand{\costp}{\cos{\theta_p}}
+\newcommand{\costkz}{\cos{\theta_{K0,CM}}}
+\newcommand{\costcm}{\cos{\theta}_{CM}}
+\newcommand{\PL}{P_{\Lambda}}
+\newcommand{\PLall}{P_{\Lambda,\ all}}
+\newcommand{\PLsele}{P_{\Lambda,\ selected}}
+\newcommand{\errPL}{\sigma(P_{\Lambda})}
+
+\newcommand{\rud}{r_{ud}}
+\newcommand{\errrud}{\sigma(\rud)}
+
+\newcommand{\accPL}{\epsilon_{\PL}}
+\newcommand{\erraccPL}{\sigma(\epsilon_{\PL})}
+
+\newcommand{\PLscat}{P_{\Lambda'}}
+\newcommand{\effPLw}{\epsilon_{\PL,\ w/}}
+\newcommand{\erreffPLw}{\sigma(\epsilon_{\PL,\ w/})}
+\newcommand{\effPLwo}{\epsilon_{\PL,\ w/o}}
+\newcommand{\erreffPLwo}{\sigma(\epsilon_{\PL,\ w/o})}
+
+\newcommand{\chisq}{\chi^{2}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%\renewcommand{\refname}{}
+\vspace{-50pt}
+\title{{\small 令和5年度 博士論文要旨} \\ %J-PARCにおける次世代$\Lp$散乱実験に向けたビーム$\Lambda$偏極度の測定\\ 
+Measurement of the beam $\Lambda$ polarization for the next $\Lp$ scattering experiment at J-PARC}
+\author{東北大学大学院理学研究科　物理学専攻　原子核物理研究室\\ 坂尾　珠和}
+%\date{}
+\maketitle
+
+%%%%%
+\section{Introduction}
+\label{sec-intro}
+
+The study focuses on the $\BB$ interaction involving octet baryons with $s$ quarks, aiming to understand nuclear forces and flavor SU(3) multiplets. Theoretical predictions suggest repulsiveness in ${\bf(8)_s}$ and ${\bf(10)}$ terms due to the Pauli effect at the quark level. The J-PARC E40 experiment measured $\SPp$ ($\SN (I=3/2)$) and $\SMp$ ($\SN (I=1/2)$) cross-sections, with the upcoming J-PARC E86 experiment aiming to measure spin observables and differential cross-section of $\Lp$ scattering. 
+
+As the basic research for J-PARC E86, this paper performed the beam $\Lambda$ polarization ($\PL$) measurement and the $\Lp$ scattering identification using the $\PiKL$ reaction data accumulated in J-PARC E40. In the $\PL$ measurement, we address the necessity of a highly polarized $\Lambda$ beam for $\Lp$ spin observable measurement. Ref. \cite{Baker} reported almost 100\% polarization of $\Lambda$ in the forward $\Kz$ scattering angular range at $E_{CM}=1847$ MeV (same as J-PARC E40), as depicted in Figure \ref{fig-Baker1847}, but uncertainty existed due to small statistics. Therefore, this paper verified the result of Ref. \cite{Baker} and established a polarization analysis method by measuring $\PL$ using the E40 data. In the $\Lp$ scattering identification, we developed a kinematical consistency analysis, which checks whether the tagged $\Lambda$ was derived from the $\PiKL$ reaction or not. The main backgrounds, such as multiple $\pi$ production, $pp$ elastic scattering, and $\Ldecay$ decay, were rejected by optimized cuts and S/N was estimated by Geant4 simulation. 
+
+%Systematic studies of the baryon-baryon interaction between octet baryons containing $s$ quarks ($\BB$ interaction) are important to understand the nuclear forces that shape matters in the world. Studying $\BB$ interactions is equivalent to investigating the properties of flavor SU(3) multiplets. Among them, ${\bf(8)_s}$ and ${\bf(10)}$ terms are predicted by QCM to be quite repulsive due to the Pauli effect at the quark level. Since the $\BB$ interaction can be represented by a combination of linear couplings in six irreducible representations, studying the structure of each term could reveal the origin of the repulsion of the nuclear force. 
+%Recently, the J-PARC E40 experiment measured the $\SPp$ ($\SN (I=3/2)$) and $\SMp$ ($\SN (I=1/2)$) differential cross-sections. Following them, a next-generation $\Lambda p$ scattering experiment, J-PARC E86, will be performed in the K1.1 beamline at J-PARC soon. It aims to measure not only differential cross-section but also spin observables such as analyzing power and depolarization in the beam momentum range of $0.4-0.8$ GeV/$c$. $\Lp$ spin observable measurement requires a highly polarized beam $\Lambda$, and its value must be measured. Ref. \cite{Baker} have reported that $\Lambda$ of the $\PiKL$ reaction is almost 100\% polarized in the forward $\Kz$ scattering angle range in the energy range of $E_{CM}=1847$ MeV (same as J-PARC E40), as shown in Figure \ref{fig-Baker1847}. However, it was uncertain since its statistics were small. In this paper, to verify the past result and establish the polarization analysis method, we tried to measure the $\Lambda$ polarization using  $\PiKL$ reaction data obtained by the J-PARC E40 experiment (in $\SM$ production). Also, $\Lp$ scattering identification was performed using the same data.
+
+%Baker  ECM=1847 MeV
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=5cm]{Baker1847.png}
+  \caption{Beam $\Lambda$ polarization in the $\PiKL$ reaction in the energy range of $E_{CM}=1847$ MeV (same as J-PARC E40) \cite{Baker}.}
+  \label{fig-Baker1847}
+\end{figure}
+%%%%%
+\section{Beam $\Lambda$ identification}
+\label{sec-LbeamID}
+
+$\Kz$ was reconstructed using $\pM$ and $\pP$ vectors detected by a cylindrical detector cluster (CATCH) and a forward magnetic spectrometer (KURAMA), respectively. Then, $\Lambda$ was tagged as missing momentum of $\PiKX$ reaction. The $\Lambda$ beam polarization measurement required CATCH to detect decay products of $\Ldecay$ decay (case \rom{1}). The $\Lp$ scattering events were identification required CATCH to detect recoil proton and decay products of $\scatldecay$ decay (case \rom{2}).
+
+%The missing mass in case \rom{1} and case \rom{2} are shown in Figure \ref{fig-mm0_1p1pi}, and Figure \ref{fig-mm0_2p}. 
+Each missing mass in case \rom{1} and case \rom{2} was fitted with a function that combines two Gaussians and a \nth{3}-order polynomial, as represented by the red solid lines. The $\Lambda$ region was defined as the range of $1.0707 - 1.1626$ GeV/$c^{2}$. The yields of $\Lambda$ peak in case \rom{1} and case \rom{2} were $6.976\times10^{4}$ (S/N$=1.523$), and $2.721\times10^{3}$ (S/N$=1.471$).
+
+%%%%%
+\section{Analysis \rom{1}: Beam $\Lambda$ polarization measurement}
+\label{sec-Pl}
+
+In case \rom{1}, $\PL$ can be obtained by fitting the emission angle distribution ($\costp$) of decay protons of $\Ldecay$ decay using the following equation.
+\begin{equation}
+  \frac{dN}{d\costp} = \frac{N_0}{2}(1+\alpha\PL\costp), 
+  \label{eq-costp}
+\end{equation}
+where $N$ is the yield of each bin, and $N_0$ represents the total yield of $\costp$. We measured $\PL$ in the $\Kz$ scattering angular range of $0.6<\costkz<1.0$ with an angular step of $d\costkz = 0.05$. To get a better $\chisq$ of the fitting, we investigated the best degree of freedom in each $\costkz$ range. Figure \ref{fig-Pl} shows the results of the E40 data with a selected degree of freedom (red points), the results of the E40 data with a full degree of freedom (blue points), and results in Ref. \cite{Baker} (green points). 
+
+The average $\PL$ value obtained with a selected degree of freedom was $\sim0.917\pm0.059\pm0.003$ in the $\costkz$ range of $0.6 - 0.85$. Therefore, we concluded that by selecting this specific $\costkz$ region, we could use a beam $\Lambda$ with high polarization, resulting in that $\Lp$ spin observable measurement is fully possible in J-PARC E86.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm]{Pl.eps}
+  \caption{Beam $\Lambda$ polarizations in the $\PiKL$ reaction.}
+  \label{fig-Pl}
+\end{figure}
+
+
+%%%%%
+\section{Analysis \rom{2}: $\Lp$ scattering identification}
+\label{sec-Lp_2p}
+
+In detection case \rom{2}, $\Lp$ scattering can be identified by kinematical consistency analysis called \say{$\Delta E-\Delta p$} method. Here, the kinetic energy of the recoil proton and momentum of scattered $\Lambda$ ($\Lambda'$) were kinematically calculated under the $\Lp$ scattering kinematics assumption. The contamination of backgrounds ($pp$ elastic scattering and $\Ldecay$ decay) was estimated by Geant4 simulation. 
+
+As a result, the yield of $\Lp$ scattering events was expected at most 14 with the S/N estimated by the simulation was 17.979. Therefore, we can say it is possible to identify $\Lp$ scattering events with a high S/N using the analysis method developed in this paper, although it is expected that there are still unknown background events that the simulation cannot predict. When we obtain high statistics in J-PARC E86, we can rigorously estimate the background structure and yield of $\Lp$ scatterings. 
+
+%%%%%
+\section{Summary}
+\label{sec-summary}
+
+As the basic research for J-PARC E86, the $\PL$ measurement, and the $\Lp$ scattering identification were performed using the $\PiKL$ reaction data accumulated in J-PARC E40. %$\Kz$ was reconstructed by $\pM$ and $\pP$ detected by CATCH and KURAMA, respectively. Then, $\Lambda$ was tagged by the missing mass of the $\PiKX$ reaction. 
+In the detection case \rom{1} where CATCH detects decay products of $\Ldecay$ decay, $\Lambda$ yield was $6.976\times10^{4}$ with S/N$=1.523$. In the detection case \rom{2} where CATCH detects the recoil proton and decay products of $\scatldecay$ decay, $\Lambda$ yield was $2.721\times10^{3}$ with S/N$=1.471$. 
+
+%The beam $\Lambda$ polarization ($\PL$) was obtained by fitting the emission angle distribution ($\costp$) of decay protons of $\Ldecay$ decay using Equation (\ref{eq-costp}) in case \rom{1}. As a result, the average $\PL$ value measured in E40 data was $\sim0.917\pm0.059\pm0.003$ in the $\costkz$ range of $0.6 - 0.85$. Therefore, we concluded that by selecting this specific $\costkz$ region, we could use a beam $\Lambda$ with high polarization, resulting in that $\Lp$ spin observable measurement is fully possible in J-PARC E86.
+The averaged $\PL$ value in case \rom{1} was $\sim0.917\pm0.059\pm0.003$ in the $\costkz$ range of $0.6 - 0.85$. Therefore, we concluded that by selecting this specific $\costkz$ region, $\Lp$ spin observable measurement would be possible in J-PARC E86.
+
+%The $\Lp$ scattering can be identified by kinematical consistency analysis (\say{$\Delta E-\Delta p$} method) in case \rom{2}. In the range of $|\Delta E|<20$ MeV and $|\Delta p|<0.05$ GeV/$c$, the S/N estimated by Geant4 simulation was 17.979, and the yield of $\Lp$ scattering events was expected at most 14. Therefore, we can say it is possible to identify $\Lp$ scattering events with a high S/N using the analysis method developed in this paper, although it is expected that there are still unknown background events that the simulation cannot predict. When we obtain high statistics in J-PARC E86, we can rigorously fit $\Delta p$ and $\Delta E$ spectra and estimate the yield of $\Lp$ scattering events. 
+The yield of $\Lp$ scattering identified in case \rom{2} was 14 with S/N estimated by Geant4 simulation of 17.979. Therefore, we concluded that identifying $\Lp$ scatterings with a high S/N is possible by the analysis method developed in this paper. When we obtain high statistics in J-PARC E86, we can rigorously estimate the background structure and $\Lp$ scattering yield. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\scriptsize{
+\begin{thebibliography}{9}
+\bibitem{Baker}R. D. Baker $et\ al.$, Nucl. Phys. B 141, 29 (1978).
+%\bibitem{NS}P.B. Demorest et al., A two-solar-mass neutron star measured using Shapiro delay, Nature. 467., 2010 
+%\bibitem{Proposal}K.Miwa et al, ”Measurement of the cross sections of $\Sigma p$ scattering”, Proposal an experiment at 50-GeV PS
+\end{thebibliography}
+}}
+%\layout
+\end{document}
