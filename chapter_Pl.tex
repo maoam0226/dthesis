@@ -3,7 +3,7 @@
 \graphicspath{{./pictures/chapter_Pl/}}
 
 %%%%%
-\chapter{Analysis \rom{1}: Beam $\Lambda$ polarization measurement} 
+\chapter{Analysis \rom{2}: \\Beam $\Lambda$ polarization measurement} 
 \label{chap-Pl}
 
 %%%%%
@@ -16,7 +16,7 @@ The kinematical consistency analysis called \say{$\Delta p$ method} identified $
 %Baker  ECM=1847 MeV
 \begin{figure}[h]
   \centering
-  \includegraphics[width=8cm]{Baker1847.png}
+  \includegraphics[width=8cm]{Baker1847.eps}
   \caption{A past data of beam $\Lambda$ polarization in the $\PiKL$ reaction for the case of $E_{CM}=1847$ MeV \cite{Baker}.}
   \label{fig-Baker1847}
 \end{figure}
@@ -49,7 +49,7 @@ where $N$ is the yield of each $\costp$ bin, and $N_0$ represents the total yiel
 %Ldecay図
 \begin{figure}[h]
   \centering
-  \includegraphics[width=12cm]{Ldecay.png}
+  \includegraphics[width=12cm]{Ldecay.eps}
   \caption{Schematic of the $\Ldecay$ decay in the rest frame of $\Lambda$. (Left) When the directions of the spin of $\Lambda$ and the decay proton are the same, $\theta_{p}=0^{\circ}$. The amplitude of this state is $(A-B)$. (Right) When the directions of the spin of $\Lambda$ and the decay proton are opposite, $\theta_{p}=\pi$. The amplitude of this state is $(A+B)$.}
   \label{fig-Ldecay}
 \end{figure}
@@ -57,7 +57,7 @@ where $N$ is the yield of each $\costp$ bin, and $N_0$ represents the total yiel
 %UD asymm定義図
 \begin{figure}[h]
   \centering
-  \includegraphics[width=15cm]{UDasymm.png}
+  \includegraphics[width=15cm]{UDasymm.eps}
   \caption{Schematic of the definition of Up/Down asymmetry of the decay proton. If $\theta_{p}$ is in the range $0^{\circ}-90^{\circ}$, it can be said that the beam $\Lambda$ polarization is Up. Conversely, if $\theta_{p}$ is in the range $90^{\circ}-180^{\circ}$, it can be said that the beam $\Lambda$ polarization is Down.}
   \label{fig-UDasymm}
 \end{figure}
@@ -74,7 +74,7 @@ Due to parity violation of $\Ldecay$ decay, $\costp$ will be asymmetrically dist
 %PiK平面図
 \begin{figure}[h]
   \centering
-  \includegraphics[width=12cm]{PiKplane.png}
+  \includegraphics[width=12cm]{PiKplane.eps}
   \caption{Schematic of the $\piKz$ plane with $\Lambda$ decaying to proton and $\pM$ in the Laboratory frame. The $\Lambda$ spin quantization axis is the $y$ axis, the normal vector of the plane. The $z$ axis is the beam $\Lambda$ direction. The $x$ axis is the outer product between $y$ and $z$ axes. $\theta_p$ is the angle of the decay proton vector from the polarization axis and is measured in the rest frame of $\Lambda$.}
   \label{fig-PiKplane}
 \end{figure}
@@ -113,7 +113,7 @@ In fact, when this analysis was applied to a simulation of only $\Ldecay$ decay,
 %L崩壊が超前方散乱に見えるの図
 \begin{figure}[h]
   \centering
-  \includegraphics[width=12cm]{forward.png}
+  \includegraphics[width=12cm]{forward.eps}
   \caption{Schematic of (Left) the $\Ldecay$ decay and (Right) the $\Lp$ scattering with super-forward scattering angle. If applying the kinematical consistency analysis 
   multiple $\pi$ production. If $\Kz$ was indeed produced, the $z$ component difference between the production and decay points should have a value following the $\Kz$ lifetime.}
   \label{fig-forward}
@@ -122,14 +122,14 @@ In fact, when this analysis was applied to a simulation of only $\Ldecay$ decay,
 %cost vs. dp
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=\columnwidth]{costdp_sim.eps}
+    \includegraphics[width=12cm]{costdp_sim.eps}
     \caption{Simulation of the correlation between the scattering angle assuming $\Lambda'$ ($\costcm$) versus $\Delta p$, taken in the simulation of only $\Ldecay$ decay.}
     \label{fig-costdp_sim}
 \end{figure}
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=\columnwidth]{costdp_each.eps}
+    \includegraphics[width=15cm]{costdp_each.eps}
     \caption{Correlation between $\costcm$ versus $\Delta p$ (upper left), the $x$ projection $\costcm$ (lower left), and the $y$ projection $\Delta p$ (upper right), taken in the E40 data. The cut to select the $\Ldecay$ decay events was made to be at $\costcm>0.9$ and $|\Delta p| < 0.05$ GeV/$c$, as represented by the red solid lines.}
     \label{fig-costdp_each}
 \end{figure}
@@ -156,7 +156,7 @@ As a sample of such a background event, we adopted the low sideband of the $\Lam
 \begin{enumerate}
   \item Analyze the $\dzkz$ distribution of background events. Fit it with Gaussian and measure its mean value.
   \item Analyze the $\dzkz$ distribution of the $\Ldecay$ decay events selected in Sec. \ref{sec-Pl-kinema} within the $\Lambda$ region of the missing mass of the $\PiKX$ reaction ($1.0707-1.1626$ GeV/$c^{2}$).
-  \item Assume that in the $\dzkz$ distribution of events in the $\Lambda$ region of the missing mass, a symmetric background distribution with the mean value obtained in step (1) is included. Then, subtract the $\costp$ distribution of events in the region below the mean value from the $\costp$ distribution of events in the region above the mean value.
+  \item Assume that in the $\dzkz$ distribution of events in the $\Lambda$ region of the missing mass, a symmetric background distribution with the mean value obtained in step (1) is included. Then, subtract the $\costp$ distribution of events in the region below the mean value from the $\costp$ distribution of events above the mean value.
 \end{enumerate}
 
 %True or False
@@ -169,21 +169,18 @@ As a sample of such a background event, we adopted the low sideband of the $\Lam
  
 %simulated Kz dz
 \begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
     \centering
-    \includegraphics[width=\columnwidth]{kzdz_true_sim.png}
+    \includegraphics[width=12cm]{kzdz_true_sim.eps}
     \caption{Simulation of $\dzkz$ in the $\PiKL$ reaction. The mean value is shifted to the positive side due to $\Kz$ being boosted downstream.}
     \label{fig-kzdz_true_sim}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{kzdz_false_sim.png}
-    \caption{Simulation of $\dzkz$ in the multiple $\pi$ production. The mean value is not shifted, and the distribution becomes symmetrical.}
-    \label{fig-kzdz_false_sim}
-  \end{minipage}
 \end{figure}
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{kzdz_false_sim.eps}
+    \caption{Simulation of $\dzkz$ in the multiple $\pi$ production. The mean value is not shifted, and the distribution becomes symmetrical.}
+    \label{fig-kzdz_false_sim}
+\end{figure}
 
 
 %%%
@@ -936,8 +933,7 @@ J-PARC E86 will introduce the SKS spectrometer \cite{K1.8} as a forward magnetic
 
 Random numbers were generated for each $\costkz$ range to reproduce the $\costp$ distribution in the E40 and E86 cases. The tagged $\Lambda$ statistic in the E86 case was assumed to be 1000 times that in the E40 case. After correcting the $\costp$ distribution with the CATCH acceptance, we fitted it with Equation (\ref{eq-fitfunc}) and estimated the $\PL$ value and its error propagation.
 
-
-\clearpage
+%\clearpage
 %%%%
 \subsection{$\costp$ distribution for $\Lambda$ events}
 \label{subsec-randcostpLam}
@@ -974,7 +970,7 @@ We reproduced the $\costp$ distribution for $\Lambda$ events in the E86 case by 
 \end{figure}
 
 
-\clearpage
+%\clearpage
 %%%%
 \subsection{$\costp$ distribution for background events}
 \label{subsec-randcostpBG}
@@ -1006,7 +1002,7 @@ We reproduced the $\costp$ distribution for background events in the E86 case by
 \end{figure}
 
 
-\clearpage
+%\clearpage
 %%%%
 \subsection{Sum of $\costp$ distributions of $\Lambda$ and background events}
 %%%
@@ -1035,7 +1031,7 @@ Like Sec. \ref{subsubsec-sume40}, we reproduced the $\costp$ distribution for $\
 \end{figure}
 
 
-\clearpage
+%\clearpage
 %%%%
 \subsection{Extraction of $\costp$ distributions for $\Lambda$ events}
 \label{subsec-randext}
@@ -1077,7 +1073,7 @@ Figure \ref{fig-cExtNew} shows the extracted $\costp$ distribution for $\Lambda$
 \end{figure}
 
 
-\clearpage
+%\clearpage
 %%%%
 \subsection{Correction of $\costp$ distributions for $\Lambda$ events}
 \label{subsec-randext}
@@ -1119,7 +1115,7 @@ Figure \ref{fig-cCorNew} shows the extracted $\costp$ distribution for $\Lambda$
 \end{figure}
 
 
-\clearpage
+%\clearpage
 %%%%
 \subsection{Fitting of $\costp$ distributions and $\PL$ measurement}
 \label{subsec-randfit}
@@ -1181,7 +1177,7 @@ This analysis shows that in the J-PARC E86, the statistical error of $\PL$ can b
 
 %\end{comment}
 
-
+%\clearpage
 %%%%
 \subsection{Summary and discussion}
 To know how the statistical error of $\PL$ will be improved by increasing the yield of $\Lambda$ tagged by the missing mass method for the $\PiKX$ reaction to 50M in J-PARC E86, we reproduced the $\costp$ distributions in the E40 and E86 cases by random numbers. Considering the SKS installation and coming updates of beamline detectors, we assumed the tagged $\Lambda$ statistic in the E86 case would be 1000 times that in the E40 case. In addition, we assumed the background statistic in the E86 case would be $1000\times\frac{1}{10}=100$ times that in the E40 case since SKS has a momentum resolution of $\Delta p/p = 10^{-3}$ (FWHM), ten times better than KURAMA. The $\costp$ distribution for $\Lambda$ events was generated to follow a function that is a product of Equation (\ref{eq-costp}) and the CATCH acceptance. The $\costp$ distribution for background events was generated to follow only the CATCH acceptance. The numbers of event generations for $\Lambda$ and background events in the E40 case were the same as the ones in the real E40 analysis. 

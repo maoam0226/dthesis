@@ -5,7 +5,7 @@
 %\renewcommand{\labelitemii}{・}
 \graphicspath{{./pictures/chapter_Lp_2p}}
 
-\chapter{Analysis \rom{2}: $\Lp$ scattering identification in case \rom{2}} 
+\chapter{Analysis \rom{3}: \\$\Lp$ scattering identification} 
 \label{chap-Lp_2p}
 
 %%%%%
@@ -26,11 +26,11 @@ The main background event in the detection case \rom{2} is $pp$ elastic scatteri
 
 Another background is $\Ldecay$ decay. As shown in Figure \ref{fig-2p_Ldecay}, there is only one proton in the final state. However, if CATCH simultaneously detects a proton from an accidental background event, it will slightly contribute to the analysis of the $\Lp$ scattering event identification.
 
-These background events were removed by appropriate event cuts. Especially regarding the removal of $pp$ elastic scattering, please refer to Sec. \ref{sec-ppRemoval}.
+Appropriate event cuts removed these background events. Especially regarding the removal of $pp$ elastic scattering, please refer to Sec. \ref{sec-ppRemoval}.
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{2p_pp_woPi.png}
+    \includegraphics[width=12cm]{2p_pp_woPi.eps}
     \caption{Schematic of $pp$ elastic scattering, the main background in detection case \rom{2} without $\pM$ mode.}
     \label{fig-2p_pp_woPi}
   \end{center}
@@ -38,7 +38,7 @@ These background events were removed by appropriate event cuts. Especially regar
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{2p_pp_wPi.png}
+    \includegraphics[width=12cm]{2p_pp_wPi.eps}
     \caption{Schematic of $pp$ elastic scattering, the main background in detection case \rom{2} with $\pM$ mode. }
     \label{fig-2p_pp_wPi} 
   \end{center}
@@ -46,7 +46,7 @@ These background events were removed by appropriate event cuts. Especially regar
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{2p_Ldecay.png}
+    \includegraphics[width=12cm]{2p_Ldecay.eps}
     \caption{Schematic of $\Ldecay$ decay, the background in detection case \rom{2}. }
     \label{fig-2p_Ldecay}
   \end{center}
@@ -91,7 +91,7 @@ The correlations between the opening angle ($\theta_{p'p''}$) versus $\Delta p$ 
 
 Figure \ref{fig-thetapp_dp} shows the same correlation taken in E40 data. Figure \ref{fig-dp_pp} and Figure \ref{fig-thetapp} also show the $y$ projection ($\Delta p$) and the $x$ projection ($\theta_{p'p''}$). As seen in Figure \ref{fig-thetapp}, a clear peak around $90^{\circ}$ appears, which corresponds to the remaining $pp$ elastic scattering contamination. To remove this, the events where $85^{\circ} < \theta_{p'p''} < 95^{\circ}$ were removed. The survival ratio of $\Lp$ scattering for this cut estimated by the simulation was $\sim66.05\%$. This is cut level {\bf C-2p-1}.
 
-\begin{comment}
+%\begin{comment}
 
 %thetapp vs. dp (sim)
 \begin{figure}[h]
@@ -104,28 +104,28 @@ Figure \ref{fig-thetapp_dp} shows the same correlation taken in E40 data. Figure
 %e40 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=12cm]{thetapp_dp.eps}
+  \includegraphics[width=12cm]{thetapp_dp_2p.eps}
   \caption{Correlation plot between the opening angle ($\theta_{pp}$) versus $\Delta p$ for the $pp$ elastic scattering, taken in E40 data.}
    \label{fig-thetapp_dp}
 \end{figure}
 
+%e40 dp
 \begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[clip,width=\columnwidth]{dp_pp.eps}
-    \caption{$\Delta p$ for the $pp$ elastic scattering, taken in E40 data.}
-    \label{fig-dp_pp}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[clip, width=\columnwidth]{thetapp.eps}
-    \caption{Opening angle between recoil proton and scattered proton assuming $pp$ elastic scattering, taken in E40 data. A cut for $\theta_{p'p''}$ was made at $85^{\circ} < \theta_{p'p''} < 95^{\circ}$, as represented by the red solid lines. The survival ratio of $\Lp$ scattering for this cut was estimated as $\sim66.05\%$. This is cut level {\bf C-2p-1}.}
-    \label{fig-thetapp}
-  \end{minipage}
+  \centering
+  \includegraphics[width=12cm]{dppp_2p.eps}
+  \caption{$\Delta p$ for the $pp$ elastic scattering, taken in E40 data.}
+   \label{fig-thetapp}
 \end{figure}
 
-\end{comment}
+%e40 thetapp
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=12cm]{thetapp_2p.eps}
+  \caption{Opening angle between recoil proton and scattered proton assuming $pp$ elastic scattering, taken in E40 data. A cut for $\theta_{p'p''}$ was made at $85^{\circ} < \theta_{p'p''} < 95^{\circ}$, as represented by the red solid lines. The survival ratio of $\Lp$ scattering for this cut was estimated as $\sim66.05\%$. This is cut level {\bf C-2p-1}.}
+   \label{fig-dp_pp}
+\end{figure}
+
+%\end{comment}
 
 
 \clearpage
@@ -138,22 +138,19 @@ The $z-$vertex and closest distance between beam $\Lambda$ and recoil proton wer
 
 Ideally, when $\Lp$ scattering occurs, its reaction vertex should be located inside the target space. Figure \ref{fig-zvertLp_sim} shows the simulated $z$-vertex between beam $\Lambda$ and recoil proton taken in the sum of all reactions generated (black solid line), $pp$ elastic scattering (red solid line), $\Lp$ scattering (green solid line), and $\Ldecay$ decay scaled to 1/100 after applying cut level {\bf C-2p-1}. For $\Lp$ scattering simulation, the $z$-verteces ($z$) is distributed within the range of $-150< z\ {\rm (mm)} <150$ (target beam axial length). Therefore, a cut to select $\Lp$ scattering was made at the same range for E40 data, as represented by the red solid lines in Figure \ref{fig-zvertLp}.
 
-\begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{zvertLp_sim.eps}
-    \caption{Simulation of the $z$-vertex between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in simulation data. The black solid line represents the results of the sum of all reactions generated, the red one represents the results of the $pp$ elastic scattering, the green one represents the results of the $\Lp$ scattering, and the blue one represents the results of $\Ldecay$ decay scaled to 1/100. Almost all $\Lp$ scattering events would distribute within the target space ($\pm150$ mm).}
-    \label{fig-zvertLp_sim}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{zvertLp.eps}
-    \caption{$z$-vertex between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in E40 data. A cut was made at $-150 < z {\rm mm} < 150$, as represented by the red solid lines.}
-    \label{fig-zvertLp}
-  \end{minipage}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{zvertLp_sim.eps}
+  \caption{Simulation of the $z$-vertex between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in simulation data. The black solid line represents the results of the sum of all reactions generated, the red one represents the results of the $pp$ elastic scattering, the green one represents the results of the $\Lp$ scattering, and the blue one represents the results of $\Ldecay$ decay scaled to 1/100. Almost all $\Lp$ scattering events would distribute within the target space ($\pm150$ mm).}
+  \label{fig-zvertLp_sim}
 \end{figure}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{zvertLp.eps}
+  \caption{$z$-vertex between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in E40 data. A cut was made at $-150 < z {\rm mm} < 150$, as represented by the red solid lines.}
+  \label{fig-zvertLp}
+\end{figure}
 
 
 %%%
@@ -162,20 +159,19 @@ Ideally, when $\Lp$ scattering occurs, its reaction vertex should be located ins
 If $\Lp$ scattering occurs, ideally the closest distance between the beam $\Lambda$ and the recoil proton should be 0. However, in reality, this distribution has a width due to the position resolution of the detectors and the influence of multiple $\pi$ production.
 
 Figure \ref{fig-cdistLp_sim} shows the simulation results of the closest distance for each reaction (black solid line: simulation sum, red solid line: $pp$ elastic scattering, green solid line: $\Lp$ scattering, blue solid line: $\Ldecay$ decay). From this, we found that most of the $\Lp$ scattering events are distributed in a region $\leq20$ mm. Therefore, in the E40 data analysis, a cut was applied to select only events distributed in this region, as represented by the red solid line in Figure \ref{fig-cdistLp}.
-\begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{cdistLp_sim.eps}
-    \caption{Simulation of the closest distance between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in simulation data. The black solid line represents the simulation sum, the red solid line $pp$ elastic scattering, the green solid line $\Lp$ scattering, and the blue solid line $\Ldecay$ decay.}
-    \label{fig-cdistLp_sim}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{cdistLp.eps}
-    \caption{Closest distance between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in E40 data. A cut to select $\Lp$ scattering was made under 20 mm, as represented by the red solid line.}
-    \label{fig-cdistLp}
-  \end{minipage}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{cdistLp_sim.eps}
+  \caption{Simulation of the closest distance between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in simulation data. The black solid line represents the simulation sum, the red solid line $pp$ elastic scattering, the green solid line $\Lp$ scattering, and the blue solid line $\Ldecay$ decay.}
+  \label{fig-cdistLp_sim}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{cdistLp.eps}
+  \caption{Closest distance between the beam $\Lambda$ and recoil proton under cut level {\bf C-2p-1}, taken in E40 data. A cut to select $\Lp$ scattering was made under 20 mm, as represented by the red solid line.}
+  \label{fig-cdistLp}
 \end{figure}
 
 

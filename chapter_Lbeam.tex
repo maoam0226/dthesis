@@ -5,7 +5,7 @@
 %\renewcommand{\labelitemii}{・}
 \graphicspath{{./pictures/chapter_Lbeam/}}
 
-\chapter{Analysis \rom{1}: \\ Beam $\Lambda$ identification} 
+\chapter{Analysis \rom{1}: \\Beam $\Lambda$ identification} 
 \label{chap-Lbeam}
 
 %%%%%
@@ -20,14 +20,14 @@ After identifying the $\pM$ beam and reconstructing $\Kz$, $\Lambda$ derived fro
 %%%%
 \subsection{Identification of the time-zero segment of BH1 and BH2}
 The true hit in a multi-hit event is identified by referring to the timing information of BH1 and BH2. After defining the time-zero ($t0$) segment, a segment of BH1 and BH2 with the hit timing nearest to 0, the time-of-flight distribution between each $t0$ segment of BH1 and BH2 was measured. \textcolor{red}{ The time-of-flight distribution between $t0$ segments of BH1 and BH2 is shown in Figure \ref{fig-btof} }. Since the hit timing of BH2 is used as the start/stop timing of the DAQ system, the timing distribution of BH2 hardly spreads.
-Therefore, the t0 segment of BH2 was identified with more than 90\% efficiency by applying a timing gate of $\pm1$ ns to this distribution. On the other hand, a timing gate of $\pm5$ ns was applied to the TOF distribution (beam TOF distribution) between BH1 and BH2 to cover the time walk. In principle, the time walk needs to be corrected by ADC information. However, correction is not possible under high-intensity conditions because multiple particles collide with the same segment within the ADC gate.
+Therefore, the t0 segment of BH2 was identified with more than 90\% efficiency by applying a timing gate of $\pm1$ ns to this distribution. On the other hand, a timing gate of $\pm5$ ns was applied to the beam TOF distribution between BH1 and BH2 to cover the time walk. In principle, the time walk needs to be corrected by ADC information. However, correction is not possible under high-intensity conditions because multiple particles collide with the same segment within the ADC gate.
 
-Typical timing resolution for BH1 and BH2 ($\sim10.5$ m apart) is 300 ps ($\sigma$). Since the time difference between BH1 and BH2 of $\pM$ and $\KM$ of 1.33 GeV/$c$ is $\sim2.137$ ns, this resolution value can be said to be sufficient to distinguish between them. The $t0$ segments of BH1 and BH2 are also used to analyze the hit position of BFT, BC3, and BC4. Here, the contamination of other particles is negligible thanks to two ESSs, four CM magnets, and two MS slits. 
+Typical timing resolution for BH1 and BH2 ($\sim10.5$ m apart) is 300 ps ($\sigma$). Since the time difference between BH1 and BH2 of $\pM$ and $\KM$ of 1.33 GeV/$c$ is $\sim2.137$ ns, this resolution value can be considered sufficient to distinguish between them. The $t0$ segments of BH1 and BH2 are also used to analyze the hit position of BFT, BC3, and BC4. Here, the contamination of other particles is negligible thanks to two ESSs, four CM magnets, and two MS slits. 
 
 \begin{figure}[!h]
   \begin{center}
     \includegraphics[width=12cm]{btof.eps}
-    \caption{The time-of-flight distribution between t0 segments of BH1 and BH2.}
+    \caption{The time-of-flight distribution between t0 segments of BH1 and BH2. A timing gate of $\pm5$ ns was applied to the beam TOF distribution between BH1 and BH2 to cover the time walk, as represented by the red solid lines.}
     \label{fig-btof}
   \end{center}
 \end{figure}
@@ -60,21 +60,21 @@ Three-dimensional trajectories at the exit of the QQDQQ system were reconstructe
   x(z_i) &= x_0 + u_0z_i, \nonumber \\
   x(z_i) &= y_0 + v_0z_i, \nonumber
 \end{align}
-where $X_i$ is a local hit position in each plane represented by $wp$ (a wire position) and $dl$ (a drift length) and $f(z_i)$ is a position calculated from a tracking result at the $z$ position of each plane. Each definition of the coordinate is shown in Figure \ref{fig-BcOuttracking}. The local straight track is expressed by a wire tilt angle, theta, and four parameters, i.e. $x_0$, $y_0$, $u_0$, and $v_0$, which respectively denote the $x$ and $y$ position at the origin of a local tracking coordinate and its slope, $dx/dz$ and $dy/dz$. 
+where $X_i$ is a local hit position in each plane represented by $wp$ (a wire position) and $dl$ (a drift length) and $f(z_i)$ is a position calculated from a tracking result at the $z$ position of each plane. Each coordinate definition is shown in Figure \ref{fig-BcOuttracking}. The local straight track is expressed by a wire tilt angle, theta, and four parameters (i.e., $x_0$, $y_0$, $u_0$, and $v_0$) which respectively denote the $x$ and $y$ position at the origin of a local tracking coordinate and its slope, $dx/dz$ and $dy/dz$. 
 
 Since the beam particles are incident almost perpendicular to the chamber planes, in the BcOut analysis, the pair plane analysis method is adopted to solve a left/right ambiguity. This method treats a set of pair planes such as $xx'$, $uu'$, and $vv'$ as one apparent plane. To reduce the high multiplicity of each pair plane, the correlation between hits on each plane and the $t0$ segment of BH2 (the BH2 filter) was applied to limit the number of hits participating in the track search. The schematic of the BH2 filter is shown in Figure \ref{fig-bh2filter}. \textcolor{red}{The reduced chi-squared distribution of BcOut tracks is shown in Figure \ref{fig-chisqrBcOut}. The threshold was set to 5.}
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{BcOuttracking.png}
-    \caption{Definition of the coordinate for BcOut tracking.}
+    \includegraphics[width=12cm]{BcOuttracking.eps}
+    \caption{The coordinate definition for BcOut tracking.}
     \label{fig-BcOuttracking}
   \end{center}
 \end{figure}
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{bh2filter.png}
+    \includegraphics[width=12cm]{bh2filter.eps}
     \caption{Schematic of the BH2 filter. Only hits correlated with the $t0$ segment of BH2 are used to make combinations.}
     \label{fig-bh2filter}
   \end{center}
@@ -83,15 +83,15 @@ Since the beam particles are incident almost perpendicular to the chamber planes
 %chisqrBcOut[it]
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{chisqrBcOut.eps}
-    \caption{Reduced chi-squared of BcOut tracking in single-track events.}
+    \includegraphics[width=12cm]{chisqrBcOut_single.eps}
+    \caption{Reduced chi-squared of BcOut tracking in single-track events. The upper threshold was $\chisq_{BcOut}=5$, as represented by the red solid line.}
     \label{fig-chisqrBcOut}
   \end{center}
 \end{figure}
 
 %%%%
 \subsection{K1.8 beamline analysis\\(Beam momentum reconstruction)}
-The beam momentum is reconstructed by a \nth{3}-order transfer matrix calculated by ORBIT using BFT and BcOut trackings. A charged particle passing K1.8 beamline magnets is represented by a vector as 
+The beam momentum is reconstructed by a \nth{3}-order transfer matrix calculated by ORBIT using BFT and BcOut trackings. A vector represents a charged particle passing K1.8 beamline magnets as 
 \begin{equation}
   \bm{X} = 
 \begin{pmatrix}
@@ -156,13 +156,13 @@ The optimal momentum and trajectory of the ejected particle were determined from
     \right. \nonumber \\
   N_{hit} &= \sum_{i}H_{i}, \nonumber 
 \end{align}
-where $X^{hit}_{i}$ and $X^{track}_{i}$ respectively represent a local position obtained from each detector hit and KURAMA tracking, and $\sigma_{i}$ is a position resolution of each plane. For the multi-hit events, all combinations between the SdcIn tracks and the SdcOut tracks are examined and sorted by $\chi^{2}$ values. The convergence of the iteration was judged by the following criterion: $(\chi^{2}_{l+1} - \chi^{2}_{l})/\chi^{2}_{l} < 10^{-3}$, where $\chi^{2}_{l}$ represents the result of the $l$-th iteration. \textcolor{red}{ The reduced chi-squared distribution of KURAMA tracking is shown in Figure \ref{fig-chisqrKurama} }. Good tracks with reduced $\chi^{2}$ value less than 50 are accepted.
+where $X^{hit}_{i}$ and $X^{track}_{i}$ respectively represent a local position obtained from each detector hit and KURAMA tracking, and $\sigma_{i}$ is a position resolution of each plane. For the multi-hit events, all combinations between the SdcIn tracks and the SdcOut tracks are examined and sorted by $\chi^{2}$ values. The convergence of the iteration was judged by the following criterion: $(\chi^{2}_{l+1} - \chi^{2}_{l})/\chi^{2}_{l} < 10^{-3}$, where $\chi^{2}_{l}$ represents the result of the $l$-th iteration. \textcolor{red}{ The reduced chi-squared distribution of KURAMA tracking is shown in Figure \ref{fig-chisqrKurama} }. Good tracks with a reduced $\chisq$ value of less than 50 are accepted.
 
 %chisqrKurama[i] ???
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{chisqrKurama.eps}
-    \caption{Reduced chi-squared distribution of KURAMA tracking in single-track events.}
+    \includegraphics[width=12cm]{chisqrKurama_single.eps}
+    \caption{Reduced chi-squared distribution of KURAMA tracking in single-track events. Good tracks with a reduced $\chisq$ value of less than 50 are accepted, as represented by the red solid line.}
     \label{fig-chisqrKurama}
   \end{center}
 \end{figure}
@@ -195,7 +195,7 @@ After energy calibrations \cite{Miwa-SMp} were applied, particle identification 
 
 %!!
 \subsubsection{Energy calibration of CATCH}
-In Ref. \cite{Miwa-SMp} in which the differential cross-section of $\SMp$ scattering was measured, the energy calibration of CATCH was performed by comparing the simulated and real $pp$ elastic scattering data. Here, the correlations between proton scattering angle and energy deposit in CFT and BGO in the momentum range of $450-850$ MeV/$c$ were used. In this paper, this calibration data was applied to the CATCH analysis part, since the $\PiKL$ reaction data was simultaneously accumulated during the $\SM$ production.
+In Ref. \cite{Miwa-SMp}, in which the differential cross-section of $\SMp$ scattering was measured, the energy calibration of CATCH was performed by comparing the simulated and real $pp$ elastic scattering data. Here, the correlations between proton scattering angle and energy deposit in CFT and BGO in the momentum range of $450-850$ MeV/$c$ were used. In this paper, this calibration data was applied to the CATCH analysis part since the $\PiKL$ reaction data was simultaneously accumulated during the $\SM$ production.
 
 \vspace{10pt}
 %%%
@@ -214,7 +214,7 @@ where $E$ represents the kinetic energy of a proton. This energy calibration was
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=12cm]{EcalibBGO.png}
+    \includegraphics[width=12cm]{EcalibBGO.eps}
     \caption{Correlation between the scattering angle and kinetic energy measured as a sum of the energy deposits in the CFT and BGO for the $pp$ elastic scattering data with a 600 MeV/$c$ proton beam \cite{Miwa-SMp}. The locus corresponds to the elastic scattering events.}
     \label{fig-EcalibBGO}
   \end{center}
@@ -240,28 +240,29 @@ The angular resolution of the CFT was estimated as 1.5\% ($\sigma$) from the wid
 
 CATCH detection efficiency includes the detector acceptance, the tracking efficiency of CFT, and the energy measurement efficiency of BGO. They depend on the angle $\theta_{lab}$, the kinetic energy $E$, and the $z-$vertex position $z$. The efficiency was evaluated based on $pp$ elastic scattering data at seven beam momentums in the $0.45-0.85$ GeV/$c$ range compared with the simulation. 
 
-In order to obtain a realistic detection efficiency, we used $pp$ elastic scattering data in which two protons are emitted. We detect a proton and identify $pp$ elastic scattering events by solving the kinematics between scattering angle and kinetic energy. By calculating the missing momentum of the $pp\rightarrow pX$ reaction, the angle and momentum of the other proton can be predicted.
+To obtain a realistic detection efficiency, we used $pp$ elastic scattering data in which two protons are emitted. We detect a proton and identify $pp$ elastic scattering events by solving the kinematics between scattering angle and kinetic energy. By calculating the missing momentum of the $pp\rightarrow pX$ reaction, the angle and momentum of the other proton can be predicted.
 
 \vspace{10pt}
 %CFT tracking efficiency
 \paragraph{CFT tracking efficiency}
-The CFT tracking efficiency was obtained by checking whether the predicted track could be detected or not, referring to the momentum dependence of the recoil proton, as shown in Figure \ref{fig-CFTtrackeff} \cite{Miwa-SMp}. The black square represents the simulation results, and the blue circle represents the results in $pp$ elastic scattering data. The CFT tracking efficiency was modeled as the Fermi function with three parameters: the maximum efficiency $P_{max}$, the momentum with half efficiency $P(1/2)$s, and blurriness $\mu$. These parameters were determined by fitting the $pp$ elastic scattering data in Figure \ref{fig-CFTtrackeff}. This parametrization of the CFT tracking efficiency was performed for each scattering angle $\theta_{lab}$. The estimated CFT tracking efficiency map as a function of the scattering angle and momentum of the proton is shown in Figure \ref{fig-CFTtrackmap} \cite{Miwa-SMp}. For more details, refer to Ref. \cite{Miwa-SMp}.
+The CFT tracking efficiency was obtained by checking whether the predicted track could be detected, referring to the momentum dependence of the recoil proton, as shown in Figure \ref{fig-CFTtrackeff} \cite{Miwa-SMp}. The black square represents the simulation results, and the blue circle represents the results in $pp$ elastic scattering data. The CFT tracking efficiency was modeled as the Fermi function with three parameters: the maximum efficiency $P_{max}$, the momentum with half efficiency $P(1/2)$s, and blurriness $\mu$. These parameters were determined by fitting the $pp$ elastic scattering data in Figure \ref{fig-CFTtrackeff}. This parametrization of the CFT tracking efficiency was performed for each scattering angle $\theta_{lab}$. The estimated CFT tracking efficiency map as a function of the scattering angle and momentum of the proton is shown in Figure \ref{fig-CFTtrackmap} \cite{Miwa-SMp}. For more details, refer to Ref. \cite{Miwa-SMp}.
 
 \begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{CFTtrackeff.png}
+  \begin{center}
+    \includegraphics[width=12cm]{CFTtrackeff.eps}
     \caption{Momentum dependence of the CFT tracking for protons from the $pp$ elastic scattering data and the simulation data for a scattering angle of $\theta_{lab}=51^{\circ}$ \cite{Miwa-SMp}.}
     \label{fig-CFTtrackeff}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{CFTtrackmap.png}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{CFTtrackmap.eps}
     \caption{Estimated CFT tracking efficiency map as a function of the scattering angle and momentum of the proton \cite{Miwa-SMp}.}
     \label{fig-CFTtrackmap}
-  \end{minipage}
+  \end{center}
 \end{figure}
+
 
 \vspace{10pt}
 %BGO energy measurement efficiency 
@@ -270,20 +271,21 @@ The efficiency was estimated by checking whether or not the measured energy by B
 BGO efficiency for protons emitted at $\theta_{lab}=41^{\circ}$ where the crossed line represents the simulation result and the red circle represents the result of $pp$ elastic scattering data. Regarding BGO energy measurement efficiency, consistency between data and simulations was confirmed in all angular regions. Therefore, the simulated efficiency was used as the efficiency map, as shown in Figure \ref{fig-BGOeffmap}. For more details, refer to Ref. \cite{Miwa-SMp}.
 
 \begin{figure}[!h]
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{BGOeff.png}
+  \begin{center}
+    \includegraphics[width=12cm]{BGOeff.eps}
     \caption{Momentum dependence of the BGO energy measurement for protons from the $pp$ elastic scattering data and the simulation data for a scattering angle of $\theta_{lab}=41^{\circ}$ \cite{Miwa-SMp}.}
     \label{fig-BGOeff}
-  \end{minipage}
-  \hspace{0.04\columnwidth} % ここで隙間作成
-  \begin{minipage}[t]{0.48\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{BGOeffmap.png}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=12cm]{BGOeffmap.eps}
     \caption{Estimated BGO efficiency map as a function of the scattering angle and momentum of the proton \cite{Miwa-SMp}.}
     \label{fig-BGOeffmap}
-  \end{minipage}
+  \end{center}
 \end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Particle identification}
@@ -292,11 +294,12 @@ BGO efficiency for protons emitted at $\theta_{lab}=41^{\circ}$ where the crosse
 \begin{figure}[!h]
   \begin{center}
     \includegraphics[clip,width=12cm]{dE_E.eps}
-    \caption{Correlation of energy loss in CFT of scattering particles and total energy measured with BGO calorimeter.}
+    \caption{Correlation of energy loss in CFT of scattering particles and total energy measured with BGO calorimeter. We required CATCH to detect $\pM$ when reconstructing $\Kz$, as represented by the red solid lines.}
     \label{fig-dE_E}
   \end{center}
 \end{figure}
 
+%%%
 \subsubsection{Determination of the outgoing $\pM$ momentum}
 As mentioned, the CATCH system can not accurately measure the energy of scattered $\pi$s since most penetrate the BGO calorimeter. As a result, measuring their momenta is difficult. To compensate for the momentum information of the scattered $\pi$, we recalculated that value by solving the kinematics of the $\kzdecay$ decay. Here, we assumed that the two $\pi$s detected by KURAMA and CATCH were derived from the $\kzdecay$ decay. Then, using the opening angle between two $\pi$s ($\theta_{\pi\pi}$) and the $\pP$ momentum ($p_{\pP}$), the $\pM$ momentum ($p_{\pM}$) was recalculated so that the invariant mass of $\pP$ (detected by KURAMA) and $\pM$ (detected by CATCH) became equal to the $\Kz$ mass. The details of this calculation are as follows:
 
