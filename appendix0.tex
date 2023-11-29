@@ -1,72 +1,445 @@
 %\documentclass[a4paper,12pt,oneside,openany]{jsbook}
 %\include{begin}
-\def\thesection{A.\arabic{section}}
-\chapter{{\bf 付録A 各散乱事象における$\Delta E$の導出}}
-ここでは、各散乱事象における$\Delta E$を導出する際に用いる運動学の計算方法を述べる。ここで、運動学を解くために我々が用いることのできる計測量を確認しておく。まず、二つのスペクトロメータから得られる$\SM$の運動量ベクトルである。このとき絶対値は前章で述べたように$\KP$の散乱角によって決定している。そして、CATCH検出器群から得られる陽子及び$\pM$のベクトルである。このとき、陽子はBGOカロリメータによって運動量も求められるが、$\pM$は貫通してしまうため、方向しか分からないことに注意が必要である。
-\section{$np\rightarrow np$弾性散乱}
-$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$が崩壊し($\SM\rightarrow\pM +n$)、崩壊先の中性子がさらに標的陽子と散乱することでnp散乱事象は生じる。\par
-まず、$\SM$の運動量ベクトルと$\pM$のベクトル情報から中性子の運動量ベクトルを導出する。CATCHで計測した$\pM$を$\SM$が崩壊したものと仮定すれば、$\pM$の放出角度$\theta_{\pi}$を用いて$\pM$の運動量$p_{\pi}$は次のように書ける。
-\begin{equation}
-p_{\pi} = \cfrac{Ap_{\Sigma}\cos\theta_{\pi}+\sqrt{D}}{2(E^{2}_{\Sigma}-p^2_{\Sigma}\cos^{2}\theta_{\pi})}
-\label{eq:decayPiMom}
-\end{equation}
-ここで、
-\begin{gather}
-\label{eq:decayPiMom1}
-A = M^2_{\Sigma}+M^2_{\pi}-M^2_{n}\\
-\label{eq:decayPiMom2}
-D = (Ap_{\Sigma}\cos\theta_{\pi})^2-(E^{2}_{\Sigma}-p_{\Sigma}\cos^2\theta_{\pi})(4E^2_{\Sigma}M^2_{\pi}-A^2)
-\end{gather}
-であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた$\pi$の運動量から、中性子の運度量ベクトルが$\overrightarrow{p_{n}}=\overrightarrow{p_{\Sigma}}-\overrightarrow{p_{\pi}}$と求まる。\par
-そして、中性子の運度量ベクトルと陽子のベクトル情報から陽子の全エネルギー$E_{calc}$を導出する。CATCHで計測した陽子をを中性子と散乱したものと仮定すれば、陽子の散乱角度$\theta_{p}$を用いて陽子の全エネルギー$E_{calc}$は次のように書ける。
-\begin{equation}
-E_{calc} = \cfrac{2M_{p}p^2_{n}\cos^2\theta_{p}}{(E_{n}+M_{p})^{2}-p^2_{n}\cos^2\theta_{p}}
-\end{equation}
-このようにnp散乱を仮定した運動学から陽子の全エネルギー$E_{calc}$が導出された。この$E_{calc}$をBGOカロリメータで実測した陽子の全エネルギー$E_{measure}$から差し引くことで$\Delta E_{np}$が求まる。
+
+%%%%%
+\def\thesection{Appendix A.\arabic{section}}
+\chapter{The CATCH acceptance for $\costp$ distributions}
+\label{chap-appA}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{$\pM p\rightarrow \pM p$弾性散乱}
-$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$が崩壊し($\SM\rightarrow\pM +n$)、崩壊先の$\pM$がさらに標的陽子と散乱することで$\pM p$散乱事象は生じる。この反応では$\Lambda$の運動量についてBGOカロリメータで実測した陽子の全運動エネルギーから得られる$p_{\Lambda\_measore}$と運動学によって計算される$p_{\Lambda\_calc}$を比較することで評価する。\par
-まず、BGOカロリメータで実測した陽子の全運動エネルギーから得られる$\pM$の運動量について考える。得られた陽子の全運動エネルギーから陽子の運動量$p_{p}$が得られる。さらに、CATCHで測定された陽子と$\pM$が$\pM p$散乱によるものと仮定すれば、二つの粒子のベクトルが成す角$\theta_{\pi p}$を用いて散乱$\pM$の運動量$p_{\pi '}$は次のように書ける。
-\begin{equation}
-p_{\pi '} = \cfrac{Ap_{p}\cos\theta_{\pi p}+(E_{p}-M_{p})\sqrt{D}}{(E_{p}-M_{p})^{2}-p^2_{p}\cos^{2}\theta_{\pi p}}
-\end{equation}
-ここで、
-\begin{gather}
-A = E_{p}M_{p}-M^2_{p}\\
-D = M^2_{\pi}(p^2_{\pi}\cos\theta_{\pi p}-(E_{p}-M_{p})^{2})+A^2
-\end{gather}
-であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた散乱$\pM$の運動量から、崩壊$\pM$の運度量ベクトルが$\overrightarrow{p_{\pi}}=\overrightarrow{p_{p}}+\overrightarrow{p_{\pi '}}$と求まる。このときの絶対値$|\overrightarrow{p_{\pi}}|$を$p_{\pi\_measure}$とする。\par
-次に、運動学によって計算される崩壊$\pM$の運動量について考える。先ほど導出した崩壊$\pM$のベクトル情報だけ用いて、$\SM$との散乱角$\theta_{\pi}$を求める。この角度と$\SM$の運動量ベクトルのみを用いて$\SM$の崩壊を仮定したとき、$\pM$の運度量$p_{\pi\_calc}$は式(\ref{eq:decayPiMom})、式(\ref{eq:decayPiMom1})、式(\ref{eq:decayPiMom2})と同様に計算できる。こうして得られた$p_{\pi\_measore}$から$p_{\pi\_calc}$を差し引くことで$\Delta p_{\pi p}$が求まる。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{$\SM p\rightarrow \Lambda n$非弾性散乱}
-$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$がさらに標的陽子と反応を起こすことで$\SM p\rightarrow \Lambda n$反応は生じる。この反応では$\Lambda$の運動量についてBGOカロリメータで実測した陽子の全運動エネルギーから得られる$p_{\Lambda\_measore}$と運動学によって計算される$p_{\Lambda\_calc}$を比較することで評価する。\par
-まず、BGOカロリメータで実測した陽子の全運動エネルギーから得られる$\Lambda$の運動量について考える。得られた陽子の全運動エネルギーから陽子の運動量$p_{p}$が得られる。さらに、CATCHで測定された陽子と$\pM$が$\Lambda$が崩壊したものと仮定すれば、二つの粒子のベクトルが成す角$\theta_{\pi p}$を用いて崩壊$\pM$の運動量$p_{\pi}$は次のように書ける。
-\begin{equation}
-p_{\pi} = \cfrac{Ap_{p}\cos\theta_{\pi p}+\sqrt{D}}{2(E^{2}_{p}-p^2_{p}\cos^{2}\theta_{\pi p})}
-\end{equation}
-ここで、
-\begin{gather}
-A = M^2_{\Lambda}-M^2_{p}-M^2_{\pi}\\
-D = (Ap_{p}\cos\theta_{\pi p})^2-(E^{2}_{p}-p_{p}\cos^2\theta_{\pi p})(4E^2_{p}M^2_{\pi}-A^2)
-\end{gather}
-であり、$D>0$のとき、$p_{\pi}$の解が存在する。得られた$\pi$の運動量から、$\Lambda$の運度量ベクトルが$\overrightarrow{p_{\Lambda}}=\overrightarrow{p_{p}}+\overrightarrow{p_{\pi}}$と求まる。このときの絶対値$|\overrightarrow{p_{\Lambda}}|$を$p_{\Lambda\_measure}$とする。\par
-次に、運動学によって計算される$\Lambda$の運動量について考える。先ほど導出した$\Lambda$のベクトル情報だけ用いて、$\SM$との散乱角$\theta_{\Lambda}$を求める。この角度と$\SM$の運動量ベクトルのみを用いて$\SM p\rightarrow \Lambda n$反応を仮定したとき、$\Lambda$の運度量$p_{\Lambda\_calc}$は次のように書ける。
-\begin{equation}
-p_{\Lambda\_calc} = \cfrac{Ap_{\Sigma}\cos\theta_{\Lambda}+(E_{\Sigma}+M_{p})\sqrt{D}}{2((E_{\Sigma}+M_{p})^{2}-p^2_{\Sigma}\cos^{2}\theta_{\Lambda})}
-\end{equation}
-ここで、
-\begin{gather}
-A = M^2_{\Sigma}+M^2_{\Lambda}+M^2_{p}-M^2_{n}-2E_{\Sigma}M_{p}\\
-D = 4M^2_{\Lambda}(p^2_{\pi}\cos\theta_{\Lambda}-(E_{\Sigma}+M_{p})^{2})+A^2
-\end{gather}
-であり、$D>0$のとき、$p_{\Lambda\_calc}$の解が存在する。こうして得られた$p_{\Lambda\_measore}$から$p_{\Lambda\_calc}$を差し引くことで$\Delta p_{Lambda n}$が求まる。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{$\SM p\rightarrow \SM p$弾性散乱}
-$\pM p\rightarrow \KP\SM$反応によって液体水素標的中で生成された$\SM$がさらに標的陽子と散乱することで$\SM p$散乱事象は生じる。\par
-$\SM$の運動量ベクトルと陽子のベクトル情報から陽子の全エネルギーを導出する。CATCHで計測した陽子を$\SM$と散乱したものと仮定すれば、陽子の散乱角度$\theta_{p}$を用いて陽子の全エネルギー$E_{calc}$は次のように書ける。
-\begin{equation}
-E_{calc} = \cfrac{2M_{p}p^2_{\Sigma}\cos^2\theta_{p}}{(E_{\Sigma}+M_{p})^{2}-p^2_{\Sigma}\cos^2\theta_{p}}
-\end{equation}
-このように$\SM p$散乱を仮定した運動学から陽子の全エネルギー$E_{calc}$が導出された。BGOカロリメータで実測した陽子の全エネルギー$E_{measure}$から$E_{calc}$を差し引くことで$\Delta E_{\Sigma p}$が求まる。\par
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{end}
+
+The numerical values of the CATCH acceptance for $\costp$ distributions in each $\costkz$ range assuming detection case \rom{1} are summarized in Table \ref{tab-Pl-acc_32} to Table \ref{tab-Pl-acc_39}. Here, the CATCH efficiency and Geant4 Hadronic process are applied (i.e., type 3 simulation).
+
+%estimated eff (type3) 結果表
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.6<\costkz<0.65$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 27.489 & 0.471 \\
+    \midrule
+    $-0.9 - -0.8$ & 24.603 & 0.452 \\
+    \midrule
+    $-0.8 - -0.7$ & 22.733 & 0.446 \\
+    \midrule
+    $-0.7 - -0.6$ & 18.712 & 0.412 \\
+    \midrule
+    $-0.6 - -0.5$ & 16.542 & 0.395 \\
+    \midrule
+    $-0.5 - -0.4$ & 13.909 & 0.363 \\
+    \midrule
+    $-0.4 - -0.3$ & 11.374 & 0.331 \\
+    \midrule
+    $-0.3 - -0.2$ & 8.763 & 0.296 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.188 & 0.249 \\
+    \midrule
+    $-0.1 - 0.0$ & 4.260 & 0.208 \\
+    \midrule
+    $0.0 - 0.1$ & 4.182 & 0.206 \\
+    \midrule
+    $0.1 - 0.2$ & 6.132 & 0.249 \\
+    \midrule
+    $0.2 - 0.3$ & 9.344 & 0.304 \\
+    \midrule
+    $0.3 - 0.4$ & 11.366 & 0.331 \\
+    \midrule
+    $0.4 - 0.5$ & 14.262 & 0.370 \\
+    \midrule
+    $0.5 - 0.6$ & 16.293 & 0.391 \\
+    \midrule
+    $0.6 - 0.7$ & 17.393 & 0.402 \\
+    \midrule
+    $0.7 - 0.8$ & 21.254 & 0.434 \\
+    \midrule
+    $0.8 - 0.9$ & 24.321 & 0.456 \\
+    \midrule
+    $0.9 - 1.0$ & 26.166 & 0.465 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_32}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.65<\costkz<0.7$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 29.190 & 0.446 \\
+    \midrule
+    $-0.9 - -0.8$ & 26.813 & 0.437 \\
+    \midrule
+    $-0.8 - -0.7$ & 23.714 & 0.418 \\
+    \midrule
+    $-0.7 - -0.6$ & 21.917 & 0.405 \\
+    \midrule
+    $-0.6 - -0.5$ & 18.680 & 0.385 \\
+    \midrule
+    $-0.5 - -0.4$ & 16.161 & 0.361 \\
+    \midrule
+    $-0.4 - -0.3$ & 13.712 & 0.339 \\
+    \midrule
+    $-0.3 - -0.2$ & 10.597 & 0.296 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.104 & 0.248 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.031 & 0.211 \\
+    \midrule
+    $0.0 - 0.1$ & 5.081 & 0.211 \\
+    \midrule
+    $0.1 - 0.2$ & 7.538 & 0.255 \\
+    \midrule
+    $0.2 - 0.3$ & 10.118 & 0.293 \\
+    \midrule
+    $0.3 - 0.4$ & 11.898 & 0.313 \\
+    \midrule
+    $0.4 - 0.5$ & 15.792 & 0.356 \\
+    \midrule
+    $0.5 - 0.6$ & 19.120 & 0.386 \\
+    \midrule
+    $0.6 - 0.7$ & 21.840 & 0.408 \\
+    \midrule
+    $0.7 - 0.8$ & 23.344 & 0.417 \\
+    \midrule
+    $0.8 - 0.9$ & 27.342 & 0.443 \\
+    \midrule
+    $0.9 - 1.0$ & 27.182 & 0.437 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_33}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.7<\costkz<0.75$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 30.369 & 0.425 \\
+    \midrule
+    $-0.9 - -0.8$ & 28.287 & 0.415 \\
+    \midrule
+    $-0.8 - -0.7$ & 27.790 & 0.414 \\
+    \midrule
+    $-0.7 - -0.6$ & 23.971 & 0.402 \\
+    \midrule
+    $-0.6 - -0.5$ & 19.656 & 0.365 \\
+    \midrule
+    $-0.5 - -0.4$ & 16.339 & 0.339 \\
+    \midrule
+    $-0.4 - -0.3$ & 14.307 & 0.320 \\
+    \midrule
+    $-0.3 - -0.2$ & 11.832 & 0.294 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.859 & 0.245 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.756 & 0.211 \\
+    \midrule
+    $0.0 - 0.1$ & 5.850 & 0.213 \\
+    \midrule
+    $0.1 - 0.2$ & 7.752 & 0.241 \\
+    \midrule
+    $0.2 - 0.3$ & 11.471 & 0.291 \\
+    \midrule
+    $0.3 - 0.4$ & 14.043 & 0.319 \\
+    \midrule
+    $0.4 - 0.5$ & 16.758 & 0.345 \\
+    \midrule
+    $0.5 - 0.6$ & 19.481 & 0367 \\
+    \midrule
+    $0.6 - 0.7$ & 22.733 & 0.389 \\
+    \midrule
+    $0.7 - 0.8$ & 25.601 & 0.403 \\
+    \midrule
+    $0.8 - 0.9$ & 27.781 & 0.413 \\
+    \midrule
+    $0.9 - 1.0$ & 29.433 & 0.418 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_34}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.75<\costkz<0.8$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 31.978 & 0.410 \\
+    \midrule
+    $-0.9 - -0.8$ & 28.998 & 0.397 \\
+    \midrule
+    $-0.8 - -0.7$ & 27.029 & 0.389 \\
+    \midrule
+    $-0.7 - -0.6$ & 24.143 & 0.377 \\
+    \midrule
+    $-0.6 - -0.5$ & 20.427 & 0.355 \\
+    \midrule
+    $-0.5 - -0.4$ & 17.607 & 0.335 \\
+    \midrule
+    $-0.4 - -0.3$ & 13.834 & 0.303 \\
+    \midrule
+    $-0.3 - -0.2$ & 11.205 & 0.274 \\
+    \midrule
+    $-0.2 - -0.1$ & 8.633 & 0.244 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.461 & 0.211 \\
+    \midrule
+    $0.0 - 0.1$ & 6.213 & 0.210 \\
+    \midrule
+    $0.1 - 0.2$ & 8.707 & 0.246 \\
+    \midrule
+    $0.2 - 0.3$ & 11.370 & 0.274 \\
+    \midrule
+    $0.3 - 0.4$ & 14.345 & 0.305 \\
+    \midrule
+    $0.4 - 0.5$ & 17.252 & 0.331 \\
+    \midrule
+    $0.5 - 0.6$ & 20.692 & 0.357 \\
+    \midrule
+    $0.6 - 0.7$ & 24.358 & 0.378 \\
+    \midrule
+    $0.7 - 0.8$ & 27.593 & 0.393 \\
+    \midrule
+    $0.8 - 0.9$ & 30.038 & 0.401 \\
+    \midrule
+    $0.9 - 1.0$ & 31.555 & 0.405 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_35}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.8<\costkz<0.85$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 32.574 & 0.396 \\
+    \midrule
+    $-0.9 - -0.8$ & 30.567 & 0.387 \\
+    \midrule
+    $-0.8 - -0.7$ & 28.748 & 0.383 \\
+    \midrule
+    $-0.7 - -0.6$ & 24.612 & 0.366 \\
+    \midrule
+    $-0.6 - -0.5$ & 19.630 & 0.337 \\
+    \midrule
+    $-0.5 - -0.4$ & 15.850 & 0.309 \\
+    \midrule
+    $-0.4 - -0.3$ & 12.443 & 0.277 \\
+    \midrule
+    $-0.3 - -0.2$ & 9.888 & 0.250 \\
+    \midrule
+    $-0.2 - -0.1$ & 7.752 & 0.223 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.101 & 0.200 \\
+    \midrule
+    $0.0 - 0.1$ & 6.552 & 0.208 \\
+    \midrule
+    $0.1 - 0.2$ & 7.725 & 0.222 \\
+    \midrule
+    $0.2 - 0.3$ & 9.575 & 0.248 \\
+    \midrule
+    $0.3 - 0.4$ & 12.340 & 0.277 \\
+    \midrule
+    $0.4 - 0.5$ & 15.857 & 0.307 \\
+    \midrule
+    $0.5 - 0.6$ & 20.019 & 0.339 \\
+    \midrule
+    $0.6 - 0.7$ & 24.052 & 0.359 \\
+    \midrule
+    $0.7 - 0.8$ & 28.680 & 0.382 \\
+    \midrule
+    $0.8 - 0.9$ & 30.587 & 0.387 \\
+    \midrule
+    $0.9 - 1.0$ & 33.207 & 0.395 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_36}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.85<\costkz<0.9$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 33.568 & 0.383 \\
+    \midrule
+    $-0.9 - -0.8$ & 30.296 & 0.379 \\
+    \midrule
+    $-0.8 - -0.7$ & 25.830 & 0.359 \\
+    \midrule
+    $-0.7 - -0.6$ & 20.516 & 0.332 \\
+    \midrule
+    $-0.6 - -0.5$ & 16.065 & 0.300 \\
+    \midrule
+    $-0.5 - -0.4$ & 12.598 & 0.271 \\
+    \midrule
+    $-0.4 - -0.3$ & 9.608 & 0.240 \\
+    \midrule
+    $-0.3 - -0.2$ & 8.232 & 0.224 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.765 & 0.205 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.472 & 0.201 \\
+    \midrule
+    $0.0 - 0.1$ & 6.206 & 0.197 \\
+    \midrule
+    $0.1 - 0.2$ & 7.042 & 0.211 \\
+    \midrule
+    $0.2 - 0.3$ & 7.421 & 0.212 \\
+    \midrule
+    $0.3 - 0.4$ & 9.333 & 0.237 \\
+    \midrule
+    $0.4 - 0.5$ & 12.212 & 0.269 \\
+    \midrule
+    $0.5 - 0.6$ & 15.644 & 0.298 \\
+    \midrule
+    $0.6 - 0.7$ & 19.715 & 0.327 \\
+    \midrule
+    $0.7 - 0.8$ & 25.488 & 0.356 \\
+    \midrule
+    $0.8 - 0.9$ & 30.477 & 0.377 \\
+    \midrule
+    $0.9 - 1.0$ & 31.713 & 0.375 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_37}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.9<\costkz<0.95$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 27.136 & 0.349 \\
+    \midrule
+    $-0.9 - -0.8$ & 22.395 & 0.331 \\
+    \midrule
+    $-0.8 - -0.7$ & 18.053 & 0.307 \\
+    \midrule
+    $-0.7 - -0.6$ & 14.596 & 0.280 \\
+    \midrule
+    $-0.6 - -0.5$ & 11.435 & 0.254 \\
+    \midrule
+    $-0.5 - -0.4$ & 8.899 & 0.227 \\
+    \midrule
+    $-0.4 - -0.3$ & 7.791 & 0.212 \\
+    \midrule
+    $-0.3 - -0.2$ & 6.842 & 0.200 \\
+    \midrule
+    $-0.2 - -0.1$ & 6.200 & 0.191 \\
+    \midrule
+    $-0.1 - 0.0$ & 6.332 & 0.192 \\
+    \midrule
+    $0.0 - 0.1$ & 6.087 & 0.188 \\
+    \midrule
+    $0.1 - 0.2$ & 6.925 & 0.201 \\
+    \midrule
+    $0.2 - 0.3$ & 6.634 & 0.195 \\
+    \midrule
+    $0.3 - 0.4$ & 7.658 & 0.211 \\
+    \midrule
+    $0.4 - 0.5$ & 9.235 & 0.230 \\
+    \midrule
+    $0.5 - 0.6$ & 10.758 & 0.248 \\
+    \midrule
+    $0.6 - 0.7$ & 14.013 & 0.278 \\
+    \midrule
+    $0.7 - 0.8$ & 18.340 & 0.309 \\
+    \midrule
+    $0.8 - 0.9$ & 22.480 & 0.333 \\
+    \midrule
+    $0.9 - 1.0$ & 27.166 & 0.350 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_38}
+  \end{center}
+\end{table}
+
+\begin{table}[!h] 
+  \begin{center}
+  \caption{Numerical values of the CATCH acceptance for $\costp$ distributions in the $\Kz$ scattering angular range of \textbf{$0.95<\costkz<1.0$} assuming detection case \rom{1}.}
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{ccc}
+    %{m{15mm} m{70mm} m{18mm}}
+    $\costp$ & $\accPL$ (\%) & $\sigma(\accPL)$ (\%) \\
+    \midrule\midrule
+    $-1.0 - -0.9$ & 10.895 & 0.235 \\
+    \midrule
+    $-0.9 - -0.8$ & 8.701 & 0.212 \\
+    \midrule
+    $-0.8 - -0.7$ & 7.921 & 0.204 \\
+    \midrule
+    $-0.7 - -0.6$ & 6.731 & 0.188 \\
+    \midrule
+    $-0.6 - -0.5$ & 6.470 & 0.188 \\
+    \midrule
+    $-0.5 - -0.4$ & 5.822 & 0.177 \\
+    \midrule
+    $-0.4 - -0.3$ & 5.437 & 0.171 \\
+    \midrule
+    $-0.3 - -0.2$ & 5.071 & 0.166 \\
+    \midrule
+    $-0.2 - -0.1$ & 4.934 & 0.163 \\
+    \midrule
+    $-0.1 - 0.0$ & 5.027 & 0.165 \\
+    \midrule
+    $0.0 - 0.1$ & 4.830 & 0.162 \\
+    \midrule
+    $0.1 - 0.2$ & 4.852 & 0.162 \\
+    \midrule
+    $0.2 - 0.3$ & 4.947 & 0.164 \\
+    \midrule
+    $0.3 - 0.4$ & 5.399 & 0.171 \\
+    \midrule
+    $0.4 - 0.5$ & 6.032 & 0.181 \\
+    \midrule
+    $0.5 - 0.6$ & 6.298  & 0.186 \\
+    \midrule
+    $0.6 - 0.7$ & 6.386 & 0.186 \\
+    \midrule
+    $0.7 - 0.8$ & 7.753 & 0.202 \\
+    \midrule
+    $0.8 - 0.9$ & 9.232 & 0.220 \\
+    \midrule
+    $0.9 - 1.0$ & 11.098 & 0.238 \\
+    \end{tabular}
+  \end{threeparttable}
+  \label{tab-Pl-acc_39}
+  \end{center}
+\end{table}
+
+%\include{end}

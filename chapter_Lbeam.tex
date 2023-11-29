@@ -19,7 +19,7 @@ After identifying the $\pM$ beam and reconstructing $\Kz$, $\Lambda$ derived fro
 \section{$\pM$ beam identification}
 %%%%
 \subsection{Identification of the time-zero segment of BH1 and BH2}
-The true hit in a multi-hit event is identified by referring to the timing information of BH1 and BH2. After defining the time-zero ($t0$) segment, a segment of BH1 and BH2 with the hit timing nearest to 0, the time-of-flight distribution between each $t0$ segment of BH1 and BH2 was measured. \textcolor{red}{ The time-of-flight distribution between $t0$ segments of BH1 and BH2 is shown in Figure \ref{fig-btof} }. Since the hit timing of BH2 is used as the start/stop timing of the DAQ system, the timing distribution of BH2 hardly spreads.
+The true hit in a multi-hit event is identified by referring to the timing information of BH1 and BH2. After defining the time-zero ($t0$) segment, a segment of BH1 and BH2 with the hit timing nearest to 0, the time-of-flight distribution between each $t0$ segment of BH1 and BH2 was measured.The time-of-flight distribution between $t0$ segments of BH1 and BH2 is shown in Figure \ref{fig-btof}. Since the hit timing of BH2 is used as the start/stop timing of the DAQ system, the timing distribution of BH2 hardly spreads.1
 Therefore, the t0 segment of BH2 was identified with more than 90\% efficiency by applying a timing gate of $\pm1$ ns to this distribution. On the other hand, a timing gate of $\pm5$ ns was applied to the beam TOF distribution between BH1 and BH2 to cover the time walk. In principle, the time walk needs to be corrected by ADC information. However, correction is not possible under high-intensity conditions because multiple particles collide with the same segment within the ADC gate.
 
 Typical timing resolution for BH1 and BH2 ($\sim10.5$ m apart) is 300 ps ($\sigma$). Since the time difference between BH1 and BH2 of $\pM$ and $\KM$ of 1.33 GeV/$c$ is $\sim2.137$ ns, this resolution value can be considered sufficient to distinguish between them. The $t0$ segments of BH1 and BH2 are also used to analyze the hit position of BFT, BC3, and BC4. Here, the contamination of other particles is negligible thanks to two ESSs, four CM magnets, and two MS slits. 
@@ -34,7 +34,7 @@ Typical timing resolution for BH1 and BH2 ($\sim10.5$ m apart) is 300 ps ($\sigm
 
 %%%%
 \subsection{BFT analysis}
-BFT measures the horizontal hit position $x$ at the entrance of the QQDQQ system. BFT has two overlapping layers ($xx'$), which allows adjacent hits to be clustered. \textcolor{red}{The typical time resolution of BFT was 900 ps ($\sigma$) under the 20M/spill beam intensity \cite{Nana-D}. The timing gate of BFT was set to be $\pm5$ ns}. Only the timing gate was applied for a single BFT hit, which was unconditionally used to reconstruct a beam momentum. The correlation between the $t0$ segment of BH1 and a hit pattern of BFT was used to reject the accidental background when several BFT hits remained after applying the timing gate.
+BFT measures the horizontal hit position $x$ at the entrance of the QQDQQ system. BFT has two overlapping layers ($xx'$), which allows adjacent hits to be clustered. The typical time resolution of BFT was 900 ps ($\sigma$) under the 20M/spill beam intensity \cite{Nana-D}. The timing gate of BFT was set to be $\pm5$ ns. Only the timing gate was applied for a single BFT hit, which was unconditionally used to reconstruct a beam momentum. The correlation between the $t0$ segment of BH1 and a hit pattern of BFT was used to reject the accidental background when several BFT hits remained after applying the timing gate.
 
 % ?? vs. bft_clpos[i] 載せないかも。
 \begin{comment}
@@ -62,7 +62,7 @@ Three-dimensional trajectories at the exit of the QQDQQ system were reconstructe
 \end{align}
 where $X_i$ is a local hit position in each plane represented by $wp$ (a wire position) and $dl$ (a drift length) and $f(z_i)$ is a position calculated from a tracking result at the $z$ position of each plane. Each coordinate definition is shown in Figure \ref{fig-BcOuttracking}. The local straight track is expressed by a wire tilt angle, theta, and four parameters (i.e., $x_0$, $y_0$, $u_0$, and $v_0$) which respectively denote the $x$ and $y$ position at the origin of a local tracking coordinate and its slope, $dx/dz$ and $dy/dz$. 
 
-Since the beam particles are incident almost perpendicular to the chamber planes, in the BcOut analysis, the pair plane analysis method is adopted to solve a left/right ambiguity. This method treats a set of pair planes such as $xx'$, $uu'$, and $vv'$ as one apparent plane. To reduce the high multiplicity of each pair plane, the correlation between hits on each plane and the $t0$ segment of BH2 (the BH2 filter) was applied to limit the number of hits participating in the track search. The schematic of the BH2 filter is shown in Figure \ref{fig-bh2filter}. \textcolor{red}{The reduced chi-squared distribution of BcOut tracks is shown in Figure \ref{fig-chisqrBcOut}. The threshold was set to 5.}
+Since the beam particles are incident almost perpendicular to the chamber planes, in the BcOut analysis, the pair plane analysis method is adopted to solve a left/right ambiguity. This method treats a set of pair planes such as $xx'$, $uu'$, and $vv'$ as one apparent plane. To reduce the high multiplicity of each pair plane, the correlation between hits on each plane and the $t0$ segment of BH2 (the BH2 filter) was applied to limit the number of hits participating in the track search. The schematic of the BH2 filter is shown in Figure \ref{fig-bh2filter}. The reduced chi-squared distribution of BcOut tracks is shown in Figure \ref{fig-chisqrBcOut}. The threshold was set to 5.
 
 \begin{figure}[!h]
   \begin{center}
@@ -115,7 +115,7 @@ The components $x$, $u$, $y$, and $v$ of the final vector at the exit of the QQD
   x(0) = \sum_{j} M_{1j}^{'(1)} X_{i}(1) + \sum_{jk} M_{1jk}^{'(2)} X_{i}(1)X_{j}(1) + \sum_{jkl} M_{1jkl}^{'(3)} X_{i}(1)X_{j}(1)X_{k}(1).
   \label{eq: transmtrx}
 \end{equation}
-Equation (\ref{eq: transmtrx}) is a cubic equation for $\delta$ and gives the beam momentum as a general solution. \textcolor{red}{ The $\pM$ beam momentum distribution reconstructed by the \nth{3}-order transfer matrix is shown in Figure \ref{fig-p_2nd}.} The setting of the momentum slit in the beamline mainly determines the spread of momentum distribution.
+Equation (\ref{eq: transmtrx}) is a cubic equation for $\delta$ and gives the beam momentum as a general solution. The $\pM$ beam momentum distribution reconstructed by the \nth{3}-order transfer matrix is shown in Figure \ref{fig-p_2nd}. The setting of the momentum slit in the beamline mainly determines the spread of momentum distribution.
 
 %p_2nd[ntK18_Bh1]
 \begin{figure}[!h]
@@ -156,7 +156,7 @@ The optimal momentum and trajectory of the ejected particle were determined from
     \right. \nonumber \\
   N_{hit} &= \sum_{i}H_{i}, \nonumber 
 \end{align}
-where $X^{hit}_{i}$ and $X^{track}_{i}$ respectively represent a local position obtained from each detector hit and KURAMA tracking, and $\sigma_{i}$ is a position resolution of each plane. For the multi-hit events, all combinations between the SdcIn tracks and the SdcOut tracks are examined and sorted by $\chi^{2}$ values. The convergence of the iteration was judged by the following criterion: $(\chi^{2}_{l+1} - \chi^{2}_{l})/\chi^{2}_{l} < 10^{-3}$, where $\chi^{2}_{l}$ represents the result of the $l$-th iteration. \textcolor{red}{ The reduced chi-squared distribution of KURAMA tracking is shown in Figure \ref{fig-chisqrKurama} }. Good tracks with a reduced $\chisq$ value of less than 50 are accepted.
+where $X^{hit}_{i}$ and $X^{track}_{i}$ respectively represent a local position obtained from each detector hit and KURAMA tracking, and $\sigma_{i}$ is a position resolution of each plane. For the multi-hit events, all combinations between the SdcIn tracks and the SdcOut tracks are examined and sorted by $\chi^{2}$ values. The convergence of the iteration was judged by the following criterion: $(\chi^{2}_{l+1} - \chi^{2}_{l})/\chi^{2}_{l} < 10^{-3}$, where $\chi^{2}_{l}$ represents the result of the $l$-th iteration. The reduced chi-squared distribution of KURAMA tracking is shown in Figure \ref{fig-chisqrKurama}. Good tracks with a reduced $\chisq$ value of less than 50 are accepted.
 
 %chisqrKurama[i] ???
 \begin{figure}[!h]
@@ -173,7 +173,7 @@ The mass of the outgoing particle was calculated using the KURAMA tracking resul
   \beta &= \frac{L}{ct},
 \end{align}
 where 
-$p$ is the measured momentum of the scattered particle, $c$ is the speed of light, $L$ is the track length from the target center to the TOF counter, and $t$ is the time-of-flight. \textcolor{red}{ Figure \ref{fig-pKurama_m2} shows the correlation between mass squared $m^{2}$ and the momentum of the scattered particles measured by the KURAMA spectrometer. $\pP$ from the $\kzdecay$ decay was identified by the $m^{2}$ gate of $m^{2}<0.15$ (GeV/$c^{2}$)$^{2}$ with a positive charge. }
+$p$ is the measured momentum of the scattered particle, $c$ is the speed of light, $L$ is the track length from the target center to the TOF counter, and $t$ is the time-of-flight. Figure \ref{fig-pKurama_m2} shows the correlation between mass squared $m^{2}$ and the momentum of the scattered particles measured by the KURAMA spectrometer. $\pP$ from the $\kzdecay$ decay was identified by the $m^{2}$ gate of $m^{2}<0.15$ (GeV/$c^{2}$)$^{2}$ with a positive charge.
 
 KURAMA tracking allows charge discrimination of detected particles, and when the KURAMA spectrometer requires positively charged scattering particles, the high-intensity $\pM$ beam is no longer the dominant background. However, by-products from other reactions must be removed. One of the main backgrounds is the multiple-$\pi$ production (i.e. the $\multipi$ reaction) since the combination of final state particles is the same as the $\Lp$ scattering. To reject such background events and select only the $\PiKL$ reaction, some cuts were applied. The details were explained in Sec. \ref{sec-Lbeam-EVselect}. 
 
@@ -289,7 +289,7 @@ BGO efficiency for protons emitted at $\theta_{lab}=41^{\circ}$ where the crosse
 
 %%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Particle identification}
-\textcolor{red}{ Figure \ref{fig-dE_E} shows the $\Delta E-E$ plot of $\Lambda$ production events, obtained after applying the CATCH calibration. } The track defined by the area surrounded by the solid red line corresponds to $\pi$. The other track distributed above it mainly corresponds to protons, and because it has a mass heavier than $\pi$, it tends to stop in the BGO calorimeter, causing the $dE/dx$ distribution to rise to the left. Most of the $\pi$ penetrated the BGO calorimeter with only a partial loss of kinetic energy. Therefore, the only information available in $\pi$s is track information.
+Figure \ref{fig-dE_E} shows the $\Delta E-E$ plot of $\Lambda$ production events obtained after applying the CATCH calibration. The track defined by the area surrounded by the solid red line corresponds to $\pi$. The other track distributed above it mainly corresponds to protons. Because it has a mass heavier than $\pi$, it tends to stop in the BGO calorimeter, causing the $dE/dx$ distribution to rise to the left. Most of the $\pi$ penetrated the BGO calorimeter with only a partial loss of kinetic energy. Therefore, the only information available in $\pi$s is track information.
 
 \begin{figure}[!h]
   \begin{center}
@@ -332,15 +332,15 @@ The beam $\Lambda$ produced by the $\PiKL$ reaction was identified by calculatin
 \label{sec-Lbeam-EVselect}
 In the previous section, we reconstructed the \say{temporary $\Kz$} using the two $\pi$s detected by KURAMA and CATCH, respectively. To ensure that this particle was indeed a $\Kz$ produced by the $\PiKL$ reaction, two cuts were used for event screening: (1) Opening angle between two $\pi$s (2) Distance of closest approach between $\pM$ beam and $\Kz$ tracks. 
 
-\textcolor{red}{ In this paper, we analyzed two detection cases of CATCH: case \rom{1} for beam $\Lambda$ polarization measurement and case \rom{2} for $\Lp$ scattering identification independently. Detection case \rom{1} requires that CATCH detects $pM$ of $\kzdecay$ decay and decay products of $\Ldecay$ decay. Detection case \rom{2} requires that CATCH detects $pM$ of $\kzdecay$ decay, recoil proton, and decay products of $\scatldecay$ decay. Therefore, the event screening to identify $\Kz$ production above was applied in each detection case, respectively. }
+In this paper, we analyzed two detection cases of CATCH: case \rom{1} for beam $\Lambda$ polarization measurement and case \rom{2} for $\Lp$ scattering identification independently. Detection case \rom{1} requires that CATCH detects $pM$ of $\kzdecay$ decay and decay products of $\Ldecay$ decay. Detection case \rom{2} requires that CATCH detects $pM$ of $\kzdecay$ decay, recoil proton, and decay products of $\scatldecay$ decay. Therefore, the event screening to identify $\Kz$ production above was applied in each detection case. 
 
 
 
 
 %%%
 \subsubsection{Opening angle between two $\pi$s}
-%\textcolor{red}{K0選択カットについては、ケース毎にも記載するからここに説明書くべきか？要検討。}
-In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s from the $\Kz$ decay should be under $90^{\circ}$ according to the Monte Carlo simulation as shown in Figure \ref{fig-thetapipi_1p1pi_sim} (case \rom{1}) and Figure \ref{fig-thetapipi_2p_sim} (case \rom{2}). \textcolor{red}{ If the main background reaction, multiple $\pi$ production, occurs, it would distribute wider. To remove such contamination, the cut was chosen at $90^{\circ}$ as represented by the red solid lines in Figure \ref{fig-thetapipi_1p1pi} (case \rom{1}) and Figure \ref{fig-thetapipi_2p} (case \rom{2}). }
+%K0選択カットについては、ケース毎にも記載するからここに説明書くべきか？要検討。
+In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s from the $\Kz$ decay should be under $90^{\circ}$ according to the Monte Carlo simulation as shown in Figure \ref{fig-thetapipi_1p1pi_sim} (case \rom{1}) and Figure \ref{fig-thetapipi_2p_sim} (case \rom{2}). If the main background reaction, multiple $\pi$ production, occurs, it would distribute wider. To remove such contamination, the cut was chosen at $90^{\circ}$ as represented by the red solid lines in Figure \ref{fig-thetapipi_1p1pi} (case \rom{1}) and Figure \ref{fig-thetapipi_2p} (case \rom{2}). 
 
 %theta(pipi) sim
 \begin{figure}[!h]
@@ -419,8 +419,8 @@ In case \rom{1} and case \rom{2}, the opening angle of two $\pi$s from the $\Kz$
 
 %%%
 \subsubsection{Distance of closest approach of $\pM$ beam and $\Kz$}
-\textcolor{red}{ The $\Kz$ reconstruction method sometimes regards the wrong combination of $\pM$ and $\pP$ as the decay products of $\kzdecay$ decay. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\Ldecay$ decay as the one of $\kzdecay$ decay. That results in the wrong $\Kz$ being reconstructed and its track would be placed apart from the $\pM$ beam track. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\scatldecay$ decay as the one of $\kzdecay$ decay. 
-To ensure the $\Kz$ reconstruction was correctly performed, we checked the closest distance between the $\pM$ beam and $\Kz$ tracks. The simulation indicates that it would distribute under 20 mm in case \rom{1} and case \rom{2}, as shown in Figure \ref{fig-cdistk0_1p1pi_sim} and Figure \ref{fig-cdistk0_2p_sim}. Therefore, the cut was chosen at the same value for E40 data analysis, as shown in Figure \ref{fig-cdistk0_1p1pi} and Figure \ref{fig-cdistk0_2p}. }
+The $\Kz$ reconstruction method sometimes regards the wrong combination of $\pM$ and $\pP$ as the decay products of $\kzdecay$ decay. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\Ldecay$ decay as the one of $\kzdecay$ decay. That results in the wrong $\Kz$ being reconstructed and its track would be placed apart from the $\pM$ beam track. For case \rom{1}, CATCH could mistakenly select the $\pM$ of $\scatldecay$ decay as the one of $\kzdecay$ decay. 
+To ensure the $\Kz$ reconstruction was correctly performed, we checked the closest distance between the $\pM$ beam and $\Kz$ tracks. The simulation indicates that it would distribute under 20 mm in case \rom{1} and case \rom{2}, as shown in Figure \ref{fig-cdistk0_1p1pi_sim} and Figure \ref{fig-cdistk0_2p_sim}. Therefore, the cut was chosen at the same value for E40 data analysis, as shown in Figure \ref{fig-cdistk0_1p1pi} and Figure \ref{fig-cdistk0_2p}. 
 
 %%%%%%%%
 % 2023/11/17 18:12
