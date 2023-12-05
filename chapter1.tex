@@ -9,7 +9,7 @@ The nuclear force is the interaction that binds protons and neutrons in all atom
 
 The meson exchange model of the nuclear force, constructed with abundant nucleon-nucleon ($NN$) scattering data, explains the long-range attraction of the nuclear force. Since $\pi$ meson is the lightest meson, it contributes to the long-distance region. $\sigma$ meson with a mass of $\sim520$ MeV and decay width of $\sim700$ MeV contributes attraction at intermediate distances. $\omega$(782) and $\rho$(770) vector mesons dominate the exchange in the short-distance region. In contrast, treating repulsive cores of nuclear force appearing in a short range at high energies is highly model-dependent and requires further study. 
 
-They say six kinds of quarks with different flavors exist: up ($u$), down ($d$), charm ($c$), strange ($s$), top ($t$), and bottom ($b$), as shown in Figure \ref{fig-quarks}. Nucleons are the ground-state baryons, which consist of $u$ and $d$ quarks with spin 1/2. The key to understanding the mechanism of the short-range nuclear force is the interaction between baryons, including other flavors, since nuclear force should be described from the same viewpoint as the nuclear force when considering that they originate from strong interaction. 
+They say six kinds of quarks with different flavors exist: up ($u$), down ($d$), charm ($c$), strange ($s$), top ($t$), and bottom ($b$), as shown in Figure \ref{fig-quarks}. Nucleons are the ground-state baryons, which consist of $u$ and $d$ quarks with spin 1/2. The key to systematically understanding the mechanism of the nuclear force is the interaction between baryons, including other flavors, such as $s$ quark.
 \begin{figure}[h!]
   \begin{center}
   \includegraphics[clip,width=12cm]{quarks.eps}
@@ -34,7 +34,7 @@ Here, \say{color confinement} occurs, in which only hadrons, whose final synthes
   \end{center}
 \end{figure}
 
-In the following, we discuss \say{baryon}, a hadron composed of $u$, $d$, and $s$ quarks. The wavefunction of the whole baryon can be written as
+In the following, we discuss \say{baryon}, a composite subatomic particle consisting of three quarks. The wavefunction of the whole baryon can be written as
 \begin{equation}
   \psi = \xi_{space} \cdot \zeta_{flavor} \cdot \chi_{spin} \cdot \phi_{color}.
 \end{equation}
@@ -67,14 +67,6 @@ Figure \ref{fig-class} shows the particle classification by $\BB$ composition. E
  \end{center}
 \end{figure}
 
-\begin{figure}[h]
- \begin{center}
-   \includegraphics[clip,width=15cm]{BB_Swave.eps}
-   \caption{Potential of $\BB$ interactions diagonal in the flavor-irreducible representation basis \cite{QCD-2019}.}
-   \label{fig-BB_Swave}
- \end{center}
-\end{figure}
-
 Since baryons are fermions like quarks, symmetric and antisymmetric representations of flavors are allowed depending on the orbital angular momentum $L$ and spin $S$, denoted by $^{2S+1}(-1)^{L}$ such as singlet-even $(^1E)$, triplet-odd $(^3O)$, triplet-even $(^3E)$, and singlet-odd $(^1O)$, as shown in Table \ref{table-BBint}. %In this table, spin states $S$ and parity of the orbital angular momentum $L$ are denoted as ${}^{2S+1}(-1)^{L}$, for example, singlet-even (${}^{1}E$) and triplet-odd (${}^{3}O$). 
 ${\bf (27), (8_{\rm_{s}})}$ and ${\bf (1)}$ are symmetric, and ${\bf (10), (10^*)}$ and ${\bf (8_{\rm{a}})}$ are asymmetric under the exchange of two baryons. By introducing $s$ quark in the SU(2), all multiplets but ${\bf (27), (10^*)}$ newly appear in the Hyperon-Nucleon ($YN$) or Hyperon-Hyperon ($YY$) channels. 
 
@@ -94,8 +86,15 @@ ${\bf (27), (8_{\rm_{s}})}$ and ${\bf (1)}$ are symmetric, and ${\bf (10), (10^*
 \end{table}
 
 %The quark-cluster model (QCM) \cite{Oka-2000} predicts that two $\SN$ channels in the $S-$wave, $(S = 0, I = 1/2)$ and $(S = 1, I = 3/2)$ have almost forbidden states. 
-${\bf (8_{\rm{s}})}$ and ${\bf (10)}$ are predicted to be strongly repulsive due to the Pauli forbidden states at a quark level. In contrast, it is said that ${\bf (8_{\rm{a}})}$ has a weak repulsive core, and ${\bf (1)}$ has an attractive pocket. These features were recently reproduced by Lattice Quantum Chromo-Dynamics (Lattice QCD) simulations \cite{QCD-2019} (see more details in Sec. \ref{sec-LatticeQCD}). Especially, the $\SN(I=3/2)$ channel ($\SPp$ and $\SMn$) are expected to have a large repulsive core originated from the quark Pauli effect since it only includes ${\bf (27)}$ and ${\bf (10)}$. The $YN$ channel is also suitable for investigating ALS forces. The reason is that while the SLS force is symmetric with respect to spin swapping, the ALS force is antisymmetric, so the picture of the ALS force can only be investigated in the $YN$ channel that includes both singlet and triplet terms. 
+${\bf (8_{\rm{s}})}$ and ${\bf (10)}$ are predicted to be strongly repulsive due to the Pauli forbidden states at a quark level. In contrast, it is said that ${\bf (8_{\rm{a}})}$ has a weak repulsive core, and ${\bf (1)}$ has an attractive pocket. These features were recently reproduced by Lattice Quantum Chromo-Dynamics (Lattice QCD) simulations \cite{QCD-2019}, as shown in Figure \ref{fig-BB_Swave} (see more details in Sec. \ref{sec-LatticeQCD}). Especially, the $\SN(I=3/2)$ channel ($\SPp$ and $\SMn$) are expected to have a large repulsive core originated from the quark Pauli effect since it only includes ${\bf (27)}$ and ${\bf (10)}$. The $YN$ channel is also suitable for investigating ALS forces. The reason is that while the SLS force is symmetric with respect to spin swapping, the ALS force is antisymmetric, so the picture of the ALS force can only be investigated in the $YN$ channel that includes both singlet and triplet terms. 
 
+\begin{figure}[h]
+ \begin{center}
+   \includegraphics[clip,width=15cm]{BB_Swave.eps}
+   \caption{Potential of $\BB$ interactions diagonal in the flavor-irreducible representation basis \cite{QCD-2019}.}
+   \label{fig-BB_Swave}
+ \end{center}
+\end{figure}
 
 \begin{comment}
 
@@ -105,11 +104,11 @@ From this viewpoint, the J-PARC E40 experiment ($\Sp$ scattering experiment) mea
 The wavefunction of a many-particle system consisting of fermions of the same kind must be antisymmetric concerning the exchange of particles. Therefore, the $NN$ channel is forbidden to be spin-antisymmetric ($S=0$) when it is isospin-antisymmetric ($I=0$) and spin-symmetric ($S=1$) when it is isospin-symmetric ($I=1$). The $\BB$ effective interaction is generally expressed as
 \begin{align}
   V(\bm{r}) =& V_{\rm c} \\
-  	  +& V_{\sigma}(\bm{s_a} \cdot \bm{s_b}) \\
-	  +& V_{\rm LS}(\bm{s}\cdot\bm{L}) \\
-	  +& V_{\tau\tau}(\bm{\tau_a}\cdot\bm{\tau_b}) \\
-	  +& V_{\rm T}S_{12} \\
-	  +& \cdots
+  +& V_{\sigma}(\bm{s_a} \cdot \bm{s_b}) \\
+  +& V_{\rm LS}(\bm{s}\cdot\bm{L}) \\
+  +& V_{\tau\tau}(\bm{\tau_a}\cdot\bm{\tau_b}) \\
+  +& V_{\rm T}S_{12} \\
+  +& \cdots
 \end{align}
 where $V_{\rm c}$ is the central force, not including the interaction between the spins $\bm{s_a}$ and $\bm{s_b}$ and the spatial relative coordinates $\bm{r = r_a - r_b}$, $V_{\sigma}(\bm{s_a} \cdot \bm{s_b})$ is the spin-spin interaction depending on the relative orientation of the spins $\bm{s_a}$ and $\bm{s_b}$, $V_{\rm LS}(\bm{s}\cdot\bm{L})$ is the spin-orbit angular momentum interaction (LS force) that depends on the orientation between spin and orbital angular momentum, $V_{\tau\tau}(\bm{\tau_a}\cdot\bm{\tau_b})$ is the isospin-isospin interaction depending on the relative orientation of isospin $\bm{\tau_a}$ and $\bm{\tau_b}$, and $V_{\rm T}S_{12}$ is the potential $V_{\rm T}$ and its tensor operator $S_{12}$, which represents the tensor force involving the interaction between spins and spatial relative coordinates.
 
@@ -141,7 +140,7 @@ First, this section introduces several theoretical models describing the two-bod
 \subsubsection{Boson exchange model}
 The Boson Exchange Potential is based on the boson field, which results from the boson exchange between two baryons. The Nijmegen model is one of the widely used models in hypernuclear physics. The Nijmegen Soft-Core (NSC) models express the repulsive core by the pomeron exchange, representing the phenomenological multiple gluon exchange. New versions of NSC, Nijmegen Extended Soft-Core (ESC) models describe $NN$, $YN$, and $YY$ interactions under SU(3) symmetry breaking in a unified manner. It consists of OBE, Two-Pseudo-Scalar meson exchange (TPS), Meson Pair Exchange (MPE), and local and nonlocal potentials.
 
-The latest version of ESC (ESC16) \cite{ESC16} incorporates several meson exchange effects to describe the small spin-orbit splitting expected in the $\Lambda$ hypernucleus, and their validity should be tested from precise measurements of the analyzing power $A_y$ in the $\Lp$ channel. ESC16 also describes the repulsion phenomenologically as a sum of \say{pure} pomeron exchange and \say{pomeron-like} exchange. This, too, needs to be validated by precise $YN$ scattering data.
+The latest version of ESC (ESC16) \cite{ESC16} incorporates several meson exchange effects to describe the small spin-orbit splitting expected in the $\Lambda$ hypernucleus, and their validity should be tested from precise measurements of the spin observables in $YN$ channels. ESC16 also describes the repulsion phenomenologically as a sum of \say{pure} pomeron exchange and \say{pomeron-like} exchange. This, too, needs to be validated by precise $YN$ scattering data.
 %ESC16論文から図を入れる？
 
 %%%
@@ -151,7 +150,7 @@ The Quark-Cluster Models (QCM), such as FSS and fss2, describe the $\BB$ interac
 This framework incorporates both quark and mesonic degrees of freedom. Since the meson-exchange effects are the non-perturbative aspect of QCD, these are described by the Effective-Meson Exchange Potentials (EMEPs) acting between quarks. The color-magnetic term of the FB interaction and the Pauli effect at the quark level describe the short-range repulsion of the $\BB$ interactions. In FSS \cite{FSS}, only the scalar-meson and pseudoscalar-meson exchanges are introduced as the EMEPs, while in fss2 \cite{fss2}, the vector-meson exchanges are also introduced. All standard terms used in the non-relativistic OBEP are included. They also try to study the charge dependence of the $\BB$ interactions by applying the pion-Columb correction in the particle basis. 
 
 The fss2 version reproduces the $NN$ phase shifts at non-relativistic energies. However, the $\Lambda$ single-particle potential has a depth of 48 MeV (fss2) and 46 MeV (FSS) if the continuous prescription is used for intermediate energy spectra. These values are slightly more attractive than the experimental values of $\Lambda$-hypernuclei \cite{Bando-1990}. It also predicts strong repulsion of the $\Sigma$ single-particle potential due to the strong Pauli effect in the $\SN\ (S = 1, I = 3/2)$ state. The estimated strengths of the potentials are about 8 MeV (fss2) and 20 MeV (FSS). %Vector-meson exchanges might cause this difference but need to be carefully investigated, referring to ultra-precise $\Sigma$-hypernuclei experimental data. 
-Additionally, fss2 describes the LS force generated from the scalar meson EMEP. If this contribution is significant, canceling the SLS and ALS force components from the FB interaction becomes less prominent. The estimated ratios of the Scheerbaum factors, $S_{\Lambda}/S_N$, are $\approx1/4$ (fss2) and $\approx1/12$ (FSS). The ALS force information derived from the analyzing power of the $\Lp$ scattering data should also check this difference. 
+Additionally, fss2 describes the LS force generated from the scalar meson EMEP. If this contribution is significant, canceling the SLS and ALS force components from the FB interaction becomes less prominent. The estimated ratios of the Scheerbaum factors, $S_{\Lambda}/S_N$, are $\approx1/4$ (fss2) and $\approx1/12$ (FSS). The ALS force information derived from the spin observables of the $YN$ channels should also check this difference. 
 
 Their three-cluster formalism would be the first step to solving the few-body systems that interact via the quark-model $\BB$ interactions, considering the essential features of RGM, the non-locality, the energy dependence, and the pairwise Pauli-forbidden state.
 
@@ -170,12 +169,12 @@ An early study of $\LN$ and $\SN$ scatterings up to NLO in SU(3) chiral Effectiv
 \end{figure}
 
 It is suggested that the effect of the variation in the strength of the $\LNtoSN$ coupling ($\Lambda$-$\Sigma$ conversion) is sizable in the case of the matter properties. %To fully constrain the $\LNtoSN$ transition potential, more $YN$ scattering data covering the momentum range of this transition is necessary, besides consistent three-body forces to compensate for the differences in few- and many-body systems.
-Since the statistics of $YN$ scattering data are insufficient, LECs at NLO and higher order and the $\LNtoSN$ transition potentials still have ambiguity. Measuring the $YN$ cross sections in a higher energy range is now required to constrain the $P$-wave contribution. %Hence, the experimental values of differential cross section and polarization observables in the $\Lambda$ beam momentum range of $400-800$ MeV/$c$ would play an important role in studying $\chi$EFT at NLO and higher order. 
+Since the statistics of $YN$ scattering data are insufficient, LECs at NLO and higher order and the $\LNtoSN$ transition potentials still have ambiguity. Therefore, measuring the cross-sections of $YN$ scatterings in a higher energy range is required to constrain the $P$-wave contribution. %Hence, the experimental values of differential cross section and polarization observables in the $\Lambda$ beam momentum range of $400-800$ MeV/$c$ would play an important role in studying $\chi$EFT at NLO and higher order. 
 
 %%%
 \subsubsection{Lattice QCD}
 \label{sec-LatticeQCD}
-Lattice Quantum Chromo-Dynamics (Lattice QCD) is a numerical simulation established independently of the above theoretical model. QCD, a field theory that introduces color degrees of freedom into the quark picture, is set up on a lattice. The Hadrons to Atomic nuclei from Lattice (HAL) QCD method was established in 2006 to extract $NN$ interactions from QCD on a lattice \cite{QCD-2006}. HAL QCD method has been applied successfully to $YN$ systems \cite{QCD-YN}, general $\BB$ systems \cite{QCD-BB}, meson-baryon systems \cite{QCD-MB}, and so on. This means obtaining hyperon interactions without requiring experimental data, but relying on QCD is possible. 
+Lattice Quantum Chromo-Dynamics (Lattice QCD) is a numerical simulation established independently of the above theoretical model. QCD, a field theory that introduces color degrees of freedom into the quark picture, is set up on a lattice. The Hadrons to Atomic nuclei from Lattice (HAL) QCD method was established in 2006 to extract $NN$ interactions from QCD on a lattice \cite{QCD-2006}. HAL QCD method has been applied successfully to $YN$ systems \cite{QCD-YN}, general $\BB$ systems \cite{QCD-BB}, meson-baryon systems \cite{QCD-MB}, and so on. This means obtaining hyperon interactions without requiring experimental data but relying on QCD is possible. 
 
 HAL QCD collaboration also performed a Lattice QCD numerical simulation and extracted $\BB$ interactions from QCD using the HAL QCD method in 2019 \cite{QCD-2019}. Since they employed a full QCD gauge configuration ensemble, the masses of the hadrons in their Lattice QCD simulation are nearly physical; for example, the $\pi$ meson mass was 146 MeV, the $K$ meson mass was 525 MeV, and the nucleon mass was 958 MeV. 
 
@@ -216,7 +215,7 @@ For the $\SN$ channels, recently we pioneered a new $\SPMp$ scattering experimen
 The J-PARC E40 experiment was performed to achieve the high-statistic $\SPMp$ scattering measurement to investigate the validity of the meson-exchange model in the $\SN(I=1/2)$ channel and the quark Pauli effect in the $\SN(I=3/2)$ channel. It finally measured the differential cross-sections of $\SMp$ scattering \cite{Miwa-SMp} (Figure \ref{fig-dcs_SMp}), $\SMpLn$ inelastic scattering \cite{Miwa-SMLn} (Figure \ref{fig-dcs_SMpLn}), and $\SPp$ scattering \cite{Nana-SPp} (Figure \ref{fig-dcs_SPp}). Ref. \cite{Nana-SPp} also measured the phase shifts $\delta_{^3S_1}$ and $\delta_{^1P_1}$, as shown in Figure \ref{fig-phaseshift_SPp}.
 
 %Lpについて
-For the $\LN$ channel, theoretical models were built based on the past $\Lp$ scattering data in a lower momentum range ($\leq400$ MeV/$c$). Figure \ref{fig-totcsLp_old} \cite{chiEFT-2020} shows the past measurements of the total cross-sections of the $\Lp$ scattering with theoretical models. The red (dark) band represents the result for NLO13 \cite{NLO13} including cutoff variations, the cyan (light) band for the alternative version NLO19, the dashed curve for the J\"{u}lich '04 meson-exchange model \cite{chiEFT-2005}, and the dotted curve for the Nijmegen NSC97f potential \cite{NSC97f}. The experimental cross-sections are taken from Refs. \cite{Lp-1968_Sechi} (filled circles), \cite{Lp-1968_Alex} (filled squares), \cite{Lp-1967_Herndon} (open triangles), \cite{Lp-1971} (open squares), and \cite{Lp-1977_Hauptman} (open circles). Below the $400$ MeV/$c$ range, several cross-section measurements with hydrogen bubble chambers were used to determine the $S$-wave contribution. In contrast, the $\Lp$ scattering data over the $400$ MeV/$c$ range are still lacking, which makes it difficult to study higher wave contributions such as $P$- and $D$-waves. Although the CLAS collaboration reported the new total cross-section data \cite{Lp-2021} in 2021 (Figure \ref{fig-Lp_totcs_CLAS}), the experimental data is still insufficient to restrict the theoretical models. As shown in Figure \ref{fig-Lp_dcs_models} \cite{chiEFT-2020}, models show different behaviors in differential cross-section in each beam momentum (i.e., $p_{lab}=500$ MeV/$c$, or $p_{lab}=633$ MeV/$c$). Here, both $\chi$EFT version of NLO13 and NLO19 suggest that the $S-$wave contributes drastically at 500 MeV/$c$, while at 633 MeV/$c$ the $\SPn$ threshold makes a strong angular dependence. the J\"{u}lich '04 meson-exchange model predicts the $P-$wave contribution even at 500 MeV/$c$. In contrast, according to Ref. \cite{OBE-1999}, the large angular dependence in the Nijmegen NSC97f potential is derived by $^3D_1$ contribution. 
+For the $\LN$ channel, theoretical models were built based on the past $\Lp$ scattering data in a lower momentum range ($\leq400$ MeV/$c$). Figure \ref{fig-totcsLp_old} \cite{chiEFT-2020} shows the past measurements of the total cross-sections of the $\Lp$ scattering with theoretical models. The red (dark) band represents the result for NLO13 \cite{NLO13} including cutoff variations, the cyan (light) band for the alternative version NLO19, the dashed curve for the J\"{u}lich '04 meson-exchange model \cite{chiEFT-2005}, and the dotted curve for the Nijmegen NSC97f potential \cite{NSC97f}. The experimental cross-sections are taken from Refs. \cite{Lp-1968_Sechi} (filled circles), \cite{Lp-1968_Alex} (filled squares), \cite{Lp-1967_Herndon} (open triangles), \cite{Lp-1971} (open squares), and \cite{Lp-1977_Hauptman} (open circles). Below the $400$ MeV/$c$ range, several cross-section measurements with hydrogen bubble chambers were used to determine the $S$-wave contribution. In contrast, the $\Lp$ scattering data over the $400$ MeV/$c$ range are still lacking, which makes it difficult to study higher wave contributions such as $P$- and $D$-waves. Although the CLAS collaboration reported the new total cross-section data in 2021 \cite{Lp-2021} (see Figure \ref{fig-Lp_totcs_CLAS}), the experimental data is still insufficient to restrict the theoretical models. As shown in Figure \ref{fig-Lp_dcs_models} \cite{chiEFT-2020}, models show different behaviors in differential cross-section in each beam momentum (i.e., $p_{lab}=500$ MeV/$c$, or $p_{lab}=633$ MeV/$c$). Here, both $\chi$EFT version of NLO13 and NLO19 suggest that the $S$-wave contributes drastically at 500 MeV/$c$, while at 633 MeV/$c$ the $\SPn$ threshold makes a strong angular dependence. the J\"{u}lich '04 meson-exchange model predicts the $P$-wave contribution even at 500 MeV/$c$. In contrast, according to Ref. \cite{OBE-1999}, the large angular dependence in the Nijmegen NSC97f potential is derived by $^3D_1$ contribution. 
 
 %以下の文章入れる？要検討。
 %\textcolor{red} {To establish the precise two-body $\LN$ interaction, we will perform the next-generation $\Lp$ scattering experiment at J-PARC which follows the same experimental technique as J-PARC E40. It aims to measure not only differential cross-section but spin observables such as analyzing power and depolarization. }
@@ -381,7 +380,7 @@ Compared to the abundance of $NN$ scattering data, $YN$ scattering data are stil
 
 For the $YN$ elastic scattering $ab\to a'b'$, the $T$ matrix can be represented in terms of spin-independent, spin-spin, SLS, ALS, and tensor components as
 \begin{align}
-  \bm{M} = V_{\rm c} \\
+  \bm{M} &= V_{\rm c} \\
   &+ V_{\sigma}(\bm{s_a} \cdot \bm{s_b}) \\
   &+ V_{{\rm SLS}}(\bm{s_a} + \bm{s_b}) \cdot \bm{L} \\
   &+ V_{{\rm ALS}}(\bm{s_a} - \bm{s_b}) \cdot \bm{L} \\
@@ -537,13 +536,13 @@ We identified the charge of scattered particles by bending the tracks of charged
 %E86モチベ
 The next-generation $\Lp$ scattering experiment, J-PARC E86 \cite{Miwa-LpProp}, is scheduled to measure the $\Lp$ scattering differential cross-section and spin observables, such as analyzing power and depolarization. These spin observables would be the first experimental input in the $\Lp$ channel. %Considering that the interaction distance that can be resolved by elastic scattering is equivalent to the wavelength of the incident particle ($1/k = \hbar/p_{CM}$), J-PARC E86 can investigate the interaction distance range of $\sim0.63-1.14$ fm in the CM frame using the beam $\Lambda$ with a momentum range of $0.4-0.8$ GeV/$c$ in the Laboratory frame. 
 
-Since $\Lambda$ and proton have isospin $I = 0$ and $I = 1/2$ respectively, the $\Lp$ channel has only the state of total isospin $I = 1/2$. Therefore, it is suitable to investigate the contribution of ALS force and the structure of $\Lp$ interaction around the $\SN$ threshold caused by the tensor force of $^3S_1 - ^3D_1$ coupling. %Many of data from past $\Lp$ scattering experiments were mainly from the era when bubble chambers were used, and their momentum regions were below the range targeted by J-PARC E86. Due to this limited experimental information, theoretical models of the $\LN$ interaction, despite being intensively studied from the $\Lambda$ hypernuclei, show quite different predictions for the $P-$wave and higher-wave momentum regions. 
+Since $\Lambda$ and proton have isospin $I = 0$ and $I = 1/2$ respectively, the $\Lp$ channel has only the state of total isospin $I = 1/2$. Therefore, it is suitable to investigate the contribution of ALS force and the structure of $\Lp$ interaction around the $\SN$ threshold caused by the tensor force of $^3S_1$ - $^3D_1$ coupling. %Many of data from past $\Lp$ scattering experiments were mainly from the era when bubble chambers were used, and their momentum regions were below the range targeted by J-PARC E86. Due to this limited experimental information, theoretical models of the $\LN$ interaction, despite being intensively studied from the $\Lambda$ hypernuclei, show quite different predictions for the $P-$wave and higher-wave momentum regions. 
 In the $P$-wave and higher-wave regions, the strength of spin-dependent interactions, such as the LS force, becomes very large. Therefore, the spin observables measurement in J-PARC E86 is extremely important in placing strong constraints on the theoretical models. 
 
 %簡単な実験セットアップの特徴説明
 %At the K1.1 beamline of the J-PARC hadron experimental facility, we will use the intensity of 30 M/spill (5.2 seconds cycle with a beam duration of 2 seconds) $\pM$ beam with the momentum of 1.05 GeV/$c$ and liquid hydrogen (LH$_2$) target with 30 cm long. The incident $\Lambda$ produced by the $\PiKL$ reaction will be tagged by the missing mass of the $\PiKX$ reaction. The total cross-section of the $\PiKL$ reaction was expected to be large ($\sim900\ \mu$b) at this momentum range \cite{Baker}. 
 
-The $\Lambda$ beam is produced via the $\PiKL$ reaction with a total cross-section $\sim900\ \mu$b \cite{Baker} using $\pM$ beam momentum of 1.05 GeV/$c$. According to Ref. \cite{Baker}, the $\Lambda$ produced in the $\pM$ beam momentum range $0.931-1.334$ GeV/$c$ is $\sim100\%$ polarized at the forward $\Kz$ scattering angle, as shown in Figure \ref{fig-PL_Baker}. However, this data had the problem of low statistics and remained uncertain. Therefore, in this paper, we confirmed that the beam $\Lambda$ is automatically polarized and verified whether it can be used for the spin observable measurement in the J-PARC E86 experiment, using the $\PiKL$ reaction data obtained in the J-PARC E40 experiment.
+The $\Lambda$ beam is produced via the $\PiKL$ reaction with a total cross-section $\sim900\ \mu$b \cite{Baker} using $\pM$ beam momentum of 1.05 GeV/$c$. According to Ref. \cite{Baker}, the $\Lambda$ produced in the $\pM$ beam momentum range of 0.931 - 1.334 GeV/$c$ is $\sim100\%$ polarized at the forward $\Kz$ scattering angle, as shown in Figure \ref{fig-PL_Baker}. However, this data had the problem of low statistics and remained uncertain. Therefore, in this paper, we confirmed that the beam $\Lambda$ is automatically polarized and verified whether it can be used for the spin observable measurement in the J-PARC E86 experiment, using the $\PiKL$ reaction data obtained in the J-PARC E40 experiment.
 
 \begin{comment}
 
@@ -558,7 +557,7 @@ We requested a 34-day beam time, including a 29-day production run and 5-day com
 \begin{figure}[!h]
   \begin{center}
    \includegraphics[width=15cm]{PL_Baker.eps}
-   \caption{Induced polarization of $\Lambda$ in the $\PiKL$ reaction in the momentum range of $0.931-1.334$ GeV/$c$ measured in Ref. \cite{Baker}. The horizontal axis shows the scattering angle of $\Kz$ in the CM frame ($\costcm$). High polarization was obtained for all momentum ranges here.}
+   \caption{Induced polarization of $\Lambda$ in the $\PiKL$ reaction in the $\pM$ beam momentum range of 0.931 - 1.334 GeV/$c$ ($1.633<E_{CM} {\rm (GeV)}<1.847$) measured in Ref. \cite{Baker}. The horizontal axis shows the scattering angle of $\Kz$ in the CM frame ($\costcm$).}
    \label{fig-PL_Baker}
  \end{center}
 \end{figure}
