@@ -1,7 +1,7 @@
 # Measurement of the beam Λ polarization for the next Λp scattering experiment at J-PARC
 - This is Tamao SAKAO (坂尾　珠和)'s dissertation, accepted by Dept. of Physics, Facl. of Science, Tohoku University (Sendai, Japan). 
 - E-mail: tamao.sakao.r3@dc.tohoku.ac.jp
-- **please read the full pdf file from [HERE](https://github.com/maoam0226/dthesis/main.pdf).**
+- **please read the full pdf file from [HERE](https://drive.google.com/file/d/1Kp4GWQ4GcoHeIvujKvBJQf-SnOIkYCSa/view?usp=share_link).**
   
 ## Abstract
 The study of baryon-baryon interactions is essential to understand the fundamental forces in particle physics. This thesis focuses on the interactions within the SU(3) flavor symmetry framework, involving different types of baryons such as protons, neutrons, and hyperons. Experimental data, primarily from the J-PARC E40 experiment, is analyzed to derive $\Lambda$ polarization in the $\pi^{-}p\to K^{0}\Lambda$ reaction. Also, the $\Lambda p$ scattering identification method was established using the same data.
